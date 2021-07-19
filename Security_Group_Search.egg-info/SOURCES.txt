@@ -1,7 +1,0 @@
-setup.py
-Security_Group_Search.egg-info/PKG-INFO
-Security_Group_Search.egg-info/SOURCES.txt
-Security_Group_Search.egg-info/dependency_links.txt
-Security_Group_Search.egg-info/entry_points.txt
-Security_Group_Search.egg-info/requires.txt
-Security_Group_Search.egg-info/top_level.txt
