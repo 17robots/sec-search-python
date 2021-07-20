@@ -2,7 +2,6 @@ import click
 from ui.app import App
 from time import sleep
 from rich.live import Live
-import keyboard
 import sys
 
 
@@ -49,7 +48,5 @@ def programLoop(subcommand, sources, dests, display, protocols, accounts, ports,
         [subcommand, sources, dests, display, accounts, protocols, ports, output]))
     with Live(app(), refresh_per_second=60, screen=True) as live:
         while isRunning:
-            if keyboard.is_pressed('q'):
-                sys.exit(0)
             live.update(app())
             sleep(1)
