@@ -1,13 +1,11 @@
-import boto3.session
 import click
-import boto3
-import json
-import os
-from botocore.exceptions import ClientError
-from pathlib import Path
-from aws.sso import SSO
 from aws.sec_groups import grab_sec_groups
+from aws.sec_group_rules import grab_sec_group_rules
+from aws.instances import grab_instances
+
 
 @click.command()
 def aws():
-    grab_sec_groups()
+    # grab_sec_group_rules()
+    # grab_sec_groups()
+    grab_instances()
