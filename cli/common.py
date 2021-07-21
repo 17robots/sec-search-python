@@ -2,12 +2,12 @@ import click
 from ui.app import App
 from time import sleep
 from rich.live import Live
-import sys
 
 
 def command_arguments(func):
     @click.command()
     @click.option('-sources', default=None, type=str, help='Name or ip of source vm', required=False)
+    @click.option('-regions', default=None, type=str, help='Regions to filter by', required=False)
     @click.option('-dests',  default=None, type=str, help='Name or ip of dest vm', required=False)
     @click.option('-display',  default=None, type=str, help='AWS fields to show on output', required=False)
     @click.option('-accounts',  default=None, type=str, help='AWS accounts within user credentials to filter by', required=False)
