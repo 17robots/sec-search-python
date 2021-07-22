@@ -14,6 +14,7 @@ def command_arguments(func):
     @click.option('-ports',  default=None, type=str, help='Ports to filter by', required=False)
     @click.option('-protocols',  default=None, type=str, help='Protocols to filter by', required=False)
     @click.option('-output', default=None, type=str, help="File to output results of command to")
+    @click.option('-query', default=None, type=str, help="Cloudwatch Query for Watch Command")
     def wrapped_func(*args, **kwargs):
         func(*args, **kwargs)
     return wrapped_func
