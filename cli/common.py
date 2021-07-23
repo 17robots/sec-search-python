@@ -2,6 +2,7 @@ import click
 from ui.app import App
 from time import sleep
 from rich.live import Live
+import keyboard
 
 
 def command_arguments(func):
@@ -21,17 +22,18 @@ def command_arguments(func):
 
 
 def listParams(paramArr):
-    subcommand, sources, dests, display, accounts, protocols, ports, output = paramArr
+    subcommand, sources, regions, dests, display, accounts, protocols, ports, output, query = paramArr
     return dict({
         'subcommand': subcommand,
         'sources': sources,
+        'regions': regions,
         'dests': dests,
         'display': display,
         'accounts': accounts,
         'protocols': protocols,
         'ports': ports,
         'output': output,
-        'cloudQuery': None
+        'cloudQuery': query
     })
 
 
@@ -39,15 +41,11 @@ isRunning = True
 
 
 def kill():
-    global isRunning
     isRunning = False
 
+def switchToWatch():
+    # store a string
+    pass
 
 def programLoop(subcommand, sources, dests, display, protocols, accounts, ports, output):
     global isRunning
-    app = App(props=listParams(
-        [subcommand, sources, dests, display, accounts, protocols, ports, output]))
-    with Live(app(), refresh_per_second=60, screen=True) as live:
-        while isRunning:
-            live.update(app())
-            sleep(1)

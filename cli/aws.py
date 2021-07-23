@@ -14,9 +14,10 @@ def aws(sources, regions, dests, display, accounts, ports, protocols, output, qu
     searcher = AWS()
     searcher.search(cli)
 
-    print('After Filtering')
-    for region in searcher.ruleMap:
-        for account in searcher.ruleMap[region]:
-            if(len(searcher.ruleMap[region][account])) > 0:
-                print("{} account {}: {} instances".format(
-                    region, account, len(searcher.ruleMap[region][account])))
+
+    # print('After Filtering')
+    # for region in searcher.ruleMap:
+    #     for account in searcher.ruleMap[region]:
+    #         if(len(searcher.ruleMap[region][account])) > 0:
+    #             print("{} account {}: {} instances".format(
+    #                 region, account, len(searcher.ruleMap[region][account])))

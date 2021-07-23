@@ -29,6 +29,9 @@ class App(Component):
             'viewHeight': pollHeight(),
             'list': pollList()
         }))
+        self.state = dict({
+            'acctArr': []
+        })
 
     def render(self):
         layout = Layout()
@@ -42,7 +45,7 @@ class App(Component):
             Layout(name='program')
         )
         layout['command'].update(Panel(self.command(), title="Command Info"))
-        layout['program'].update(Panel(self.program(), title="Program Info"))
+        layout['program'].update(Panel(self.program.setState(newState=self.state), title="Progress"))
 
         layout['main'].update(
             Panel(self.Output(), title="Output"))

@@ -5,7 +5,7 @@ from aws.sec_group_rules import grab_sec_group_rules
 from aws.sec_groups import grab_sec_groups
 from aws.instances import grab_instances
 from threading import Thread
-
+import time
 
 class AWS:
     def __init__(self) -> None:
@@ -45,13 +45,20 @@ class AWS:
                     self.ruleMap[reg][acct] = grab_sec_group_rules(
                         ec2_client)
                     self.ruleMap[reg][acct] = list(
-                        filter(cli.filterSources, self.ruleMap[reg][acct]))
-                    self.ruleMap[reg][acct] = list(
-                        filter(cli.filterDestinations, self.ruleMap[reg][acct]))
-                    self.ruleMap[reg][acct] = list(
                         filter(cli.filterPorts, self.ruleMap[reg][acct]))
                     self.ruleMap[reg][acct] = list(
                         filter(cli.filterProtocols, self.ruleMap[reg][acct]))
+                    self.ruleMap[reg][acct] = list(
+                        filter(cli.filterSources, self.ruleMap[reg][acct]))
+                    self.ruleMap[reg][acct] = list(
+                        filter(cli.filterDestinations, self.ruleMap[reg][acct]))
+                    
+                    expand = cli.ExpandRule(self.instanceMap[reg][acct])
+
+                    expanded = list(map(expand, self.ruleMap[reg][acct]))
+                    for ruleArr in expanded:
+                        print(ruleArr)
+                    
 
                     self.groupMap[reg][acct] = grab_sec_groups(ec2_client)
                 x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
