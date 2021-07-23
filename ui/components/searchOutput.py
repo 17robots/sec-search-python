@@ -6,15 +6,11 @@ from .searchResults import SearchResults
 class SearchOutput(Component):
     def __init__(self, props=None):
         self.state = dict({
-            'total': props['total'],
-            'account': props['account'],
-            'instance': props['instance'],
+            'completed': props['completed'],
             'results': []
         })
         self.searchbarOutput = SearchbarOutput(props=dict({
-            'total': self.state['total'],
-            'account': self.state['account'],
-            'instance': self.state['instance']
+            'completed': self.state['completed'],
         }))
         self.searchResults = SearchResults(props=dict({
             'results': self.state['results']

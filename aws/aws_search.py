@@ -5,7 +5,9 @@ from aws.sec_group_rules import grab_sec_group_rules
 from aws.sec_groups import grab_sec_groups
 from aws.instances import grab_instances
 from threading import Thread
-import time
+import queue
+import common.event
+
 
 class AWS:
     def __init__(self) -> None:
@@ -14,8 +16,7 @@ class AWS:
         self.groupMap = {}
         self.instanceMap = {}
 
-    def search(self, cli: CLI):
-        processes = []
+    def search(self, cli: CLI, msgPmp: queue.Queue):
         sso = SSO()
         regions = filter(cli.filterRegions, sso.getRegions())
         for region in regions:
@@ -24,8 +25,13 @@ class AWS:
                 self.ruleMap[region] = {}
                 self.groupMap[region] = {}
                 self.instanceMap[region] = {}
-            accounts = sso.getAccounts()
-            for account in filter(cli.filterAccounts, accounts['accountList']):
+
+            threads = []
+            accounts = list(
+                filter(cli.filterAccounts, sso.getAccounts()['accountList']))
+            msgPmp.put(common.event.InitEvent(
+                reg=region, acctTotal=len(accounts)))
+            for account in accounts:
                 self.currentAccount = account['accountId']
                 if not account['accountId'] in self.ruleMap[region]:
                     self.ruleMap[region][account['accountId']] = []
@@ -35,10 +41,11 @@ class AWS:
                 def thread_func(region, account):
                     reg = region
                     acct = account['accountId']
+                    msgPmp.put(common.event.AccountStartedEvent(
+                        reg=reg, acctId=acct))
                     creds = sso.getCreds(account=account)
                     ec2_client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
                                               aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
-
                     self.instanceMap[reg][acct] = grab_instances(
                         ec2_client)
 
@@ -52,19 +59,22 @@ class AWS:
                         filter(cli.filterSources, self.ruleMap[reg][acct]))
                     self.ruleMap[reg][acct] = list(
                         filter(cli.filterDestinations, self.ruleMap[reg][acct]))
-                    
+
                     expand = cli.ExpandRule(self.instanceMap[reg][acct])
 
                     expanded = list(map(expand, self.ruleMap[reg][acct]))
-                    for ruleArr in expanded:
-                        print(ruleArr)
-                    
+
+                    # for ruleArr in expanded:
+                    #     print(ruleArr)
 
                     self.groupMap[reg][acct] = grab_sec_groups(ec2_client)
+                    msgPmp.put(common.event.AccounFinishedEvent(
+                        reg=reg, resTotal=len(self.ruleMap)))
+
                 x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
                     region, account['accountId']), args=(region, account))
-                processes.append(x)
+                threads.append(x)
                 x.start()
 
-        for process in processes:
+        for process in threads:
             process.join()

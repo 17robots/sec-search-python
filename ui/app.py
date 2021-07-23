@@ -19,9 +19,7 @@ class App(Component):
         self.program = ProgramInfo()
         self.command = CommandInfo(props=self.param)
         self.output = SearchOutput(props=dict({
-            'total': 10,
-            'account': pollAccount(),
-            'instance': pollInstance()
+            'completed': False
         })) if self.param['subcommand'] == 'search' else WatchOutput(props=dict({
             'total': 10,
             'account': pollAccount(),
@@ -30,7 +28,9 @@ class App(Component):
             'list': pollList()
         }))
         self.state = dict({
-            'acctArr': []
+            'regArr': {},
+            'finishedSearching': False,
+            'results': []
         })
 
     def render(self):
@@ -45,7 +45,8 @@ class App(Component):
             Layout(name='program')
         )
         layout['command'].update(Panel(self.command(), title="Command Info"))
-        layout['program'].update(Panel(self.program.setState(newState=self.state), title="Progress"))
+        layout['program'].update(
+            Panel(self.program.setState(newState=self.state), title="Progress"))
 
         layout['main'].update(
             Panel(self.Output(), title="Output"))

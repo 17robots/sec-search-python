@@ -5,13 +5,19 @@ from .component import Component
 class ProgramInfo(Component):
     def __init__(self, props=None):
         self.state = dict({
-            'acctArr': []
+            'regArr': {},
+            'finishedSearching': False
         })
+
     def render(self):
-        table = Table.grid(padding=1, expand=True)
-        table.add_column("", justify='center')
-        table.add_column("", justify='center')
-        table.add_column("", justify='center')
-        for account in self.state['acctArr']:
-            table.add_row(account['id'], "{}/{}".format(account['finishedCount'], account['totalCount']), "{} in {}S".format(account['resultCount'], account['duration']) if account['finishedCount'] == account['totalCount'] else "")
+        table = Table.grid(expand=True)
+        table.add_column("", justify='left')
+        table.add_column("", justify='left')
+        table.add_column("", justify='left')
+        # TODO: Implement Based On State
+        for region in self.state['regArr']:
+            table.add_row(
+                region, "{}/{}".format(self.state['regArr'][region]['completed'], self.state['regArr'][region]['total']), "{} results in {}s".format(self.state['regArr'][region]['results'], self.state['regArr'][region]['duration']) if self.state['regArr'][region]['finishedSearch'] else "")
+            table.add_row("Current Account: ",
+                          self.state['regArr'][region]['currAcct'], "")
         return table

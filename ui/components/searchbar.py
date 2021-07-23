@@ -5,16 +5,22 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 
 class Searchbar(Component):
     def __init__(self, props=None):
+        self.state = dict({
+            'completed': props['completed']
+        })
         self.props = props
         self.progress = Progress(
             SpinnerColumn(),
         )
         self.task = self.progress.add_task(
-            description="", total=props['total'], justify='right'
+            description="", total=100, justify='right'
         )
 
     def render(self):
         return self.progress
 
-    def progress_task(self):
-        self.progress.update(self.task, advance=1)
+    def setState(self, newState):
+        for key in newState:
+            self.state[key] = newState[key]
+        if self.state['completed']:
+            self.progress.update(completed=True)

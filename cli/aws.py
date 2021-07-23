@@ -14,7 +14,6 @@ def aws(sources, regions, dests, display, accounts, ports, protocols, output, qu
     searcher = AWS()
     searcher.search(cli)
 
-
     # print('After Filtering')
     # for region in searcher.ruleMap:
     #     for account in searcher.ruleMap[region]:
