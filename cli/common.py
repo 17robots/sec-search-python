@@ -39,10 +39,6 @@ def listParams(paramArr):
 
 isRunning = True
 
-
-def kill():
-    isRunning = False
-
 def switchToWatch():
     # store a string
     pass

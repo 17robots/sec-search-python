@@ -13,11 +13,8 @@ class ProgramInfo(Component):
         table = Table.grid(expand=True)
         table.add_column("", justify='left')
         table.add_column("", justify='left')
-        table.add_column("", justify='left')
         # TODO: Implement Based On State
         for region in self.state['regArr']:
             table.add_row(
-                region, "{}/{}".format(self.state['regArr'][region]['completed'], self.state['regArr'][region]['total']), "{} results in {}s".format(self.state['regArr'][region]['results'], self.state['regArr'][region]['duration']) if self.state['regArr'][region]['finishedSearch'] else "")
-            table.add_row("Current Account: ",
-                          self.state['regArr'][region]['currAcct'], "")
+                region, "{}/{}".format(self.state['regArr'][region]['completed'], self.state['regArr'][region]['total']), "{} results".format(self.state['regArr'][region]['resultTotal'] if self.state['regArr'][region]['finishedSearch'] else "Loading"))
         return table

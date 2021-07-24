@@ -20,8 +20,7 @@ class SearchOutput(Component):
         return self.searchResults.setState(newState=dict({
             'results': self.state['results']
         })) if self.finished() else self.searchbarOutput.setState(newState=dict({
-            'account': self.state['account'],
-            'instance': self.state['instance']
+            'completed': self.state['completed']
         }))
 
     def finished(self):

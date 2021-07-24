@@ -23,6 +23,7 @@ class Events(enum.Enum):
 class InitEvent(Event):
     reg: str
     acctTotal: int
+    regionTotal: int
     e_type: str = field(default=Events.InitEvent.value, init=False)
 
 
@@ -37,6 +38,7 @@ class AccountStartedEvent(Event):
 class AccounFinishedEvent(Event):
     reg: str
     resTotal: int
+    results: list
     e_type: str = field(default=Events.AccounFinishedEvent.value, init=False)
 
 
@@ -49,7 +51,6 @@ class RegionFinishedEvent(Event):
 
 @dataclass
 class SearchCompletedEvent(Event):
-    finalResults: dict
     e_type: str = field(default=Events.SearchCompletedEvent.value, init=False)
 
 
@@ -68,6 +69,6 @@ class MessagePump:
     def processEvents(self):
         if self.messagePump.qsize() == 0:
             return
-        event = self.messagePump.get()
+        event = self.messagePump.get(block=False)
         if event.e_type in self.listeners:
             self.listeners[event.e_type](event)

@@ -22,8 +22,7 @@ class App(Component):
             'completed': False
         })) if self.param['subcommand'] == 'search' else WatchOutput(props=dict({
             'total': 10,
-            'account': pollAccount(),
-            'instance': pollInstance(),
+            'completed': False,
             'viewHeight': pollHeight(),
             'list': pollList()
         }))
@@ -56,19 +55,11 @@ class App(Component):
         global count
         count += 1
         return self.output.setState(newState=dict({
-            'account': pollAccount(),
-            'instance': pollInstance(),
-            'results': pollResults(),
+            'results': self.state['results'],
+            'completed': self.state['finishedSearching'],
             'viewHeight': pollHeight(),
             'list': pollList()
         }))
-
-
-def pollResults():
-    global count
-    if count % 2 == 0:
-        return ['None', "{}".format(count)]
-    return ['Cool Result', "{}".format(count)]
 
 
 def pollAccount():

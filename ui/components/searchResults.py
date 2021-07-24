@@ -13,5 +13,5 @@ class SearchResults(Component):
         resultsTable = Table.grid(padding=1)
         resultsTable.add_column("")
         for val in self.state['results']:
-            resultsTable.add_row(val)
+            resultsTable.add_row(val['id'])
         return resultsTable

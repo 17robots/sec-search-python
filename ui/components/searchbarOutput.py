@@ -18,8 +18,3 @@ class SearchbarOutput(Component):
         table.add_row(self.searchstatus(), self.searchbar.setState(
             newState=dict({'completed': self.state['completed']})))
         return table
-
-    def setState(self, newState):
-        for key in newState:
-            self.state[key] = newState[key]
-        return self()

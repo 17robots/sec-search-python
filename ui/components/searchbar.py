@@ -10,10 +10,10 @@ class Searchbar(Component):
         })
         self.props = props
         self.progress = Progress(
-            SpinnerColumn(),
+            SpinnerColumn()
         )
         self.task = self.progress.add_task(
-            description="", total=100, justify='right'
+            description="", total=100, justify='right', completed=0, start=True
         )
 
     def render(self):
@@ -23,4 +23,4 @@ class Searchbar(Component):
         for key in newState:
             self.state[key] = newState[key]
         if self.state['completed']:
-            self.progress.update(completed=True)
+            self.progress.update(task_id=self.task, completed=100)

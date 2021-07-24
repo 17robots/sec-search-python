@@ -18,7 +18,8 @@ class AWS:
 
     def search(self, cli: CLI, msgPmp: queue.Queue):
         sso = SSO()
-        regions = filter(cli.filterRegions, sso.getRegions())
+        threads = []
+        regions = list(filter(cli.filterRegions, sso.getRegions()))
         for region in regions:
             self.currentRegion = region
             if not region in self.ruleMap:
@@ -26,11 +27,10 @@ class AWS:
                 self.groupMap[region] = {}
                 self.instanceMap[region] = {}
 
-            threads = []
             accounts = list(
                 filter(cli.filterAccounts, sso.getAccounts()['accountList']))
             msgPmp.put(common.event.InitEvent(
-                reg=region, acctTotal=len(accounts)))
+                reg=region, regionTotal=len(regions), acctTotal=len(accounts)), block=False)
             for account in accounts:
                 self.currentAccount = account['accountId']
                 if not account['accountId'] in self.ruleMap[region]:
@@ -42,7 +42,7 @@ class AWS:
                     reg = region
                     acct = account['accountId']
                     msgPmp.put(common.event.AccountStartedEvent(
-                        reg=reg, acctId=acct))
+                        reg=reg, acctId=acct), block=False)
                     creds = sso.getCreds(account=account)
                     ec2_client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
                                               aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
@@ -60,16 +60,15 @@ class AWS:
                     self.ruleMap[reg][acct] = list(
                         filter(cli.filterDestinations, self.ruleMap[reg][acct]))
 
-                    expand = cli.ExpandRule(self.instanceMap[reg][acct])
+                    # expand = cli.ExpandRule(self.instanceMap[reg][acct])
 
-                    expanded = list(map(expand, self.ruleMap[reg][acct]))
+                    # expanded = list(map(expand, self.ruleMap[reg][acct]))
 
                     # for ruleArr in expanded:
                     #     print(ruleArr)
 
-                    self.groupMap[reg][acct] = grab_sec_groups(ec2_client)
                     msgPmp.put(common.event.AccounFinishedEvent(
-                        reg=reg, resTotal=len(self.ruleMap)))
+                        reg=reg, resTotal=len(self.ruleMap[reg][acct]), results=self.ruleMap[reg][acct]), block=False)
 
                 x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
                     region, account['accountId']), args=(region, account))
