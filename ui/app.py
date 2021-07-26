@@ -1,36 +1,28 @@
+from ui.components.output import Output
 from .components.component import Component
 from rich.layout import Layout
 from rich.panel import Panel
 from .components.commandInfo import CommandInfo
 from .components.programInfo import ProgramInfo
-from .components.searchOutput import SearchOutput
-from .components.watchOutput import WatchOutput
 import os
-from typing import Mapping
-
-count = 0
-demoCount = 1
-environ: Mapping[str, str] = os.environ
-
 
 class App(Component):
     def __init__(self, props):
         self.param = props
-        self.program = ProgramInfo()
-        self.command = CommandInfo(props=self.param)
-        self.output = SearchOutput(props=dict({
-            'completed': False
-        })) if self.param['subcommand'] == 'search' else WatchOutput(props=dict({
-            'total': 10,
-            'completed': False,
-            'viewHeight': pollHeight(),
-            'list': pollList()
-        }))
         self.state = dict({
             'regArr': {},
             'finishedSearching': False,
-            'results': []
+            'outputList': [],
+            'outputColumns': []
         })
+
+        self.program = ProgramInfo()
+        self.command = CommandInfo(props=self.param)
+        self.output = Output(props=dict({
+            'viewHeight': pollHeight(),
+            'columns': self.state['outputColumns'],
+            'messages': self.state['outputList']
+        }))
 
     def render(self):
         layout = Layout()
@@ -52,39 +44,11 @@ class App(Component):
         return layout
 
     def Output(self):
-        global count
-        count += 1
         return self.output.setState(newState=dict({
-            'results': self.state['results'],
-            'completed': self.state['finishedSearching'],
             'viewHeight': pollHeight(),
-            'list': pollList()
+            'columns': self.state['outputColumns'],
+            'messages': self.state['outputList']
         }))
-
-
-def pollAccount():
-    global count
-    if count % 5 == 0:
-        return 'Hello'
-    return 'World'
-
-
-def pollInstance():
-    global count
-    if count % 2 == 0:
-        return 'World'
-    return 'Hello'
-
-
-def pollList():
-    retList = []
-    global demoCount
-    if count >= 11:
-        for i in range(1, 50 if demoCount > 50 else demoCount, 1):
-            retList.append('count val: {}'.format(i))
-        demoCount += 1
-    return retList
-
 
 def pollHeight():
     return os.get_terminal_size().lines - 2

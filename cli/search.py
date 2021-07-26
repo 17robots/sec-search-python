@@ -1,3 +1,4 @@
+from logging import ERROR
 from aws.aws_search import AWS
 from cli.cli import CLI
 from cli.common import command_arguments, listParams
@@ -21,7 +22,8 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
     state = dict({
         'regArr': {},
         'finishedSearching': False,
-        'results': [],
+        'outputList': [],
+        'outputColumns': [],
         'regionTotal': 0,
         'completedRegions': 0
     })
@@ -34,7 +36,6 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         state['regArr'][e.reg]['duration'] = 0
         state['regArr'][e.reg]['currAcct'] = 'None'
         state['regArr'][e.reg]['startTime'] = time.time()
-        state['regArr'][e.reg]['finishedSearch'] = False
         state['regionTotal'] = e.regionTotal
 
     def startAcct(e: common.event.AccountStartedEvent):
@@ -57,6 +58,12 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
 
     def finishSearch(e: common.event.SearchCompletedEvent):
         state['finishedSearching'] = True
+    
+    def handleError(e: common.event.ErrorEvent):
+        state['outputList'] = [str(e.e)]
+    
+    def handleLoadResults(e: common.event.LoadResultsEvent):
+        pass
 
     # add eventlisteners
     pump.addListener(common.event.Events.InitEvent.value, initState)
@@ -67,14 +74,19 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         common.event.Events.RegionFinishedEvent.value, finishRegion)
     pump.addListener(
         common.event.Events.SearchCompletedEvent.value, finishSearch)
+    pump.addListener(common.event.Events.ErrorEvent.value, handleError)
+    pump.addListener(common.event.Events.LoadResultsEvent.value, handleLoadResults)
 
     # main search thread
     def searchThread():
-        cli = CLI(subcommand="search", sources=sources, regions=regions, dests=dests,
-                  protocols=protocols, accounts=accounts, ports=ports, output=output, cloudquery=query)
-        searcher = AWS()
-        searcher.search(cli, pump.messagePump)
-        state['results'] = searcher.ruleMap['us-east-1']['995684153539']
+        try:
+            cli = CLI(subcommand="search", sources=sources, regions=regions, dests=dests,
+                    protocols=protocols, accounts=accounts, ports=ports, output=output, cloudquery=query)
+            searcher = AWS()
+            searcher.search(cli, pump.messagePump)
+            pump.messagePump.put(common.event.LoadResultsEvent(results=searcher.ruleMap))
+        except Exception as e:
+            pump.messagePump.put(common.event.ErrorEvent(e=e))
 
     thread = threading.Thread(target=searchThread, daemon=True)
     app = App(props=listParams(

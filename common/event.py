@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from logging import ERROR
 import queue
 import enum
 
@@ -8,16 +9,23 @@ class Event:
     e_type: str
     pass
 
-
-# search events
-
 class Events(enum.Enum):
     InitEvent = "InitEvent"
     AccountStartedEvent = "AccountStartedEvent"
     AccounFinishedEvent = "AccounFinishedEvent"
     RegionFinishedEvent = "RegionFinishedEvent"
     SearchCompletedEvent = "SearchCompletedEvent"
+    ErrorEvent = "ErrorEvent"
+    LoadResultsEvent = "LoadResultsEvent"
 
+# error events
+
+@dataclass
+class ErrorEvent(Event):
+    e: ERROR
+    e_type: str = field(default=Events.ErrorEvent.value, init=False)
+
+# search events
 
 @dataclass
 class InitEvent(Event):
@@ -52,6 +60,11 @@ class RegionFinishedEvent(Event):
 @dataclass
 class SearchCompletedEvent(Event):
     e_type: str = field(default=Events.SearchCompletedEvent.value, init=False)
+
+@dataclass
+class LoadResultsEvent(Event):
+    results: dict
+    e_type: str = field(default=Events.LoadResultsEvent.value, init=False)
 
 
 # watch events
