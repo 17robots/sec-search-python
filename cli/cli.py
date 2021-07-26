@@ -90,9 +90,11 @@ class CLI:
         return True
     
     def ExpandRule(self, instances):
+        instanceCache = {}
         def inner(rule):
             rules = []
-            instanceCache = {}
+            def walkGroup(group):
+                pass
             if rule['referencedGroup'] is not None:
                 # we have a referenced group, we need all of the ips on the instances that reference this group to make rules for them
                 for instance in instances:
@@ -100,7 +102,7 @@ class CLI:
                         if rule['referencedGroup'] in instance['secgrps']:
                             for ipaddr in instance['privaddresses']:
                                 for ip in ipaddr['ips']:
-                                    rules.append(Rule(source=ipaddr, dest=None, ruleId=rule['id']))
+                                    rules.append(Rule(source=None if rule['isEgress'] else ipaddr, dest=ipaddr if rule['isEgress'] else None, ruleId=rule['id']))
             else:
                 if(rule['cidrv4'] is not None):
                     try:

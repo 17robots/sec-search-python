@@ -35,13 +35,3 @@ def listParams(paramArr):
         'output': output,
         'cloudQuery': query
     })
-
-
-isRunning = True
-
-def switchToWatch():
-    # store a string
-    pass
-
-def programLoop(subcommand, sources, dests, display, protocols, accounts, ports, output):
-    global isRunning

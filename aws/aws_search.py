@@ -2,7 +2,6 @@ import boto3
 from .sso import SSO
 from cli.cli import CLI
 from aws.sec_group_rules import grab_sec_group_rules
-from aws.sec_groups import grab_sec_groups
 from aws.instances import grab_instances
 from threading import Thread
 import queue
@@ -39,36 +38,39 @@ class AWS:
                     self.instanceMap[region][account['accountId']] = []
 
                 def thread_func(region, account):
-                    reg = region
-                    acct = account['accountId']
-                    msgPmp.put(common.event.AccountStartedEvent(
-                        reg=reg, acctId=acct), block=False)
-                    creds = sso.getCreds(account=account)
-                    ec2_client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
-                                              aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
-                    self.instanceMap[reg][acct] = grab_instances(
-                        ec2_client)
+                    try:
+                        reg = region
+                        acct = account['accountId']
+                        msgPmp.put(common.event.AccountStartedEvent(
+                            reg=reg, acctId=acct), block=False)
+                        creds = sso.getCreds(account=account)
+                        ec2_client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
+                                                aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                        self.instanceMap[reg][acct] = grab_instances(
+                            ec2_client)
 
-                    self.ruleMap[reg][acct] = grab_sec_group_rules(
-                        ec2_client)
-                    self.ruleMap[reg][acct] = list(
-                        filter(cli.filterPorts, self.ruleMap[reg][acct]))
-                    self.ruleMap[reg][acct] = list(
-                        filter(cli.filterProtocols, self.ruleMap[reg][acct]))
-                    self.ruleMap[reg][acct] = list(
-                        filter(cli.filterSources, self.ruleMap[reg][acct]))
-                    self.ruleMap[reg][acct] = list(
-                        filter(cli.filterDestinations, self.ruleMap[reg][acct]))
+                        self.ruleMap[reg][acct] = grab_sec_group_rules(
+                            ec2_client)
+                        self.ruleMap[reg][acct] = list(
+                            filter(cli.filterPorts, self.ruleMap[reg][acct]))
+                        self.ruleMap[reg][acct] = list(
+                            filter(cli.filterProtocols, self.ruleMap[reg][acct]))
+                        self.ruleMap[reg][acct] = list(
+                            filter(cli.filterSources, self.ruleMap[reg][acct]))
+                        self.ruleMap[reg][acct] = list(
+                            filter(cli.filterDestinations, self.ruleMap[reg][acct]))
 
-                    # expand = cli.ExpandRule(self.instanceMap[reg][acct])
+                        # expand = cli.ExpandRule(self.instanceMap[reg][acct])
 
-                    # expanded = list(map(expand, self.ruleMap[reg][acct]))
+                        # expanded = list(map(expand, self.ruleMap[reg][acct]))
 
-                    # for ruleArr in expanded:
-                    #     print(ruleArr)
+                        # for ruleArr in expanded:
+                            # print(ruleArr)
 
-                    msgPmp.put(common.event.AccounFinishedEvent(
-                        reg=reg, resTotal=len(self.ruleMap[reg][acct]), results=self.ruleMap[reg][acct]), block=False)
+                        msgPmp.put(common.event.AccounFinishedEvent(
+                            reg=reg, resTotal=len(self.ruleMap[reg][acct]), results=self.ruleMap[reg][acct]), block=False)
+                    except Exception as e:
+                        msgPmp.put(common.event.ErrorEvent(e=e))
 
                 x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
                     region, account['accountId']), args=(region, account))
