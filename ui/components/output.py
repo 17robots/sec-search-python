@@ -13,11 +13,8 @@ class Output(Component):
 
     def render(self):
         table = Table(expand=True).grid()
-        table.add_column('')
-        colString = ""
-        for column in self.state['columns']:
-            colString += str(column) + ' '
-        table.add_row(colString.strip(' '))
+        for col in self.state['columns']:
+            table.add_column(col)
         for row in self.state['messages'][-self.state['viewHeight']:] if len(self.state['messages']) > self.state['viewHeight'] else self.state['messages']:
             table.add_row(row)
         return table

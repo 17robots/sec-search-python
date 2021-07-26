@@ -12,9 +12,11 @@ import gc
 
 isRunning = True
 
+
 def kill():
     global isRunning
     isRunning = False
+
 
 @command_arguments
 def search(sources, regions, dests, display, accounts, ports, protocols, output, query):
@@ -38,8 +40,6 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         state['regArr'][e.reg]['startTime'] = time.time()
         state['regionTotal'] = e.regionTotal
 
-    def startAcct(e: common.event.AccountStartedEvent):
-        pass
     def finishAcct(e: common.event.AccounFinishedEvent):
         state['regArr'][e.reg]['resultTotal'] += e.resTotal
         state['regArr'][e.reg]['completed'] += 1
@@ -53,38 +53,51 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         state['regArr'][e.reg]['currAcct'] = "Region Completed"
         state['completedRegions'] += 1
         if state['completedRegions'] == state['regionTotal']:
-            pump.messagePump.put(common.event.SearchCompletedEvent(), block=False)
-
+            pump.messagePump.put(
+                common.event.SearchCompletedEvent(), block=False)
 
     def finishSearch(e: common.event.SearchCompletedEvent):
         state['finishedSearching'] = True
-    
+
     def handleError(e: common.event.ErrorEvent):
         state['outputList'] = [str(e.e)]
-    
+
     def handleLoadResults(e: common.event.LoadResultsEvent):
-        pass
+        # TODO: parse the display
+        if not bool(e.results):
+            state['outputList'].append("No results")
+            return
+
+        # filter the properties into the output
+        for region in e.results:
+            for account in e.results[region]:
+                for results in e.results[region][account]:
+                    outputString: str = ""
+                    for result in results:
+                        outputString += str(results[result]) + ' '
+                    state['outputList'].append(outputString)
 
     # add eventlisteners
     pump.addListener(common.event.Events.InitEvent.value, initState)
     pump.addListener(
         common.event.Events.AccounFinishedEvent.value, finishAcct)
-    pump.addListener(common.event.Events.AccountStartedEvent.value, startAcct)
     pump.addListener(
         common.event.Events.RegionFinishedEvent.value, finishRegion)
     pump.addListener(
         common.event.Events.SearchCompletedEvent.value, finishSearch)
     pump.addListener(common.event.Events.ErrorEvent.value, handleError)
-    pump.addListener(common.event.Events.LoadResultsEvent.value, handleLoadResults)
+    pump.addListener(
+        common.event.Events.LoadResultsEvent.value, handleLoadResults)
 
     # main search thread
     def searchThread():
         try:
             cli = CLI(subcommand="search", sources=sources, regions=regions, dests=dests,
-                    protocols=protocols, accounts=accounts, ports=ports, output=output, cloudquery=query)
+                      protocols=protocols, accounts=accounts, ports=ports, output=output, cloudquery=query)
             searcher = AWS()
             searcher.search(cli, pump.messagePump)
-            pump.messagePump.put(common.event.LoadResultsEvent(results=searcher.ruleMap))
+            pump.messagePump.put(
+                common.event.LoadResultsEvent(results=searcher.ruleMap))
         except Exception as e:
             pump.messagePump.put(common.event.ErrorEvent(e=e))
 

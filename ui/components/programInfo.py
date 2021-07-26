@@ -16,5 +16,5 @@ class ProgramInfo(Component):
         # TODO: Implement Based On State
         for region in self.state['regArr']:
             table.add_row(
-                region, "{}/{}".format(self.state['regArr'][region]['completed'], self.state['regArr'][region]['total']), "{} results".format(self.state['regArr'][region]['resultTotal'] if self.state['regArr'][region]['finishedSearch'] else "Loading"))
+                region, "{}/{}".format(self.state['regArr'][region]['completed'], self.state['regArr'][region]['total']), "{} results".format(self.state['regArr'][region]['resultTotal'] if self.state['finishedSearching'] else "Loading"))
         return table
