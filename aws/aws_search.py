@@ -45,7 +45,7 @@ class AWS:
                             reg=reg, acctId=acct), block=False)
                         creds = sso.getCreds(account=account)
                         ec2_client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
-                                                aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                                                  aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
                         self.instanceMap[reg][acct] = grab_instances(
                             ec2_client)
 
@@ -63,9 +63,6 @@ class AWS:
                         # expand = cli.ExpandRule(self.instanceMap[reg][acct])
 
                         # expanded = list(map(expand, self.ruleMap[reg][acct]))
-
-                        # for ruleArr in expanded:
-                            # print(ruleArr)
 
                         msgPmp.put(common.event.AccounFinishedEvent(
                             reg=reg, resTotal=len(self.ruleMap[reg][acct]), results=self.ruleMap[reg][acct]), block=False)

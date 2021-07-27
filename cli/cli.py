@@ -2,11 +2,13 @@ from dataclasses import dataclass
 import ipaddress
 import re
 
+
 @dataclass
 class Rule:
     source: str
     dest: str
     ruleId: str
+
 
 class CLI:
     def __init__(self, subcommand, sources, regions, dests, accounts, ports, protocols, cloudquery, output) -> None:
@@ -42,33 +44,42 @@ class CLI:
             return region in self.regions
         return True
 
-    def filterSources(self, rule):
+    def filterSources(self, expandedRule: Rule):
         if len(self.sources) > 0:
             for source in self.sources:
-                if ipaddress.ip_address(source) in ipaddress.ip_network(rule['cidrv4']):
-                    return True
-                if source in rule['cidrv4']:
-                    return True
-                if ipaddress.ip_address(rule['cidrv4']) in ipaddress.ip_network(source):
-                    return True
-                return False
-        return True
-
-    def filterDestinations(self, rule):
-        if len(self.dests) > 0:
-            if rule['isEgress']:
-                for dest in self.dests:
-                    # check if the source is in the subnet
-                    if ipaddress.ip_address(dest) in ipaddress.ip_network(rule['cidrv4']):
+                try:
+                    x = ipaddress.ip_network(source)
+                    y = ipaddress.ip_network(expandedRule.source)
+                    if x.subnet_of(y):
                         return True
-                    # check if the source is the same network as the rule
-                    if dest in rule['cidrv4']:
+                    if y.subnet_of(x):
                         return True
-                    # check if the source is the network of the rules ip
-                    if ipaddress.ip_address(rule['cidrv4']) in ipaddress.ip_network(dest):
+                    if source in expandedRule.source:
+                        return True
+                    if expandedRule.source in source:
                         return True
                     return False
-            return True
+                except Exception as e:
+                    continue
+        return True
+
+    def filterDestinations(self, expandedRule: Rule):
+        if len(self.dests) > 0:
+            for dest in self.dests:
+                try:
+                    x = ipaddress.ip_network(dest)
+                    y = ipaddress.ip_network(expandedRule.dest)
+                    if x.subnet_of(y):
+                        return True
+                    if y.subnet_of(x):
+                        return True
+                    if dest in expandedRule.dest:
+                        return True
+                    if expandedRule.dest in dest:
+                        return True
+                    return False
+                except Exception as e:
+                    continue
         return True
 
     def filterPorts(self, rule):
@@ -88,39 +99,42 @@ class CLI:
                     return True
             return False
         return True
-    
+
     def ExpandRule(self, instances):
         instanceCache = {}
-        def inner(rule):
+
+        def traceGroup(group):
+            ipaddresses = []
+            for instance in instances:
+                if 'secgrps' in instance:
+                    if group in instance['secgrps']:
+                        for ipaddr in instance['privaddresses']:
+                            for ip in ipaddr['ips']:
+                                ipaddresses.append(ip)
+                if 'othergrps' in instance:
+                    if group in instance['othergrps']:
+                        for ipaddr in instance['privaddresses']:
+                            for ip in ipaddr['ips']:
+                                ipaddresses.append(ip)
+            return ipaddresses
+
+        def innerExpand(rule):
             rules = []
-            def walkGroup(group):
-                pass
+            myIps = traceGroup(rule['groupId'])
             if rule['referencedGroup'] is not None:
-                # we have a referenced group, we need all of the ips on the instances that reference this group to make rules for them
-                for instance in instances:
-                    if 'secgrps' in instance:
-                        if rule['referencedGroup'] in instance['secgrps']:
-                            for ipaddr in instance['privaddresses']:
-                                for ip in ipaddr['ips']:
-                                    rules.append(Rule(source=None if rule['isEgress'] else ipaddr, dest=ipaddr if rule['isEgress'] else None, ruleId=rule['id']))
+                secIps = traceGroup(rule['referencedGroup'])
+                for selfIp in myIps:
+                    for ip in secIps:
+                        rules.append(Rule(
+                            source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=rule['id']))
             else:
-                if(rule['cidrv4'] is not None):
-                    try:
-                        x = ipaddress.ip_address(rule['cidrv4'])
-                        for instance in instances:
-                            for ip in instance['ips']:
-                                rules.append(Rule(source=None if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else None, ruleId=rule['id']))
-                    except ValueError as e:
-                        # we know the cidr provided isnt an ip but rather a network
-                        rules.append(Rule(source=None if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else None, ruleId=rule['id']))
+                if rule['cidrv4'] is not None:
+                    for selfIp in myIps:
+                        rules.append(Rule(
+                            source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=rule['id']))
                 else:
-                    try:
-                        x = ipaddress.ip_address(rule['cidrv6'])
-                        for instance in instances:
-                            for ip in instance['ipv6s']:
-                                rules.append(Rule(source=None if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else None, ruleId=rule['id']))
-                    except ValueError as e:
-                        # we know the cidr provided isnt an ip but rather a network
-                        rules.append(Rule(source=None if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else None, ruleId=rule['id']))
+                    for selfIp in myIps:
+                        rules.append(Rule(
+                            source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=rule['id']))
             return rules
-        return inner
+        return innerExpand

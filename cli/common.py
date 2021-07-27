@@ -1,8 +1,5 @@
 import click
-from ui.app import App
 from time import sleep
-from rich.live import Live
-import keyboard
 
 
 def command_arguments(func):

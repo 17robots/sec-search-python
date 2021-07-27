@@ -1,4 +1,4 @@
-from cli.common import command_arguments, programLoop
+from cli.common import command_arguments
 
 
 @command_arguments
