@@ -1,5 +1,4 @@
-from logging import ERROR
-from aws.aws_search import AWS
+from aws.aws import AWS
 from cli.cli import CLI
 from cli.common import command_arguments, listParams
 import keyboard
@@ -9,6 +8,7 @@ import threading
 import common.event
 import time
 import gc
+import traceback
 
 isRunning = True
 
