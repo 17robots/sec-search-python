@@ -3,10 +3,11 @@ from .sso import SSO
 from cli.cli import CLI
 from aws.sec_group_rules import grab_sec_group_rules
 from aws.instances import grab_instances
-import aws.cloud_logs
 from threading import Thread
 import queue
 import common.event
+from .searchEnum import SearchFilters
+from time import sleep
 
 
 class AWS:
@@ -106,15 +107,42 @@ class AWS:
                 def thread_func():
                     try:
                         creds = sso.getCreds(account=account)
-                        ec2_client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
-                                                  aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
-                        query = cli.buildCloudQuery()
-                        messages = []
+                        client = boto3.client('logs', region_name=region, aws_access_key_id=creds.access_key,
+                                              aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                        innerThreads = []
+                        paginator = client.get_paginator(
+                            'describe_log_groups').paginate().search(SearchFilters.logs.value)
 
+                        names = list(filter(lambda x: ('vpc' in x or 'VPC' in x) and 'tf' not in x,
+                                            [val for val in paginator]))
+
+                        def sub_thread_func(name):
+                            paginator = client.get_paginator('filter_log_events').paginate(
+                                logGroupName=name,
+                                startTime=1627482128000,
+                                filterPattern="?ACCEPT ?REJECT",
+                                PaginationConfig={
+                                    'PageSize': 1
+                                },
+                            ).search(SearchFilters.events.value)
+                            count = 0
+                            try:
+                                while count < 5:
+                                    print(next(paginator))
+                                    sleep(1)
+                                    count += 1
+                            except StopIteration as e:
+                                pass
+                        for name in names:
+                            x = Thread(target=sub_thread_func, args=(name,))
+                            innerThreads.append(x)
+                            x.start()
+                        for thread in innerThreads:
+                            thread.join()
                     except Exception as e:
                         pass
                 x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
-                    region, account['accountId']), args=(region, account))
+                    region, account['accountId']))
                 threads.append(x)
                 x.start()
 
