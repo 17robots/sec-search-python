@@ -1,13 +1,17 @@
+from os import times
+from aws.cloud_logs import LogEntry
 import boto3
 from .sso import SSO
 from cli.cli import CLI
 from aws.sec_group_rules import grab_sec_group_rules
 from aws.instances import grab_instances
-from threading import Thread
+from threading import Thread, Event
 import queue
 import common.event
 from .searchEnum import SearchFilters
 from time import sleep
+from datetime import datetime, timedelta
+# from botocore.exceptions import
 
 
 class AWS:
@@ -31,7 +35,7 @@ class AWS:
             accounts = list(
                 filter(cli.filterAccounts, sso.getAccounts()['accountList']))
             msgPmp.put(common.event.InitEvent(
-                reg=region, regionTotal=len(regions), acctTotal=len(accounts)), block=False)
+                reg=region, regionTotal=len(regions), counterTotal=len(accounts)), block=False)
             for account in accounts:
                 self.currentAccount = account['accountId']
                 if not account['accountId'] in self.ruleMap[region]:
@@ -95,74 +99,75 @@ class AWS:
         for process in threads:
             process.join()
 
-    def watch(self, cli: CLI):  # , msgPmp: queue.Queue
+    def watch(self, cli: CLI, msgPmp: queue.Queue, killEvent: Event):
         sso = SSO()
         threads = []
         regions = list(filter(cli.filterRegions, sso.getRegions()))
 
         for region in regions:
+            msgPmp.put(common.event.InitEvent(
+                reg=region, regionTotal=len(regions), counterTotal=0), block=False)
             accounts = list(
                 filter(cli.filterAccounts, sso.getAccounts()['accountList']))
             for account in accounts:
-                def thread_func():
-                    try:
-                        creds = sso.getCreds(account=account)
-                        client = boto3.client('logs', region_name=region, aws_access_key_id=creds.access_key,
-                                              aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
-                        innerThreads = []
-                        paginator = client.get_paginator(
-                            'describe_log_groups').paginate().search(SearchFilters.logs.value)
+                try:
+                    creds = sso.getCreds(account=account)
+                    client = boto3.client('logs', region_name=region, aws_access_key_id=creds.access_key,
+                                          aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                    paginator = client.get_paginator(
+                        'describe_log_groups').paginate().search(SearchFilters.logs.value)
 
-                        names = list(filter(lambda x: ('vpc' in x or 'VPC' in x) and 'tf' not in x,
-                                            [val for val in paginator]))
+                    names = list(filter(lambda x: ('vpc' in x or 'VPC' in x) and 'tf' not in x,
+                                        [val for val in paginator]))
+                    msgPmp.put(common.event.AddLogStream(
+                        region=region, amt=len(names)))
 
-                        def sub_thread_func(name):
-                            paginator = client.get_paginator('filter_log_events').paginate(
-                                logGroupName=name,
-                                startTime=1627482128000,
-                                filterPattern="?ACCEPT ?REJECT",
-                                PaginationConfig={
-                                    'PageSize': 1
-                                },
-                            ).search(SearchFilters.events.value)
-                            count = 0
+                    def sub_thread_func(name):
+                        while not killEvent.is_set():
+                            timestamp = int(
+                                (datetime.now() - timedelta(minutes=1)).timestamp())
                             try:
-                                while count < 5:
-                                    print(next(paginator))
-                                    sleep(1)
-                                    count += 1
-                            except StopIteration as e:
-                                pass
-                        for name in names:
-                            x = Thread(target=sub_thread_func, args=(name,))
-                            innerThreads.append(x)
-                            x.start()
-                        for thread in innerThreads:
-                            thread.join()
-                    except Exception as e:
-                        pass
-                x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
-                    region, account['accountId']))
-                threads.append(x)
-                x.start()
+                                paginator = client.get_paginator('filter_log_events').paginate(
+                                    logGroupName=name,
+                                    startTime=timestamp * 1000,
+                                    filterPattern="?ACCEPT ?REJECT",
+                                    PaginationConfig={
+                                        'PageSize': 1
+                                    },
+                                ).search(SearchFilters.events.value)
+                                val = next(paginator, None)
+                                while val is not None:
+                                    if cli.allowEntry(LogEntry(val['timestamp'], val['message'])):
+                                        msgPmp.put(
+                                            common.event.LogEntryReceivedEvent(
+                                                log=str(val))
+                                        )
+                                    else:
+                                        common.event.LogEntryReceivedEvent(
+                                            log="Log Failed Filter"
+                                        )
+                                    val = next(paginator, None)
+                                    sleep(.5)
+                            except Exception as e:
+                                msgPmp.put(
+                                    common.event.LogEntryReceivedEvent(
+                                        log="{}-{}: {}".format(region, name, e))
+                                )
+                                break
+                        msgPmp.put(
+                            common.event.LogStreamStopped(region=region))
 
+                    for name in names:
+                        if killEvent.is_set():
+                            raise Exception("Quitting Thread")
+                        x = Thread(target=sub_thread_func, args=(name,))
+                        threads.append(x)
+                        msgPmp.put(
+                            common.event.LogStreamStarted(region=region))
+                        x.start()
+
+                except Exception as e:
+                    msgPmp.put(
+                        common.event.ErrorEvent(e=e))
         for process in threads:
             process.join()
-
-
-'''
-self.log_group_name = kwargs.get('log_group_name')
-        self.log_stream_name = kwargs.get('log_stream_name')
-        self.filter_pattern = kwargs.get('filter_pattern')
-        self.watch = kwargs.get('watch')
-        self.watch_interval = kwargs.get('watch_interval')
-        self.color_enabled = COLOR_ENABLED.get(kwargs.get('color'), True)
-        self.output_stream_enabled = kwargs.get('output_stream_enabled')
-        self.output_group_enabled = kwargs.get('output_group_enabled')
-        self.output_timestamp_enabled = kwargs.get('output_timestamp_enabled')
-        self.output_ingestion_time_enabled = kwargs.get(
-            'output_ingestion_time_enabled')
-        self.start = self.parse_datetime(kwargs.get('start'))
-        self.end = self.parse_datetime(kwargs.get('end'))
-        self.query = kwargs.get('query')
-'''

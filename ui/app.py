@@ -3,8 +3,9 @@ from .components.component import Component
 from rich.layout import Layout
 from rich.panel import Panel
 from .components.commandInfo import CommandInfo
-from .components.programInfo import ProgramInfo
+from .components.status import ProgramInfo
 import os
+
 
 class App(Component):
     def __init__(self, props):
@@ -33,10 +34,10 @@ class App(Component):
 
         layout['sidebar'].split_column(
             Layout(name='command'),
-            Layout(name='program')
+            Layout(name='status')
         )
         layout['command'].update(Panel(self.command(), title="Command Info"))
-        layout['program'].update(
+        layout['status'].update(
             Panel(self.program.setState(newState=self.state), title="Progress"))
 
         layout['main'].update(
@@ -49,6 +50,7 @@ class App(Component):
             'columns': self.state['outputColumns'],
             'messages': self.state['outputList']
         }))
+
 
 def pollHeight():
     return os.get_terminal_size().lines - 2

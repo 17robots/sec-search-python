@@ -8,7 +8,6 @@ import threading
 import common.event
 import time
 import gc
-import traceback
 
 isRunning = True
 
@@ -32,7 +31,7 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
 
     def initState(e: common.event.InitEvent):
         state['regArr'][e.reg] = {}
-        state['regArr'][e.reg]['total'] = e.acctTotal
+        state['regArr'][e.reg]['total'] = e.counterTotal
         state['regArr'][e.reg]['completed'] = 0
         state['regArr'][e.reg]['resultTotal'] = 0
         state['regArr'][e.reg]['duration'] = 0

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import ipaddress
-import re
+from aws.cloud_logs import LogEntry
 
 
 @dataclass
@@ -139,10 +139,73 @@ class CLI:
             return rules
         return innerExpand
 
-    def buildCloudQuery(self):
-        return
-        """
-        parse @message /(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/
-        | filter pkt_srcaddr="192.0.2.1" and pkt_dstaddr="198.51.100.1"
-        | display action, @timestamp, pkt_srcaddr, srcport, pkt_dstaddr, dstport, protocol, vpc_id, subnet_id, instance_id
-        """
+    def filterEntrySource(self, entry: LogEntry):
+        if len(self.sources) > 0:
+            for source in self.sources:
+                try:
+                    x = ipaddress.ip_network(source)
+                    y = ipaddress.ip_network(entry.pkt_source)
+                    if x.subnet_of(y):
+                        return True
+                    if y.subnet_of(x):
+                        return True
+                    if source in entry.pkt_source:
+                        return True
+                    if entry.pkt_source in source:
+                        return True
+                    return False
+                except Exception as e:
+                    continue
+        return True
+
+    def filterEntryDest(self, entry: LogEntry):
+        for dest in self.dests:
+            try:
+                x = ipaddress.ip_network(dest)
+                y = ipaddress.ip_network(entry.pkt_source)
+                if x.subnet_of(y):
+                    return True
+                if y.subnet_of(x):
+                    return True
+                if dest in entry.pkt_dest:
+                    return True
+                if entry.pkt_dest in dest:
+                    return True
+                return False
+            except Exception as e:
+                continue
+        return True
+
+    def filterEntryPorts(self, entry: LogEntry):
+        if len(self.ports) > 0:
+            for port in self.ports:
+                if port == entry.dstport:
+                    return True
+                if port == entry.srcport:
+                    return True
+            return False
+        return True
+
+    def filterEntryProtocol(self, entry: LogEntry):
+        if len(self.protocols) > 0:
+            for protocol in self.protocols:
+                if protocol in entry.protocol:
+                    return True
+            return False
+        return True
+
+    def allowEntry(self, entry):
+        print("Filtering")
+        if not self.filterEntryPorts(entry):
+            print("Failed Port Test")
+            return False
+        if not self.filterEntryProtocol(entry):
+            print("Failed Protocol Test")
+            return False
+        if not self.filterEntrySource(entry):
+            print("Failed Source Test")
+            return False
+        if not self.filterEntryDest(entry):
+            print("Failed DestTest")
+            return False
+        return True

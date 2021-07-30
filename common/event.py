@@ -2,12 +2,14 @@ from dataclasses import dataclass, field
 from logging import ERROR
 import queue
 import enum
+from aws.cloud_logs import LogEntry
 
 
 @dataclass
 class Event:
     e_type: str
     pass
+
 
 class Events(enum.Enum):
     InitEvent = "InitEvent"
@@ -17,22 +19,30 @@ class Events(enum.Enum):
     SearchCompletedEvent = "SearchCompletedEvent"
     ErrorEvent = "ErrorEvent"
     LoadResultsEvent = "LoadResultsEvent"
+    LogEntryReceivedEvent = "LogEntryReceivedEvent"
+    LogStreamStarted = "LogStreamStarted"
+    LogStreamStopped = "LogStreamStopped"
+    AddLogStream = "AddLogStream"
 
 # error events
+
 
 @dataclass
 class ErrorEvent(Event):
     e: ERROR
     e_type: str = field(default=Events.ErrorEvent.value, init=False)
 
-# search events
+# general events
+
 
 @dataclass
 class InitEvent(Event):
     reg: str
-    acctTotal: int
+    counterTotal: int
     regionTotal: int
     e_type: str = field(default=Events.InitEvent.value, init=False)
+
+# search events
 
 
 @dataclass
@@ -61,6 +71,7 @@ class RegionFinishedEvent(Event):
 class SearchCompletedEvent(Event):
     e_type: str = field(default=Events.SearchCompletedEvent.value, init=False)
 
+
 @dataclass
 class LoadResultsEvent(Event):
     results: dict
@@ -69,8 +80,33 @@ class LoadResultsEvent(Event):
 
 # watch events
 
+@dataclass
+class LogEntryReceivedEvent(Event):
+    log: LogEntry
+    e_type: str = field(default=Events.LogEntryReceivedEvent.value, init=False)
+
+
+@dataclass
+class LogStreamStarted(Event):
+    region: str
+    e_type: str = field(default=Events.LogStreamStarted.value, init=False)
+
+
+@dataclass
+class AddLogStream(Event):
+    region: str
+    amt: int
+    e_type: str = field(default=Events.AddLogStream.value, init=False)
+
+
+@dataclass
+class LogStreamStopped(Event):
+    region: str
+    e_type: str = field(default=Events.LogStreamStopped.value, init=False)
 
 # pipeline
+
+
 class MessagePump:
     def __init__(self) -> None:
         self.messagePump: queue.Queue = queue.Queue()
