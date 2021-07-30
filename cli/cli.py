@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 import ipaddress
-from aws.cloud_logs import LogEntry
-
+from aws.cloud_logs import LogEntry, initQuery
 
 @dataclass
 class Rule:
@@ -31,8 +30,9 @@ class CLI:
         self.regionString = regions
         self.regions = [region.strip(' ') for region in self.regionString.split(
             ',')] if regions != None else []
-        self.query = cloudquery,
+        self.initQuery = initQuery,
         self.outputFile = output
+        self.cloudQuery = cloudquery
 
     def filterAccounts(self, acct):
         if len(self.accounts) > 0:
@@ -179,9 +179,9 @@ class CLI:
     def filterEntryPorts(self, entry: LogEntry):
         if len(self.ports) > 0:
             for port in self.ports:
-                if port == entry.dstport:
+                if int(port) == entry.dstport:
                     return True
-                if port == entry.srcport:
+                if int(port) == entry.srcport:
                     return True
             return False
         return True
@@ -195,7 +195,6 @@ class CLI:
         return True
 
     def allowEntry(self, entry):
-        print("Filtering")
         if not self.filterEntryPorts(entry):
             print("Failed Port Test")
             return False
@@ -209,3 +208,32 @@ class CLI:
             print("Failed DestTest")
             return False
         return True
+
+    def buildQuery(self):
+        if self.cloudQuery is not None:
+            return self.initQuery + " | " + self.cloudQuery
+        
+        filterQuery = ""
+        if len(self.sources) > 0:
+            filterQuery += "| filter "
+            for source in self.sources:
+                filterQuery += "pkt_srcaddr = {} or ".format(source)
+            filterQuery.rstrip('or ')
+        if len(self.dests) > 0:
+            filterQuery += " | filter "
+            for dest in self.dests:
+                filterQuery += "pkt_dstaddr = {} or ".format(dest)
+            filterQuery.rstrip('or ')
+        if len(self.ports) > 0:
+            filterQuery += " | filter "
+            for port in self.ports:
+                filterQuery += "poirt = {} or ".format(port)
+            filterQuery.rstrip('or ')
+        if len(self.protocols) > 0:
+            filterQuery += " | filter "
+            for protocol in self.protocols:
+                filterQuery += "pkt_srcaddr = {} or ".format(protocol)
+            filterQuery.rstrip('or ')
+        return self.initQuery + " | " + filterQuery
+            
+

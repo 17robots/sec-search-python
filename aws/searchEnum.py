@@ -6,5 +6,4 @@ class SearchFilters(Enum):
     groups = "SecurityGroups[*].{id:GroupId, name:GroupName, description:Description, vpc:VpcId, inbound:IpPermissions[*].{ips:IpRanges[*].{ip:CidrIp}, ipv6s:Ipv6Ranges[*].{ip:CidrIpv6}, from:FromPort, to:ToPort, protocol:IpProtocol}, outbound:IpPermissionsEgress[*].{ips:IpRanges[*].{ip:CidrIp}, ipv6s:Ipv6Ranges[*].{ip:CidrIpv6}, from:FromPort, to:ToPort, protocol:IpProtocol}}"
     rules = "SecurityGroupRules[*].{id:SecurityGroupRuleId, description:Description, groupId:GroupId, isEgress:IsEgress, protocol:IpProtocol, from:FromPort, to:ToPort, cidrv4:CidrIpv4, cidrv6:CidrIpv6, referencedGroup:ReferencedGroupInfo.GroupId}"
     logs = "logGroups[*].logGroupName"
-    # logs = "FlowLogs[*].LogGroupName"
     events = "events[*].{timestamp:timestamp, message:message}"

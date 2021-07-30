@@ -1,37 +1,37 @@
 
 class LogEntry:
-    __slots__ = [
-        'timestamp',
-        'version',
-        'account_id',
-        'interface_id',
-        'srcaddr'
-        'dstaddr',
-        'srcport',
-        'dstport',
-        'protocol',
-        'packets',
-        'bytes',
-        'start',
-        'end',
-        'action',
-        'log_status',
-        'vpc_id',
-        'subnet_id',
-        'instance_id',
-        'tcp_flags',
-        'type',
-        'pkt_srcaddr',
-        'pkt_dstaddr',
-        'region',
-        'az_id',
-        'sublocation_type',
-        'sublocation_id',
-        'pkt_src_aws_service',
-        'pkt_dst_aws_service',
-        'flow_direction',
-        'traffic_path'
-    ]
+    # __slots__ = [
+    #     'timestamp',
+    #     'version',
+    #     'account_id',
+    #     'interface_id',
+    #     'srcaddr'
+    #     'dstaddr',
+    #     'srcport',
+    #     'dstport',
+    #     'protocol',
+    #     'packets',
+    #     'bytes',
+    #     'start',
+    #     'end',
+    #     'action',
+    #     'log_status',
+    #     'vpc_id',
+    #     'subnet_id',
+    #     'instance_id',
+    #     'tcp_flags',
+    #     'type',
+    #     'pkt_srcaddr',
+    #     'pkt_dstaddr',
+    #     'region',
+    #     'az_id',
+    #     'sublocation_type',
+    #     'sublocation_id',
+    #     'pkt_src_aws_service',
+    #     'pkt_dst_aws_service',
+    #     'flow_direction',
+    #     'traffic_path'
+    # ]
 
     def __init__(self, timestamp: str, message: str):
         self.timestamp = timestamp
@@ -65,3 +65,5 @@ class LogEntry:
         self.pkt_dst_aws_service = messageFields[26]
         self.flow_direction = messageFields[27]
         self.traffic_path = messageFields[28]
+
+initQuery = "parse @message /(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/"

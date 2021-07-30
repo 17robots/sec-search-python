@@ -121,15 +121,20 @@ class AWS:
                                         [val for val in paginator]))
                     msgPmp.put(common.event.AddLogStream(
                         region=region, amt=len(names)))
+                    queryString = cli.buildQuery()
+                    
 
                     def sub_thread_func(name):
                         while not killEvent.is_set():
                             timestamp = int(
                                 (datetime.now() - timedelta(minutes=1)).timestamp())
+                            endstamp = int(
+                                (datetime.now() + timedelta(minutes=5)).timestamp())
                             try:
                                 paginator = client.get_paginator('filter_log_events').paginate(
                                     logGroupName=name,
                                     startTime=timestamp * 1000,
+                                    endTime=endstamp * 1000,
                                     filterPattern="?ACCEPT ?REJECT",
                                     PaginationConfig={
                                         'PageSize': 1
@@ -149,11 +154,26 @@ class AWS:
                                     val = next(paginator, None)
                                     sleep(.5)
                             except Exception as e:
-                                msgPmp.put(
-                                    common.event.LogEntryReceivedEvent(
-                                        log="{}-{}: {}".format(region, name, e))
-                                )
                                 break
+                            
+                            query = client.start_query(
+                                logGroupName=name,
+                                startTime=timestamp * 1000,
+                                endTime=endstamp * 1000,
+                                queryString=queryString
+                            )['queryId']
+
+                            results = client.get_query_results(query)
+
+                            # wait for there to be some results
+                            while results == None or results['status'] == 'Running':
+                                continue
+                            
+                            # check for errors
+                            if results['status'] != 'Completed':
+                                break # ?? might need to change this
+
+
                         msgPmp.put(
                             common.event.LogStreamStopped(region=region))
 
