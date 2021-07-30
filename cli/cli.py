@@ -1,6 +1,9 @@
 from dataclasses import dataclass
 import ipaddress
-from aws.cloud_logs import LogEntry, initQuery
+from aws.cloud_logs import LogEntry
+
+initQuery: str = """parse @message /(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/"""
+
 
 @dataclass
 class Rule:
@@ -30,7 +33,7 @@ class CLI:
         self.regionString = regions
         self.regions = [region.strip(' ') for region in self.regionString.split(
             ',')] if regions != None else []
-        self.initQuery = initQuery,
+        self.initQuery: str = initQuery,
         self.outputFile = output
         self.cloudQuery = cloudquery
 
@@ -211,29 +214,33 @@ class CLI:
 
     def buildQuery(self):
         if self.cloudQuery is not None:
-            return self.initQuery + " | " + self.cloudQuery
-        
+            return initQuery + " | " + self.cloudQuery
+
         filterQuery = ""
         if len(self.sources) > 0:
             filterQuery += "| filter "
             for source in self.sources:
                 filterQuery += "pkt_srcaddr = {} or ".format(source)
             filterQuery.rstrip('or ')
+
         if len(self.dests) > 0:
             filterQuery += " | filter "
             for dest in self.dests:
                 filterQuery += "pkt_dstaddr = {} or ".format(dest)
             filterQuery.rstrip('or ')
+
         if len(self.ports) > 0:
             filterQuery += " | filter "
             for port in self.ports:
                 filterQuery += "poirt = {} or ".format(port)
             filterQuery.rstrip('or ')
+
         if len(self.protocols) > 0:
             filterQuery += " | filter "
             for protocol in self.protocols:
                 filterQuery += "pkt_srcaddr = {} or ".format(protocol)
             filterQuery.rstrip('or ')
-        return self.initQuery + " | " + filterQuery
-            
 
+        if filterQuery != "":
+            return initQuery + " | " + filterQuery
+        return initQuery

@@ -66,4 +66,28 @@ class LogEntry:
         self.flow_direction = messageFields[27]
         self.traffic_path = messageFields[28]
 
-initQuery = "parse @message /(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/"
+
+""" backup stuff
+paginator = client.get_paginator('filter_log_events').paginate(
+                                    logGroupName=name,
+                                    startTime=timestamp * 1000,
+                                    endTime=endstamp * 1000,
+                                    filterPattern="?ACCEPT ?REJECT",
+                                    PaginationConfig={
+                                        'PageSize': 1
+                                    },
+                                ).search(SearchFilters.events.value)
+                                val = next(paginator, None)
+                                while val is not None:
+                                    if cli.allowEntry(LogEntry(val['timestamp'], val['message'])):
+                                        msgPmp.put(
+                                            common.event.LogEntryReceivedEvent(
+                                                log=str(val))
+                                        )
+                                    else:
+                                        common.event.LogEntryReceivedEvent(
+                                            log="Log Failed Filter"
+                                        )
+                                    val = next(paginator, None)
+                                    sleep(.5)
+"""
