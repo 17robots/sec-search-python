@@ -7,7 +7,9 @@ from threading import Thread, Event
 import queue
 import common.event
 from .searchEnum import SearchFilters
+from time import sleep
 from datetime import datetime, timedelta
+from .cloud_logs import LogEntry
 # from botocore.exceptions import
 
 
@@ -118,7 +120,7 @@ class AWS:
                                         [val for val in paginator]))
                     msgPmp.put(common.event.AddLogStream(
                         region=region, amt=len(names)))
-                    queryString = cli.buildQuery()
+                    # queryString = cli.buildQuery()
 
                     def sub_thread_func(name):
                         while not killEvent.is_set():
@@ -127,42 +129,30 @@ class AWS:
                             endstamp = int(
                                 (datetime.now() + timedelta(minutes=5)).timestamp())
                             try:
-                                query = client.start_query(
+                                paginator = client.get_paginator('filter_log_events').paginate(
                                     logGroupName=name,
                                     startTime=timestamp * 1000,
                                     endTime=endstamp * 1000,
-                                    queryString=queryString
-                                )
-                                query = query['queryId']
-                                results = None
-
-                                # wait for there to be some results
-                                while results == None or results['status'] == 'Running':
-                                    msgPmp.put(
-                                        common.event.LogEntryReceivedEvent(
-                                            log="{}".format(results)
+                                    filterPattern="?ACCEPT ?REJECT",
+                                    PaginationConfig={
+                                        'PageSize': 1
+                                    }
+                                ).search(SearchFilters.events.value)
+                                val = next(paginator, None)
+                                while val is not None:
+                                    if killEvent.is_set(): return
+                                    entry = LogEntry(val['timestamp'], val['message'])
+                                    if cli.allowEntry(entry=entry):
+                                        msgPmp.put(
+                                            common.event.LogEntryReceivedEvent(
+                                                log="[{}]{} {} {} {} {} {}[/{}]".format("green" if entry.action == "ACCEPT" else "red", entry.pkt_srcaddr, entry.pkt_dstaddr, entry.srcport, entry.dstport, entry.action, entry.flow_direction, "green" if entry.action == "ACCEPT" else "red"))
                                         )
-                                    )
-                                    results = client.get_query_results(
-                                        queryId=query)
-
-                                # check for errors
-                                if results['status'] != 'Completed':
-                                    break  # ?? might need to change this because we might not know why it errored, so we could run it again
-
-                                # so now that we have all of the results we can send things back
-                                msgPmp.put(
-                                    common.event.LogEntryReceivedEvent(
-                                        log="Made it here 2"
-                                    )
-                                )
-                                for result in results['results']:
-                                    msgPmp.put(
+                                    else:
                                         common.event.LogEntryReceivedEvent(
-                                            log="{}, {}".format(
-                                                result[0]['field'], result[0]['value'])
+                                            log="Log Failed Filter"
                                         )
-                                    )
+                                    val = next(paginator, None)
+                                    sleep(.5)
                             except Exception as e:
                                 common.event.ErrorEvent(
                                     e=e
@@ -171,10 +161,9 @@ class AWS:
 
                         msgPmp.put(
                             common.event.LogStreamStopped(region=region))
+                        return
 
                     for name in names:
-                        if killEvent.is_set():
-                            raise Exception("Quitting Thread")
                         x = Thread(target=sub_thread_func, args=(name,))
                         threads.append(x)
                         msgPmp.put(

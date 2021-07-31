@@ -68,26 +68,40 @@ class LogEntry:
 
 
 """ backup stuff
-paginator = client.get_paginator('filter_log_events').paginate(
+query = client.start_query(
                                     logGroupName=name,
                                     startTime=timestamp * 1000,
                                     endTime=endstamp * 1000,
-                                    filterPattern="?ACCEPT ?REJECT",
-                                    PaginationConfig={
-                                        'PageSize': 1
-                                    },
-                                ).search(SearchFilters.events.value)
-                                val = next(paginator, None)
-                                while val is not None:
-                                    if cli.allowEntry(LogEntry(val['timestamp'], val['message'])):
-                                        msgPmp.put(
-                                            common.event.LogEntryReceivedEvent(
-                                                log=str(val))
-                                        )
-                                    else:
+                                    queryString=queryString
+                                )
+                                query = query['queryId']
+                                results = None
+
+                                # wait for there to be some results
+                                while results == None or results['status'] == 'Running':
+                                    msgPmp.put(
                                         common.event.LogEntryReceivedEvent(
-                                            log="Log Failed Filter"
+                                            log="{}".format(results)
                                         )
-                                    val = next(paginator, None)
-                                    sleep(.5)
+                                    )
+                                    results = client.get_query_results(
+                                        queryId=query)
+
+                                # check for errors
+                                if results['status'] != 'Completed':
+                                    break  # ?? might need to change this because we might not know why it errored, so we could run it again
+
+                                # so now that we have all of the results we can send things back
+                                msgPmp.put(
+                                    common.event.LogEntryReceivedEvent(
+                                        log="Made it here 2"
+                                    )
+                                )
+                                for result in results['results']:
+                                    msgPmp.put(
+                                        common.event.LogEntryReceivedEvent(
+                                            log="{}, {}".format(
+                                                result[0]['field'], result[0]['value'])
+                                        )
+                                    )
 """

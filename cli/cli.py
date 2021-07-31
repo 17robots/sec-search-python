@@ -199,16 +199,12 @@ class CLI:
 
     def allowEntry(self, entry):
         if not self.filterEntryPorts(entry):
-            print("Failed Port Test")
             return False
         if not self.filterEntryProtocol(entry):
-            print("Failed Protocol Test")
             return False
         if not self.filterEntrySource(entry):
-            print("Failed Source Test")
             return False
         if not self.filterEntryDest(entry):
-            print("Failed DestTest")
             return False
         return True
 
