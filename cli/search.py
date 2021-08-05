@@ -8,6 +8,7 @@ import threading
 import common.event
 import time
 import gc
+from datetime import datetime
 
 isRunning = True
 
@@ -28,6 +29,16 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         'regionTotal': 0,
         'completedRegions': 0
     })
+
+    def fileOutput(outputArr):
+        filename = output
+        if not filename:
+            filename = "{}-{}.txt".format("search",
+                                          str(datetime.now()).replace(" ", "_").replace(":", "-"))
+        with open(filename, 'w') as file:
+            for outputItem in outputArr:
+                file.write("{}\n".format(outputItem))
+            file.close()
 
     def initState(e: common.event.InitEvent):
         state['regArr'][e.reg] = {}
@@ -70,12 +81,12 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         # filter the properties into the output
         for region in e.results:
             for account in e.results[region]:
-                for results in e.results[region][account]:
+                for result in e.results[region][account]:
                     outputString: str = ""
-                    for result in results:
-                        outputString += str(results[result]) + ' '
+                    outputString += "id {} description {} group id {} {} protocol {} from {} to {} ip: {} refGroup {}".format(
+                        result['id'], result['description'], result['groupId'], "egress" if result['isEgress'] else 'ingress', result['protocol'], result['from'], result['to'], result['cidrv4'], result['referencedGroup'])
                     state['outputList'].append(outputString)
-
+        fileOutput(state['outputList'])
     # add eventlisteners
     pump.addListener(common.event.Events.InitEvent.value, initState)
     pump.addListener(

@@ -1,0 +1,503 @@
+id sgr-024450e4af2cae705 description Ivanti port 135 to VNA DB group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0f1fbd19a1c4f7abe description TCP/1433 to database group id sg-0108b5ef4f70f47e2 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-055416377db964931
+id sgr-069d8083c98592bb9 description VNA Migration port tcp 445 from VNA Portal group id sg-0001792fb5f005031 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-00b4f5a5d8a3141f7 description VNA DB port 135 to ADDC group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-05062006979d03454 description TCP/445 to MServ group id sg-0108b5ef4f70f47e2 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-049b7d74a464a197d description TCP/445 to cbei SSNHS Database Server group id sg-03365c2346b16bf88 egress protocol tcp from 445 to 445 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0f3825ba90ece66fe description VNA Application port tcp 445 to VNA Migration group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-06caad48410b78e83 description MFT Front End port 445 to ADDC group id sg-0142ce8054e41aa11 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-08799a68a9ad6a3bb description Ivanti port 445 to VNA FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0a9f91bdb2e07273d description VNA DB 135/tcp from HostMon group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0b81bf293da9d59d7 description Ingress TCP/1433 from Splunk Heavy Forwarder group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: 10.66.0.11/32 refGroup None
+id sgr-03023714fa3c6cf0b description TCP/445 from Hostmon group id sg-0142ce8054e41aa11 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-07bb140c0a0ab01c0 description TCP/135 to Enterprise CA group id sg-0302e8fba4ee5dd10 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-07e4138348eccc76f description TCP/135 from Hostmon group id sg-0142ce8054e41aa11 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0e56d835fa71cff3c description VNA Application 135/tcp from VNA HL7 group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-07f40a72ef40bc348 description 135/tcp to MServ group id sg-0302e8fba4ee5dd10 egress protocol tcp from 135 to 135 ip: 10.66.0.101/32 refGroup None
+id sgr-04f6ed009f838050e description VNA Migration port 1433 to VNA SQL group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-0001792fb5f005031
+id sgr-0ee114ebb3f9e911d description VNA HL7 port 1433 to VNA SQL group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-09a960609851061f3
+id sgr-007c1b7c164aa668c description Ivanti port 445 to OnBase Application Server group id sg-03f6ded8315c58921 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0de2da14cab26de06 description VNA Application 135/tcp to certificate authority group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0811d0e9f0fb8ce6b description VNA FSX port 445 to ADDC group id sg-009d754caf5dbaf03 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-005ce651bebda277e description Ivanti port 135 to VNA Migration group id sg-0001792fb5f005031 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0ee2b6e05b825ab17 description TCP/135 from SentryOne Host group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: 10.66.1.49/32 refGroup None
+id sgr-01da22d1ed20a25bd description TCP/445 from Hostmon group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-00531fdb3ca315ea8 description VNA FSX port 135 to ADDC group id sg-009d754caf5dbaf03 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-054cce6fed5212e72 description 445/tcp to CVO group id sg-0302e8fba4ee5dd10 egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-0686be33ad69fb65e description VNA Application port tcp 445 to VNA Portal group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0f3abd249c7ad8a89 description VNA DB 135/tcp from VNA Portal group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-083edbef913f75a2a description VNA Application port tcp 445 from VNA Migration group id sg-03a50dc2b759e8192 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-085d3130f00a5a50d description TCP/135 to cbei SSNHS Database Server group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-057e3ef425b3c8351 description TCP/445 from SentryOne Host group id sg-0153d10e9928921d8 ingress protocol tcp from 445 to 445 ip: 10.66.1.49/32 refGroup None
+id sgr-046f82a64b947b9fc description TCP/445 from SentryOne Host group id sg-03365c2346b16bf88 ingress protocol tcp from 445 to 445 ip: 10.66.1.49/32 refGroup None
+id sgr-0634fb19c9c6d302f description VNA Application port 1433 to VNA SQL group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0246385d9327f7490 description VNA Migration port 445 to ADDC group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0481f46754f126778 description Ivanti port 445 to VNA DB group id sg-0153d10e9928921d8 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-08b4b76d29754309c description VNA DB 135/tcp to VNA HL7 group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-066b324371109aa46 description VNA Migration 135/tcp from HostMon group id sg-0001792fb5f005031 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0bf04cb21d4c50651 description 135/tcp to MServ group id sg-03f6ded8315c58921 egress protocol tcp from 135 to 135 ip: 10.66.0.101/32 refGroup None
+id sgr-0aa50f5fdaedf3673 description VNA Migration 445/tcp to VNA Migration group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-0885070b133becf07 description TCP/135 from Hostmon group id sg-0108b5ef4f70f47e2 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-03751a30b6f2f7d43 description VNA DB 445/tcp from HostMon group id sg-03365c2346b16bf88 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-097f6fb9bab3c7d1f description VNA Portal port 445 to FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0d6b8543f8b7558e3 description VNA DB 135/tcp from VNA Application group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-037527a1c1f8d1ce4 description F5 port 445 to ADDC group id sg-011a1cbcccecae068 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0c2ab005bcf6a016e description VNA DB 135/tcp from VNA Portal group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0c7901cc5cb3a171c description VNA DB 135/tcp from VNA Application group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0d5a08c75f31c3833 description VNA Application port 445 to ADDC group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0c46e48cbf7f1b1d2 description OnBase Web Server port 445 TCP to Ivanti group id sg-0302e8fba4ee5dd10 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-09818871658fd73b9 description VNA FSX port 135 to ADDC group id sg-009d754caf5dbaf03 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-06ced3527aefb15fb description VNA DB 135/tcp to certificate authority group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0f627eb3a97d62456 description Ivanti port 445 to Base group id sg-03a4dad840bfc8aca ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-02ae418690ef40b76 description TCP/135 to Enterprise CA group id sg-03f6ded8315c58921 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0565e6cc51a6de8db description VNA Application 135/tcp from VNA Application group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-01bc0aeb7549221c5 description VNA DB 445/tcp from HostMon group id sg-03365c2346b16bf88 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0972be06ab6f6093b description VNA FSX port 445 to ADDC group id sg-009d754caf5dbaf03 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-027ed37f3000ab398 description Base port 135 to ADDC group id sg-03a4dad840bfc8aca egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-02a1720d9a2af9ba3 description TCP/1433 from cbei SSNHS Database Server group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0fa10e6e8992b88f0 description VNA Application port 1433 to VNA SQL group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-06d55d11d67046ccf description VNA Application 445/tcp to certificate authority group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-03432775d3551f13f description Ivanti port 445 to VNA Migration group id sg-052ec060d85d8674a ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0f3ff8eb847e05add description OnBase Application Server port 135 to ADDC group id sg-03f6ded8315c58921 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-036c0f722a9296552 description Ivanti port 135 to VNA Application group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0d40a5e23656bba81 description ODBC from VPC group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: 10.67.1.0/24 refGroup None
+id sgr-0f16835cf2b9d9742 description TCP/135 to License Server group id sg-0108b5ef4f70f47e2 egress protocol tcp from 135 to 135 ip: 10.198.2.110/32 refGroup None
+id sgr-0eb87636861904254 description 445/tcp to CVO group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 192.168.11.51/32 refGroup None
+id sgr-0e31d4c4e0995a440 description TCP/135 from Hostmon group id sg-03f6ded8315c58921 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-03cd8ab85408aa021 description VNA DB port 445 to ADDC group id sg-03365c2346b16bf88 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0e8bf5bddba7cb34c description VNA Migration 445/tcp from HostMon group id sg-0001792fb5f005031 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-06f8940fe1ab24b87 description TCP/1433 to Database group id sg-03f6ded8315c58921 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-055416377db964931
+id sgr-07a9db2364bfc543d description VNA Application 135/tcp from VNA Portal group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0a0aae6c0e1590781 description TCP/445 to CVO group id sg-0142ce8054e41aa11 egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-077530948b2597ee8 description VNA Application port 135 to ADDC group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0402d4f615ece737a description VNA DB 135/tcp from HostMon group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-008fca562b4750afe description VNA DB 135/tcp from HostMon group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-08e36d3bb224a46c3 description F5 port 135 to ADDC group id sg-011a1cbcccecae068 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0cb57f09e19858d93 description VNA DB port 135 to ADDC group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0871ae48695bf805e description VNA Application 445/tcp from HostMon group id sg-03a50dc2b759e8192 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-0b97265238d396746 description TCP/445 from Hostmon group id sg-03f6ded8315c58921 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-0ababe77df9fdd3b8 description Ivanti port 445 to OnBase Web Server group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0ac0eef0b4d00e3a6 description Ingress TCP/1433 from Splunk Heavy Forwarder group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: 10.66.0.220/32 refGroup None
+id sgr-0cfa7a065fd51fba7 description VNA DB 135/tcp to VNA Application group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0da2e9bf62d3a4d37 description 445/tcp to MServ group id sg-03f6ded8315c58921 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-042eed1e968e7d380 description VNA Migration port 445 to FSX group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: None refGroup sg-009d754caf5dbaf03
+id sgr-0d686074804ed0edb description VNA DB port 135 to ADDC group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0af49206ea0596e9b description VNA Migration 445/tcp from HostMon group id sg-0001792fb5f005031 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-013b87c5e3437c2c4 description VNA DB 445/tcp from HostMon group id sg-0153d10e9928921d8 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-06c25b7cd3558ad30 description TCP/135 to OB App group id sg-0108b5ef4f70f47e2 egress protocol tcp from 135 to 135 ip: None refGroup sg-03f6ded8315c58921
+id sgr-0f4fe98b84c59afbb description 135/tcp to MServ group id sg-03a4dad840bfc8aca egress protocol tcp from 135 to 135 ip: 10.66.0.101/32 refGroup None
+id sgr-0059ea8bb118eb247 description TCP/135 from Hostmon group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0205d31395d4664fe description TCP/445 to cbei SSNHSUT1 Database Server group id sg-0153d10e9928921d8 egress protocol tcp from 445 to 445 ip: None refGroup sg-0153d10e9928921d8
+id sgr-024c125c275b83850 description VNA Application port tcp 445 from VNA Portal group id sg-03a50dc2b759e8192 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-07692a11c8eee473f description 445/tcp to CVO group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 192.168.11.50/32 refGroup None
+id sgr-0854156b0608e7659 description VNA FSX 445/tcp from HostMon group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-025a83d3d810dcd47 description VNA Application 135/tcp from VNA SQL group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-04601838eb3ab2c4d description TCP/1433 from cbei SSNHSUT1 Database Server group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0f7fdf92d510b2d57 description Ivanti port 445 to VNA Application group id sg-03a50dc2b759e8192 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0a0ef02b7ddb8dca8 description VNA Migration 445/tcp from VNA Application group id sg-0001792fb5f005031 ingress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-043160aaacfa55441 description TCP/445 from Hostmon group id sg-0108b5ef4f70f47e2 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-00fe8803214c8cd0f description Ivanti port 135 to VNA DB group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0c0c21aae5781182a description VNA DB 135/tcp from VNA HL7 group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-032b42228e9d777cd description VNA Migration port 1433 to VNA SQL group id sg-052ec060d85d8674a egress protocol tcp from 1433 to 1433 ip: None refGroup sg-03365c2346b16bf88
+id sgr-04dca0e5ccc68b678 description VNA Migration port 445 to FSX group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: None refGroup sg-0b4776feaeb78f01e
+id sgr-0a17df384923d366e description MFT Front End port 445 TCP to Ivanti group id sg-0142ce8054e41aa11 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-00ccdd2230a2099e4 description OnBase Application Server port 135 to ADDC group id sg-03f6ded8315c58921 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0f990e76d0c95cb8f description VNA Application port tcp 445 from VNA Application group id sg-03a50dc2b759e8192 ingress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-069fbc8bb171a34fe description VNA DB port 445 TCP to Ivanti group id sg-0153d10e9928921d8 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0aa5d1dba17a611f7 description TCP/135 to cbei SSNHSUT1 Database Server group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-09d1107a51481247a description Base port 445 to ADDC group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-07cddab8f3a66f272 description TCP/445 to CVO group id sg-03f6ded8315c58921 egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-02c6d625b7ea82a60 description Ivanti port 445 to VNA Migration group id sg-0001792fb5f005031 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-04fdfe355c4581104 description TCP/135 to Enterprise CA group id sg-0142ce8054e41aa11 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0514be47f5936b082 description TCP/445 to OnBase Services Servers group id sg-03f6ded8315c58921 egress protocol tcp from 445 to 445 ip: None refGroup sg-0bdc2a78569b76550
+id sgr-02163c071a703465e description TCP/135 from cbei SSNHSUT1 Database Server group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0362b367360be69ec description VNA DB 445/tcp to certificate authority group id sg-03365c2346b16bf88 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-01b2a379d8a38924f description TCP/1433 from SentryOne Host group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: 10.66.1.49/32 refGroup None
+id sgr-0d045d6be12760965 description VNA Migration port 135 to ADDC group id sg-0001792fb5f005031 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-00ed5a84f3c560f93 description TCP/445 from Hostmon group id sg-03f6ded8315c58921 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-00574c82fec1a5986 description F5 port 445 to ADDC group id sg-011a1cbcccecae068 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-05380f291bc650b3c description VNA Migration port tcp 445 to VNA Portal group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-010bd71f8d982ddca description Ivanti port 135 to MFT Front End group id sg-0142ce8054e41aa11 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-080c95382adc7098c description F5 port 135 to ADDC group id sg-011a1cbcccecae068 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-04d67c46bbd8c9c4c description OnBase Web Server port 135 to ADDC group id sg-0302e8fba4ee5dd10 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0b7566e14aec76338 description TCP/445 to cvo group id sg-0108b5ef4f70f47e2 egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-0ccac425806fa2c36 description VNA FSX 445/tcp from HostMon group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0006c635fde13bbf9 description TCP/445 from Hostmon group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-03f2dd1f7ed1cd909 description VNA FSX 135/tcp from HostMon group id sg-009d754caf5dbaf03 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-07ebcb3620c290c0f description TCP/445 from Hostmon group id sg-0142ce8054e41aa11 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0ab8ba5d12ac2d338 description VNA Migration 135/tcp to certificate authority group id sg-0001792fb5f005031 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0b7a4a22c57b26c84 description ODBC from VPC group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: 10.67.0.0/24 refGroup None
+id sgr-04fb865c759a61e06 description Base 135/tcp to certificate authority group id sg-03a4dad840bfc8aca egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-04f090013e4180f4b description VNA DB port 445 to ADDC group id sg-03365c2346b16bf88 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0c6cae9f8ea0b463c description TCP/445 from Hostmon group id sg-0108b5ef4f70f47e2 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-05ec0db5ad6145597 description Ivanti port 135 to OnBase Web Server group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-01e8859b254a8d6ab description VNA Application port 445 to FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0b51752f4ee17b294 description VNA Application 135/tcp to VNA Portal group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-02965d81704f7757e description VNA Application port 445 to FSX group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: None refGroup sg-009d754caf5dbaf03
+id sgr-0439d92f36add5c7d description VNA DB port 445 to ADDC group id sg-0153d10e9928921d8 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-047fb5b937b0be08c description VNA Application 445/tcp from HostMon group id sg-03a50dc2b759e8192 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0ce089ae354b14f25 description TCP/135 from Hostmon group id sg-0142ce8054e41aa11 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-076c6ee6297a25e6a description Base port 445 to ADDC group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0dece8973515fcde5 description VNA DB 135/tcp to VNA HL7 group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-0a4146dbf12761377 description VNA FSX 135/tcp from HostMon group id sg-009d754caf5dbaf03 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-026e76fedf8a31bc9 description VNA DB 135/tcp from HostMon group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0fe495b501cb16bf5 description VNA Migration port 445 to ADDC group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-00c405d25908df333 description TCP/135 to License Server group id sg-0108b5ef4f70f47e2 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0484cacd170d5c5c1 description TCP/135 from Hostmon group id sg-03f6ded8315c58921 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0763be2b7902d34a3 description VNA Migration 445/tcp to VNA Application group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-005bd750844a573b7 description VNA DB 135/tcp to VNA Application group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0794341582e082c1d description MFT Front End port 445 to ADDC group id sg-0142ce8054e41aa11 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-04f31afa0b4cab620 description Ivanti port 445 to F5 group id sg-011a1cbcccecae068 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0600bf668b4f533a2 description VNA Portal port 1433 to VNA SQL group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0ee5f768415ff57b7 description Ivanti port 135 to OnBase Application Server group id sg-03f6ded8315c58921 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0b5e2d84a0154c7ad description VNA DB 445/tcp to certificate authority group id sg-0153d10e9928921d8 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-06aaf26285afc448f description VNA Migration port 135 to ADDC group id sg-052ec060d85d8674a egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0df43809a44327097 description 445/tcp to CVO group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 192.168.11.49/32 refGroup None
+id sgr-0e723fff45abc29a3 description VNA DB port 445 to FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0b0cf3a0916f8f871 description Base port 135 to ADDC group id sg-03a4dad840bfc8aca egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-00a6ee3de508b6ab5 description OnBase Web Server port 445 to ADDC group id sg-0302e8fba4ee5dd10 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0aea112c047b4ded4 description OnBase Application Server port 445 to ADDC group id sg-03f6ded8315c58921 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-07ec8bc526a07980c description Ingress TCP/1433 from Splunk Heavy Forwarder group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: 10.66.0.11/32 refGroup None
+id sgr-03f7e65710f9b0555 description VNA Migration port 445 to FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-044996104f4a78c6d description VNA Application 135/tcp from HostMon group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0852cb19aad3cbe65 description Ivanti port 135 to Base group id sg-03a4dad840bfc8aca ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0df340e21ac91a3e8 description VNA DB 135/tcp from VNA HL7 group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-05ee86a4167c39a94 description UDP/445 to OnBase Services Servers group id sg-03f6ded8315c58921 egress protocol udp from 445 to 445 ip: None refGroup sg-0bdc2a78569b76550
+id sgr-0933f18ad7d4c8c6c description TCP/135 to OB Web group id sg-0108b5ef4f70f47e2 egress protocol tcp from 135 to 135 ip: None refGroup sg-0302e8fba4ee5dd10
+id sgr-0322a4331baac74cc description VNA FSX port 445 TCP to Ivanti group id sg-009d754caf5dbaf03 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-09ecb9e1b7be93d8c description OnBase Web Server port 445 to ADDC group id sg-0302e8fba4ee5dd10 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-05265dbdb5236a142 description VNA Migration port 445 TCP to Ivanti group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-02c4580cbf24d0406 description VNA Application port 445 to ADDC group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0e11f1bc646f053c2 description TCP/1433 to cbei SSNHSUT1 Database Server group id sg-0153d10e9928921d8 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0da33380d95f6961d description VNA Migration 445/tcp to certificate authority group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-0d84ede33c3fe0bf4 description VNA HL7 port 1433 to VNA SQL group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-05ad9719d84d17138
+id sgr-048f3a15673438bff description OnBase Application Server port 445 to ADDC group id sg-03f6ded8315c58921 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0f6429965f63f0998 description VNA DB 135/tcp to certificate authority group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-06b63a5875e7bb646 description TCP/135 from Hostmon group id sg-0108b5ef4f70f47e2 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-09437a2d77312d6a9 description VNA DB 445/tcp from HostMon group id sg-0153d10e9928921d8 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-0beb8462065744f19 description MFT Front End port 135 to ADDC group id sg-0142ce8054e41aa11 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0c7cec17aba18bbd9 description Base 445/tcp to certificate authority group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-0bee721474b454377 description TCP/1433 to cbei SSNHS Database Server group id sg-03365c2346b16bf88 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-03365c2346b16bf88
+id sgr-081d8dbd20a7b816a description VNA DB port 135 to ADDC group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0c899d38c4006ae56 description VNA DB 135/tcp to VNA Portal group id sg-0153d10e9928921d8 egress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0d9ab5759af464aef description TCP/135 from cbei SSNHS Database Server group id sg-03365c2346b16bf88 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-02b6f91e185cc3cdc description VNA Application port 135 to ADDC group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0cf8bcffe9be1a4c2 description TCP/1433 from SentryOne Host group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: 10.66.1.49/32 refGroup None
+id sgr-088f614b3fe8320b7 description VNA DB port 445 to ADDC group id sg-0153d10e9928921d8 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0aa9e95d25870f12f description Ingress TCP/1433 from Audit Server (IAD-VMDB196) group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: 10.216.10.28/32 refGroup None
+id sgr-092cad3ef4a02257f description OnBase Web Server port 135 to ADDC group id sg-0302e8fba4ee5dd10 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-03b0850d7302f4068 description Ivanti port 445 to MFT Front End group id sg-0142ce8054e41aa11 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-04800813dd20e44b0 description VNA Application port tcp 445 to VNA Application group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0d8d0514fa86d3c84 description VNA Migration port 445 TCP to Ivanti group id sg-0001792fb5f005031 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-038cd0f58199a75c8 description Base port 445 TCP to Ivanti group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0bc74fe195f74e901 description VNA Migration 445/tcp from VNA Migration group id sg-0001792fb5f005031 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-08bd04f52f8bedb94 description VNA DB port 445 TCP to Ivanti group id sg-03365c2346b16bf88 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-01fc661535eb79f43 description VNA Migration port 445 to ADDC group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-07f7db9b345fd6c97 description MFT Front End port 135 to ADDC group id sg-0142ce8054e41aa11 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0207b368789f8459c description VNA Application port 1433 to VNA SQL group id sg-03a50dc2b759e8192 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0d55391f2fbb0d836 description TCP/445 from cbei SSNHS Database Server group id sg-03365c2346b16bf88 ingress protocol tcp from 445 to 445 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0f03f8ba4476240a3 description TCP/445 from cbei SSNHSUT1 Database Server group id sg-0153d10e9928921d8 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0e3fa9c05cc664332 description OnBase Application Server port 445 TCP to Ivanti group id sg-03f6ded8315c58921 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0ead245fe1e7e4b8d description Ingress TCP/1433 from Splunk Heavy Forwarder group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: 10.66.0.220/32 refGroup None
+id sgr-0c4d054961060f788 description VNA Application port 445 TCP to Ivanti group id sg-03a50dc2b759e8192 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-08c9ce22e22500b1d description VNA Application 135/tcp from HostMon group id sg-03a50dc2b759e8192 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0771c7a238e72992f description Ivanti port 445 to VNA DB group id sg-03365c2346b16bf88 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0a474e2d406cee0ad description VNA Migration port 1433 to VNA SQL group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-052ec060d85d8674a
+id sgr-0560f4d0fc9d272f6 description VNA Application 135/tcp to VNA Application group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0a8d17f4be056b3ab description VNA Migration 135/tcp from HostMon group id sg-0001792fb5f005031 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0191fd021c6cc515f description TCP/445 to MServ group id sg-0142ce8054e41aa11 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-0fd1984c04c5ef769 description VNA Application 135/tcp to VNA SQL group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0f00b52d3cc6adc15 description 445/tcp to MServ group id sg-03a4dad840bfc8aca egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-031c5cb78a81750bd description TCP/135 to OB Services group id sg-0108b5ef4f70f47e2 egress protocol tcp from 135 to 135 ip: None refGroup sg-0bdc2a78569b76550
+id sgr-073a79d441d896706 description TCP/135 from Hostmon group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-07201011d595f8bfa description VNA DB port 445 to FSX group id sg-0153d10e9928921d8 egress protocol tcp from 445 to 445 ip: None refGroup sg-009d754caf5dbaf03
+id sgr-0f40a83147a9b8ec2 description VNA Migration port 135 to ADDC group id sg-0001792fb5f005031 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0d6360d17097d5e3a description TCP/135 from SentryOne Host group id sg-0153d10e9928921d8 ingress protocol tcp from 135 to 135 ip: 10.66.1.49/32 refGroup None
+id sgr-0c4bf287d2a76a4b3 description VNA DB port 445 to FSX group id sg-03365c2346b16bf88 egress protocol tcp from 445 to 445 ip: None refGroup sg-0b4776feaeb78f01e
+id sgr-062b1254a347c3de2 description 445/tcp to MServ group id sg-0302e8fba4ee5dd10 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-001d0284e10dc3741 description Ingress TCP/1433 from Audit Server (IAD-VMDB196) group id sg-0153d10e9928921d8 ingress protocol tcp from 1433 to 1433 ip: 10.216.10.28/32 refGroup None
+id sgr-0108cd4a63aa39126 description VNA Migration port 1433 to VNA SQL group id sg-0001792fb5f005031 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0beeeb87ec52d2bcb description F5 port 445 TCP to Ivanti group id sg-011a1cbcccecae068 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0f24430cbb8c2bd9a description Ivanti port 135 to VNA FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0f37199314a17d6a9 description Ivanti port 135 to F5 group id sg-011a1cbcccecae068 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0b7e251de5f139960 description VNA HL7 port 445 to FSX group id sg-009d754caf5dbaf03 ingress protocol tcp from 445 to 445 ip: None refGroup sg-05ad9719d84d17138
+id sgr-0de30ef962b2b10c5 description VNA Portal port 1433 to VNA SQL group id sg-03365c2346b16bf88 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-0b9f51742e273916f
+id sgr-001b95f84abf5083f description VNA Application 135/tcp to VNA HL7 group id sg-03a50dc2b759e8192 egress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-07b532ec337f76b81 description VNA DB 135/tcp to VNA Portal group id sg-03365c2346b16bf88 egress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-08ab04dbb8016e99a description shared  Database Server port 135 to ADDC group id sg-055416377db964931 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-085f5e3ea451a98fc description VNA Migration port 445 to ADDC group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-06dec1b4732bc13d4 description NetApp Cloud Volumes ONTAP port 445 TCP to Ivanti group id sg-06b3d58054be003e8 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-04c5275419831eb78 description TCP/1433 from SentryOne Host group id sg-055416377db964931 ingress protocol tcp from 1433 to 1433 ip: 10.66.1.49/32 refGroup None
+id sgr-06103cf27c7fa9fcb description VNA Portal 445/tcp from HostMon group id sg-0a11db6005c8211f1 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-065716b91d8241223 description ODBC from VPC group id sg-06b3d58054be003e8 ingress protocol tcp from 445 to 445 ip: 10.67.2.0/24 refGroup None
+id sgr-0f9c4dc458bd16fe6 description NetApp Cloud Volumes ONTAP port 135 to ADDC group id sg-06b3d58054be003e8 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-013e7844f54c2b1ed description VNA Migration port 445 to FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-0e364c7504642facf description VNA Migration 135/tcp to certificate authority group id sg-052ec060d85d8674a egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-00a8c7e45fc7280d8 description Ivanti port 445 to VNA Application group id sg-07d6f3effad4e74c8 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-04bc06703822caa25 description Ivanti port 445 to Sophos group id sg-0782587593469d1a3 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0d13fc46e0514f864 description TCP/445 from Hostmon group id sg-07d2ac4b31f823a76 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-002a4ba8785e7ef18 description VNA Application port tcp 445 from VNA Migration group id sg-07d6f3effad4e74c8 ingress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-09c57a77cfb501da3 description VNA Application port 445 to ADDC group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0717e6ff84359b2cd description TCP/445 to MServ group id sg-07fbd7cb547ad43ca egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-0f3faa04c26164cea description shared  Database Server port 445 TCP to Ivanti group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-07677c19008d1173a description VNA HL7 port 445 to ADDC group id sg-05ad9719d84d17138 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0288bf99e368d6fe1 description TCP/135 from Hostmon group id sg-07d2ac4b31f823a76 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-013c557b101414852 description VNA HL7 135/tcp from HostMon group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0ceb14cf9ead51961 description ODBC from VPC group id sg-055416377db964931 ingress protocol tcp from 1433 to 1433 ip: 10.67.2.0/24 refGroup None
+id sgr-02b98ee3702665fe8 description VNA Portal port 445 to FSX group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: None refGroup sg-009d754caf5dbaf03
+id sgr-0c4331b1116505429 description VNA HL7 135/tcp from VNA Portal group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0173618ac0880e6cf description VNA Portal 135/tcp to VNA Application group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-08868516a1d5c1af8 description VNA HL7 135/tcp from VNA Portal group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0e1113916d4dc8e49 description NetApp Cloud Volumes ONTAP Mediator port 135 to ADDC group id sg-06d593bac95cb2e80 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0c25c52b358c5e35b description TCP/445 to MServ group id sg-06b3d58054be003e8 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-013af0e4b20ec651e description VNA HL7 135/tcp from VNA SQL group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-04ba0bb12af9a103f description NetApp Cloud Manager port 445 to ADDC group id sg-07fbd7cb547ad43ca egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0065d0b6b63f20de1 description VNA Portal port 135 to ADDC group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-07f3d478bf915f3ef description VNA HL7 port 445 to ADDC group id sg-09a960609851061f3 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0c60d3c85729c8218 description Ivanti port 445 to VNA Portal group id sg-0a11db6005c8211f1 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-00ad7ba64cc841c41 description TCP/445 from shared  Database Server group id sg-055416377db964931 ingress protocol tcp from 445 to 445 ip: None refGroup sg-055416377db964931
+id sgr-0319ae06c9e344f97 description VNA HL7 445/tcp from HostMon group id sg-09a960609851061f3 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-07a6fe69262e7deb1 description VNA HL7 135/tcp from VNA SQL group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-014fb86f20f3e7441 description Ivanti port 445 to shared  Database Server group id sg-055416377db964931 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0232d5140de34825e description Sophos port 445 TCP to Ivanti group id sg-0782587593469d1a3 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0e328212d939eebf5 description VNA HL7 135/tcp from VNA Application group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0ff87581004395a87 description Ivanti port 135 to NetApp Cloud Volumes ONTAP group id sg-06b3d58054be003e8 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-095e1420d38755d2b description NetApp Cloud Volumes ONTAP port 135 to ADDC group id sg-06b3d58054be003e8 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0ef7f4c18bc10ce13 description VNA Application port tcp 445 to VNA Portal group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0e7a61672132157b6 description VNA Application port tcp 445 from VNA Application group id sg-07d6f3effad4e74c8 ingress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-01aa849e4c804280b description VNA Portal 135/tcp from VNA Application group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0202ee8744952b847 description VNA Portal 135/tcp from HostMon group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0d654e485c2a1e6cd description VNA Application port 1433 to VNA SQL group id sg-07d6f3effad4e74c8 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-03365c2346b16bf88
+id sgr-079dfa27a95eb74dd description VNA HL7 135/tcp to VNA Portal group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0ce1aee0cd09261f1 description TCP/135 from Hostmon group id sg-055416377db964931 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-00d5fbc5607cf016d description VNA Portal port 445 to ADDC group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-02393f037611f90d4 description NetApp Cloud Manager port 135 to ADDC group id sg-07fbd7cb547ad43ca egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-01efba53b225c1f93 description VNA HL7 port 445 to ADDC group id sg-09a960609851061f3 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0d0030926f42bb9a4 description VNA Portal 135/tcp from VNA SQL group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-0d16da77d62855686 description VNA HL7 135/tcp to VNA SQL group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-07ce0a9e38c989864 description VNA Application 135/tcp to VNA Portal group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-01d09380e22707b92 description VNA Portal port tcp 445 from VNA Application group id sg-0a11db6005c8211f1 ingress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-044e30f795fc215fa description Ivanti port 445 to VNA HL7 group id sg-09a960609851061f3 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-08efb0158d99e8da6 description NetApp Cloud Volumes ONTAP Mediator port 135 to ADDC group id sg-06d593bac95cb2e80 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0d4a363d18a0fc01e description Ivanti port 135 to VNA Migration group id sg-052ec060d85d8674a ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0d4acfa07fe40578c description NetApp Cloud Volumes ONTAP Mediator port 445 to ADDC group id sg-06d593bac95cb2e80 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-07f69fabfa9d8680e description VNA HL7 port 445 to ADDC group id sg-05ad9719d84d17138 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-026696cfc738446b3 description VNA Portal 135/tcp to VNA HL7 group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-0c302df345ab1aeaa description VNA Application port tcp 445 from VNA Portal group id sg-07d6f3effad4e74c8 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0a2238a588e4dd803 description Ingress TCP/1433 from Splunk Heavy Forwarder group id sg-055416377db964931 ingress protocol tcp from 1433 to 1433 ip: 10.66.0.220/32 refGroup None
+id sgr-04c1058dcca0a16d3 description VNA HL7 port 445 to FSX group id sg-05ad9719d84d17138 egress protocol tcp from 445 to 445 ip: None refGroup sg-009d754caf5dbaf03
+id sgr-082ab88b899f710ff description VNA Portal 135/tcp to VNA SQL group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: None refGroup sg-0153d10e9928921d8
+id sgr-05776eee5d8b0a8c1 description VNA HL7 135/tcp from HostMon group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0ca45ff21ca5a26c0 description VNA HL7 port 135 to ADDC group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0033253437d43c3d2 description shared  Database Server port 135 to ADDC group id sg-055416377db964931 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-00d4b3d23835d17c1 description Ingress TCP/1433 from Splunk Heavy Forwarder group id sg-055416377db964931 ingress protocol tcp from 1433 to 1433 ip: 10.66.0.11/32 refGroup None
+id sgr-017d6c3840c6bbb74 description Egress TCP/135 from NetApp CVO group id sg-055416377db964931 egress protocol tcp from 135 to 135 ip: None refGroup sg-06b3d58054be003e8
+id sgr-00c23bf4d109a65a3 description VNA Application 445/tcp from HostMon group id sg-07d6f3effad4e74c8 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-03292d9769fbb5941 description VNA HL7 port 1433 to VNA SQL group id sg-05ad9719d84d17138 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-0153d10e9928921d8
+id sgr-06487c78624b2257b description VNA HL7 135/tcp from HostMon group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0e2221e76bde035a1 description VNA HL7 port 445 to CBEI HL7 group id sg-05ad9719d84d17138 egress protocol tcp from 445 to 445 ip: None refGroup sg-05ad9719d84d17138
+id sgr-09e2361ec463a2b0b description Egress TCP/445 from NetApp CVO group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-05edb4e8d9eb78b0b description shared  Database Server 445/tcp to certificate authority group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-09fd058041d1c43ea description VNA HL7 port 1433 to VNA SQL group id sg-09a960609851061f3 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0d2df637abc3e9e11 description NetApp Cloud Volumes ONTAP Mediator port 445 TCP to Ivanti group id sg-06d593bac95cb2e80 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0691c84012b9f8310 description VNA HL7 445/tcp from HostMon group id sg-05ad9719d84d17138 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0e8c81f7efdf00577 description VNA Application port 445 to FSX group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: None refGroup sg-0b4776feaeb78f01e
+id sgr-01fc2793861c0c96d description VNA HL7 135/tcp to VNA Portal group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0fff7e6cb6ed89231 description VNA Application 135/tcp from VNA Application group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-05666fb0cdfd84337 description VNA Portal port 1433 to VNA SQL group id sg-0a11db6005c8211f1 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-0153d10e9928921d8
+id sgr-090c8bdbf98ec2abc description VNA Application 135/tcp to VNA HL7 group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-085618080765b34ad description VNA Migration port tcp 445 from VNA Portal group id sg-052ec060d85d8674a ingress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-05e488c1c44d9a03e description VNA Portal port tcp 445 from VNA Application group id sg-0a11db6005c8211f1 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-05e45bf4113e18e69 description VNA Application port 445 to ADDC group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-08a4fd893a044e473 description VNA Migration 445/tcp from HostMon group id sg-052ec060d85d8674a ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0ca4bd00dc1702b7c description VNA HL7 135/tcp to VNA HL7 group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-01ca32c6b943eb5b2 description Sophos port 135 to ADDC group id sg-0782587593469d1a3 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0709d1dbf2fd73283 description VNA Portal 135/tcp from VNA Portal group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0dffdfe055436c6c7 description shared  Database Server port 445 to ADDC group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0beef418c372bd6f1 description shared  Database Server port 445 to ADDC group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0a697ee4c59359bb4 description 445/tcp to CVO group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 192.168.11.51/32 refGroup None
+id sgr-0e445277667fc9ec9 description VNA Portal 445/tcp from HostMon group id sg-0a11db6005c8211f1 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0a8b065e754a240d8 description VNA Application 135/tcp to certificate authority group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0e3af230dfb1f5128 description Ingress UDP/445 from NetApp CVO group id sg-055416377db964931 ingress protocol udp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-0fe514fdabeec4f21 description VNA Migration 445/tcp to VNA Migration group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-01176664775fc2681 description Ivanti port 135 to VNA Application group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-01845cb92135aade4 description NetApp Cloud Manager port 445 to ADDC group id sg-07fbd7cb547ad43ca egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-07c542698ff5927d3 description VNA HL7 135/tcp from VNA HL7 group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-03f3e6bd192522521 description 445/tcp to CVO group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 192.168.11.49/32 refGroup None
+id sgr-0bb7228e9e44956f7 description VNA Migration 445/tcp from VNA Migration group id sg-052ec060d85d8674a ingress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-0a91ff08fc4f944da description VNA Migration port 135 to ADDC group id sg-052ec060d85d8674a egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0a5e8c6459d05e89e description VNA Migration port tcp 445 to VNA Portal group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-080478e778681c714 description VNA Application 135/tcp to VNA SQL group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0c11a56bd7dc1b067 description Ingress TCP/1433 from Audit Server (IAD-VMDB196) group id sg-055416377db964931 ingress protocol tcp from 1433 to 1433 ip: 10.216.10.28/32 refGroup None
+id sgr-0141861f55f8250ff description VNA Portal port 445 TCP to Ivanti group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0be079b5fc70aa99e description VNA Application 135/tcp to VNA Application group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0bdaa69150317ba7e description 135/tcp to MServ group id sg-055416377db964931 egress protocol tcp from 135 to 135 ip: 10.66.0.101/32 refGroup None
+id sgr-0da1046c2ea53280f description VNA Migration 135/tcp from HostMon group id sg-052ec060d85d8674a ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0ac4eb8ed643c23d7 description TCP/445 to MServ group id sg-07d2ac4b31f823a76 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-00fc59858a90d78f0 description VNA Application 135/tcp from VNA HL7 group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-0e097d4a889840fa3 description TCP/445 to shared  Database Server group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: None refGroup sg-055416377db964931
+id sgr-0f5c21f583df58460 description Sophos port 445 to ADDC group id sg-0782587593469d1a3 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0de4cb3b3a403fca3 description VNA Application 445/tcp from HostMon group id sg-07d6f3effad4e74c8 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-01f8be6dc85611271 description TCP/135 from shared  Database Server group id sg-055416377db964931 ingress protocol tcp from 135 to 135 ip: None refGroup sg-055416377db964931
+id sgr-00a9c6117a71e4adf description Ivanti port 445 to VNA HL7 group id sg-05ad9719d84d17138 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0737661ab6eaaf925 description VNA HL7 445/tcp from HostMon group id sg-09a960609851061f3 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-01f3db3e296a3a302 description TCP/1433 from shared  Database Server group id sg-055416377db964931 ingress protocol tcp from 1433 to 1433 ip: None refGroup sg-055416377db964931
+id sgr-0b21372f823f102b8 description TCP/135 from Hostmon group id sg-07d2ac4b31f823a76 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0a6daf58db46a057c description VNA HL7 135/tcp from VNA HL7 group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-06d57777424988ddf description Sophos port 135 to ADDC group id sg-0782587593469d1a3 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-066aa31e3ec47f516 description VNA HL7 port 445 TCP to Ivanti group id sg-09a960609851061f3 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0fd750368bb5d651e description HTTPS to CVO from Splunk Heavy Forwarders group id sg-06b3d58054be003e8 ingress protocol tcp from 445 to 445 ip: 10.66.0.220/32 refGroup None
+id sgr-0f832fcb98fa42662 description VNA HL7 135/tcp to VNA HL7 group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-032bd48c6bcffc6a7 description VNA HL7 135/tcp to VNA Application group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-03ae572a6dae52866 description TCP/445 from Hostmon group id sg-055416377db964931 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-006fa52ac5c095439 description TCP/445 from Hostmon group id sg-07d2ac4b31f823a76 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0e840c942afac13b1 description VNA Migration 445/tcp from VNA Application group id sg-052ec060d85d8674a ingress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-01fa8469ea6e1c9bd description VNA Portal port tcp 445 to VNA Application group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0002c49a7dccccb37 description VNA HL7 135/tcp to certificate authority group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0f9f1a01beb7d80d1 description VNA Portal 445/tcp to certificate authority group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-0562f2b17e424f110 description VNA HL7 445/tcp to certificate authority group id sg-09a960609851061f3 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-0e87c15a46474294e description Ivanti port 135 to Sophos group id sg-0782587593469d1a3 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-036486cc41da79770 description Ingress TCP/135 from NetApp CVO group id sg-055416377db964931 ingress protocol tcp from 135 to 135 ip: None refGroup sg-06b3d58054be003e8
+id sgr-02563fc467e6b1b68 description TCP/445 from Hostmon group id sg-055416377db964931 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-03c17d929de302d2a description Sophos port 445 to ADDC group id sg-0782587593469d1a3 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0f25b64f7f7399666 description VNA Portal 135/tcp to certificate authority group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-082b539883a2156b3 description Ivanti port 135 to NetApp Cloud Volumes ONTAP Mediator group id sg-06d593bac95cb2e80 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-06517f40736c1a8de description Ivanti port 135 to NetApp Cloud Manager group id sg-07fbd7cb547ad43ca ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0f51c1588c098a49d description VNA Application port 445 TCP to Ivanti group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0adae052594253dd1 description 445/tcp to MServ group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-04aa6b7e916b28f69 description NetApp Cloud Volumes ONTAP port 445 to ADDC group id sg-06b3d58054be003e8 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0bceced22bf072f04 description VNA HL7 135/tcp from HostMon group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-03815bcb801343c10 description Ivanti port 135 to VNA HL7 group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-065640e4fff569590 description Egress UDP/445 from NetApp CVO group id sg-055416377db964931 egress protocol udp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-0afa744128986c775 description VNA Migration 135/tcp from HostMon group id sg-052ec060d85d8674a ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-03625b60af00d9375 description Ivanti port 445 to NetApp Cloud Volumes ONTAP group id sg-06b3d58054be003e8 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-08042065cd1cbdd13 description VNA Application port tcp 445 to VNA Migration group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-0dea2e3d962053a9b description VNA Portal 135/tcp from HostMon group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-07a3325eb3e69e250 description TCP/135 to shared  Database Server group id sg-055416377db964931 egress protocol tcp from 135 to 135 ip: None refGroup sg-055416377db964931
+id sgr-02318bec7b83e8845 description VNA HL7 445/tcp from HostMon group id sg-05ad9719d84d17138 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-09ed406eedbdfac9a description Ivanti port 445 to NetApp Cloud Manager group id sg-07fbd7cb547ad43ca ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0a8b44d9e9c7be202 description VNA Application port 135 to ADDC group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-059234ec085e8da32 description VNA HL7 135/tcp to VNA Application group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0c8b985ba0c091429 description Ivanti port 135 to VNA Portal group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0d18ebfa43159024f description 445/tcp to CVO group id sg-055416377db964931 egress protocol tcp from 445 to 445 ip: 192.168.11.50/32 refGroup None
+id sgr-0538f8f71a0548acb description Ingress TCP/445 from NetApp CVO group id sg-055416377db964931 ingress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-00cf3a36aa4f69f7f description NetApp Cloud Manager port 445 TCP to Ivanti group id sg-07fbd7cb547ad43ca egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-063bfdc9628d7aeec description TCP/1433 to shared  Database Server group id sg-055416377db964931 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-055416377db964931
+id sgr-0deb7a81e36a33ccf description VNA Migration 445/tcp to certificate authority group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-0ac0fb40acfb129b4 description VNA Application 135/tcp from HostMon group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0f8045fb78395bf66 description TCP/445 to MServ group id sg-06d593bac95cb2e80 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-0afa29c6f2a39184c description VNA HL7 port 445 to CBEI HL7 group id sg-09a960609851061f3 egress protocol tcp from 445 to 445 ip: None refGroup sg-09a960609851061f3
+id sgr-061fc78676453ff80 description VNA HL7 port 445 TCP to Ivanti group id sg-05ad9719d84d17138 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-013c79d988ffd9680 description Ivanti port 135 to shared  Database Server group id sg-055416377db964931 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-095732ffae5631e35 description VNA HL7 135/tcp to VNA SQL group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0ec8ad82e4c9999b3 description VNA HL7 port 445 to CBEI HL7 group id sg-09a960609851061f3 ingress protocol tcp from 445 to 445 ip: None refGroup sg-09a960609851061f3
+id sgr-0a36b4adb6160c53c description VNA Migration 445/tcp to VNA Application group id sg-052ec060d85d8674a egress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0f81f4be2d849612d description VNA Migration 445/tcp from HostMon group id sg-052ec060d85d8674a ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-037b805a54230f9b5 description VNA Portal 135/tcp from VNA HL7 group id sg-0a11db6005c8211f1 ingress protocol tcp from 135 to 135 ip: None refGroup sg-05ad9719d84d17138
+id sgr-0b10337f3343039b8 description VNA Portal port 445 to ADDC group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0d11f0a6bfb088334 description VNA Portal port tcp 445 to VNA Application group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-02ea3ece0f82b980c description VNA HL7 135/tcp to certificate authority group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-06ec7ada038b868c8 description VNA HL7 port 135 to ADDC group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0e0ab0c9d3b6dc2d5 description NetApp Cloud Volumes ONTAP Mediator port 445 to ADDC group id sg-06d593bac95cb2e80 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-05909762c48cbdb52 description VNA HL7 port 445 to FSX group id sg-09a960609851061f3 egress protocol tcp from 445 to 445 ip: None refGroup sg-0b4776feaeb78f01e
+id sgr-077b14d3a954a5872 description Ivanti port 135 to VNA HL7 group id sg-09a960609851061f3 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0066f74e346143586 description VNA Portal port 135 to ADDC group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-087dcbbb58d0c49ee description VNA Application 135/tcp from VNA SQL group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-034c502bf10932033 description VNA Portal port tcp 445 to VNA Migration group id sg-0a11db6005c8211f1 egress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-07cfd5216d3bd5aa9 description VNA Application 445/tcp to certificate authority group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-034da53e19c4210c0 description NetApp Cloud Volumes ONTAP port 445 to ADDC group id sg-06b3d58054be003e8 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-064362fdf1a624f84 description VNA HL7 port 135 to ADDC group id sg-05ad9719d84d17138 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0c621f2c25a976d38 description VNA Application port tcp 445 to VNA Application group id sg-07d6f3effad4e74c8 egress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-072e8a879c0c51420 description VNA Application 135/tcp from HostMon group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-059761fd3d3567947 description shared  Database Server 135/tcp to certificate authority group id sg-055416377db964931 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-09c46bf2267749a3c description HTTPS to CVO from Splunk Heavy Forwarders group id sg-06b3d58054be003e8 ingress protocol tcp from 445 to 445 ip: 10.66.0.11/32 refGroup None
+id sgr-0c10d13fed77ae81d description VNA HL7 port 135 to ADDC group id sg-09a960609851061f3 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-0f9ce56f96ec4c99a description Ivanti port 445 to NetApp Cloud Volumes ONTAP Mediator group id sg-06d593bac95cb2e80 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0f88597e0cbe29c31 description VNA Application port 135 to ADDC group id sg-07d6f3effad4e74c8 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-04cbeeec3ec8d81f5 description NetApp Cloud Manager port 135 to ADDC group id sg-07fbd7cb547ad43ca egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-05d7eacc78877df90 description VNA Application 135/tcp from VNA Portal group id sg-07d6f3effad4e74c8 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0bbd69304e7432f2c description VNA HL7 445/tcp to certificate authority group id sg-05ad9719d84d17138 egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-03e8f36ae3bed3042 description TCP/445 from SentryOne Host group id sg-055416377db964931 ingress protocol tcp from 445 to 445 ip: 10.66.1.49/32 refGroup None
+id sgr-0ddc9b48b010d5ac2 description TCP/135 from Hostmon group id sg-055416377db964931 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0988445428b9e4c7b description VNA Portal port tcp 445 from VNA Migration group id sg-0a11db6005c8211f1 ingress protocol tcp from 445 to 445 ip: None refGroup sg-0001792fb5f005031
+id sgr-0ffc46e1af8fb511d description TCP/135 from SentryOne Host group id sg-055416377db964931 ingress protocol tcp from 135 to 135 ip: 10.66.1.49/32 refGroup None
+id sgr-02c329adedd2d2bf8 description VNA Portal 135/tcp to VNA Portal group id sg-0a11db6005c8211f1 egress protocol tcp from 135 to 135 ip: None refGroup sg-0a11db6005c8211f1
+id sgr-0e88b54b90fdc60cb description VNA HL7 135/tcp from VNA Application group id sg-05ad9719d84d17138 ingress protocol tcp from 135 to 135 ip: None refGroup sg-03a50dc2b759e8192
+id sgr-0ea3eeb34b4a2fa7c description VNA HL7 port 445 to CBEI HL7 group id sg-05ad9719d84d17138 ingress protocol tcp from 445 to 445 ip: None refGroup sg-05ad9719d84d17138
+id sgr-0de51d48142e2fc66 description VNA FSX port 445 to ADDC group id sg-0b4776feaeb78f01e egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0ed48ec1a9601e89c description OnBase Services Server port 135 to ADDC group id sg-0bdc2a78569b76550 egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-0f7eece7a4eebcccb description TCP/135 from Citrix VDA group id sg-0bdc2a78569b76550 ingress protocol tcp from 135 to 135 ip: None refGroup sg-0108b5ef4f70f47e2
+id sgr-0e6bbff58df4c13fc description VNA Portal 445/tcp from HostMon group id sg-0b9f51742e273916f ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0c4b09214401a32d0 description Ivanti port 135 to OnBase Services Server group id sg-0bdc2a78569b76550 ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-02315333460b57887 description Ivanti port 445 to OnBase Services Server group id sg-0bdc2a78569b76550 ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0c3dc90886c53c042 description TCP/445 from Hostmon group id sg-0c00f5e10960a582a ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0a94132a8cbc2df97 description TCP/135 from Hostmon group id sg-0c00f5e10960a582a ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-091c04cee1ad761e5 description OnBase Services Server port 445 to ADDC group id sg-0bdc2a78569b76550 egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-059a5d3e98a7877e8 description TCP/445 to MServ group id sg-0c00f5e10960a582a egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-0d29e06eadb86f272 description Ivanti port 445 to VNA Portal group id sg-0b9f51742e273916f ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0cd7fc5a63df7b0a8 description VNA Portal port tcp 445 to VNA Application group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0154231b2a6cd88d3 description OnBase Services Server port 135 to ADDC group id sg-0bdc2a78569b76550 egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-086eea96c7606657f description VNA FSX 445/tcp from HostMon group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-06575453ea1fc0b17 description UDP/445 Ingress from OnBase Application Servers group id sg-0bdc2a78569b76550 ingress protocol udp from 445 to 445 ip: None refGroup sg-03f6ded8315c58921
+id sgr-0ec471ad208cec633 description VNA Portal port tcp 445 from VNA Migration group id sg-0b9f51742e273916f ingress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-0e1ba2837799af5d7 description Ivanti port 135 to MFT Back End group id sg-0c00f5e10960a582a ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0ec8353fb8ad09544 description TCP/445 from Hostmon group id sg-0c00f5e10960a582a ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-0fb48ec0361eb2773 description MFT Back End port 135 to ADDC group id sg-0c00f5e10960a582a egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-052596f3408209624 description VNA FSX 135/tcp from HostMon group id sg-0b4776feaeb78f01e ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-09c078b255c1ed3e8 description VNA FSX port 135 to ADDC group id sg-0b4776feaeb78f01e egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-097b3b7f72218c0ab description VNA Portal 445/tcp from HostMon group id sg-0b9f51742e273916f ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-0f222761750c350c1 description TCP/445 to CVO group id sg-0bdc2a78569b76550 egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-03afadba50f289487 description VNA Portal 135/tcp from VNA SQL group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0a0ecd6b5834fa70b description Ivanti port 445 to VNA FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0b1e9b2f9d3abc2a7 description VNA Portal port 445 to ADDC group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-071ecaa47b7334890 description VNA HL7 port 445 to FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: None refGroup sg-09a960609851061f3
+id sgr-04de70ad7fb3bc511 description Ivanti port 135 to VNA FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-0309cb9a6858a3d45 description VNA Portal port 445 to FSX group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: None refGroup sg-0b4776feaeb78f01e
+id sgr-0ae4292287cbdf343 description VNA Portal port tcp 445 to VNA Application group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-09d2b052c26980395 description MFT Back End port 445 to ADDC group id sg-0c00f5e10960a582a egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0e0851e61e9ab3eee description VNA Portal 135/tcp to VNA SQL group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: None refGroup sg-03365c2346b16bf88
+id sgr-09abc7b5908b6445c description VNA Portal 135/tcp to VNA Portal group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0bb05b30ea4909273 description VNA Portal port tcp 445 from VNA Application group id sg-0b9f51742e273916f ingress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-05c45f3f2eb9bc972 description 445/tcp to MServ group id sg-0bdc2a78569b76550 egress protocol tcp from 445 to 445 ip: 10.66.0.101/32 refGroup None
+id sgr-04acdb3161c5b9f4e description VNA FSX port 445 TCP to Ivanti group id sg-0b4776feaeb78f01e egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0cb8c1a46aae2c345 description TCP/445 from Hostmon group id sg-0bdc2a78569b76550 ingress protocol tcp from 445 to 445 ip: 10.66.0.20/32 refGroup None
+id sgr-0c18fce679e5df39f description 135/tcp to MServ group id sg-0bdc2a78569b76550 egress protocol tcp from 135 to 135 ip: 10.66.0.101/32 refGroup None
+id sgr-00664c811b8714f55 description MFT Back End port 445 to ADDC group id sg-0c00f5e10960a582a egress protocol tcp from 445 to 445 ip: 10.66.0.38/32 refGroup None
+id sgr-0ad59ee90f45b3045 description VNA Portal 135/tcp to certificate authority group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0ba9110fb222134a5 description MFT Back End port 135 to ADDC group id sg-0c00f5e10960a582a egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-056dac4730fa84a08 description VNA Portal port 1433 to VNA SQL group id sg-0b9f51742e273916f egress protocol tcp from 1433 to 1433 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0a8c3f4e7db3deec9 description Ivanti port 445 to MFT Back End group id sg-0c00f5e10960a582a ingress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0ad6f29a1cbb18c21 description VNA Portal 135/tcp from VNA Application group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0f95f2c48ed3512be description VNA Portal 135/tcp to VNA HL7 group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-0b24884d4b42b72ac description VNA FSX 445/tcp from HostMon group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None
+id sgr-0da013b8977cf93d4 description TCP/135 from Hostmon group id sg-0c00f5e10960a582a ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-033e6523df0755bd5 description TCP/135 to Enterprise CA group id sg-0bdc2a78569b76550 egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-066182fca15168d86 description VNA Portal 135/tcp from HostMon group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-090857d02ed951226 description TCP/445 Ingress from OnBase Application Servers group id sg-0bdc2a78569b76550 ingress protocol tcp from 445 to 445 ip: None refGroup sg-03f6ded8315c58921
+id sgr-00cb8bef8dd85c901 description VNA Portal 445/tcp to certificate authority group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: 10.220.0.131/32 refGroup None
+id sgr-0abbf8d69a61ef336 description VNA FSX port 445 to ADDC group id sg-0b4776feaeb78f01e egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-06e324dbf48ff4505 description TCP/1433 to Database group id sg-0bdc2a78569b76550 egress protocol tcp from 1433 to 1433 ip: None refGroup sg-055416377db964931
+id sgr-0aa8d2f3f5104ca20 description VNA Portal port 135 to ADDC group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-00cdd16f82f97820b description TCP/135 to Enterprise CA group id sg-0c00f5e10960a582a egress protocol tcp from 135 to 135 ip: 10.220.0.131/32 refGroup None
+id sgr-0bee04acabf90bca3 description TCP/135 from Hostmon group id sg-0bdc2a78569b76550 ingress protocol tcp from 135 to 135 ip: 10.66.0.180/32 refGroup None
+id sgr-0918aa33b95d54720 description VNA Portal 135/tcp to VNA Application group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0f58e267fed7b03c9 description VNA Portal port tcp 445 to VNA Migration group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: None refGroup sg-052ec060d85d8674a
+id sgr-063170335171dbdc9 description VNA Portal port 445 TCP to Ivanti group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-09277c82f9ac3d970 description VNA Portal 135/tcp from VNA HL7 group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: None refGroup sg-09a960609851061f3
+id sgr-0af86c30d549855d8 description VNA FSX 135/tcp from HostMon group id sg-0b4776feaeb78f01e ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0278dcae6977575ae description VNA Portal port tcp 445 from VNA Application group id sg-0b9f51742e273916f ingress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0e10c86af88ad50e1 description MFT Back End port 445 TCP to Ivanti group id sg-0c00f5e10960a582a egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0293a676d6688fdf4 description VNA Application port 445 to FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: None refGroup sg-07d6f3effad4e74c8
+id sgr-0556bb7dc8e0166f3 description VNA FSX port 135 to ADDC group id sg-0b4776feaeb78f01e egress protocol tcp from 135 to 135 ip: 10.66.0.38/32 refGroup None
+id sgr-09bfd53ab35a42cae description VNA Portal port 445 to ADDC group id sg-0b9f51742e273916f egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-01fb8ca433c03212a description VNA DB port 445 to FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: None refGroup sg-03365c2346b16bf88
+id sgr-0943fa1d6cfb7d84c description OnBase Services Server port 445 TCP to Ivanti group id sg-0bdc2a78569b76550 egress protocol tcp from 445 to 445 ip: 10.66.1.25/32 refGroup None
+id sgr-0fc7fad06bd902d55 description VNA Portal port 445 to FSX group id sg-0b4776feaeb78f01e ingress protocol tcp from 445 to 445 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0a32d20e688119477 description TCP/135 from Hostmon group id sg-0bdc2a78569b76550 ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0dc809f0047f11d17 description VNA Portal port 135 to ADDC group id sg-0b9f51742e273916f egress protocol tcp from 135 to 135 ip: 10.66.0.191/32 refGroup None
+id sgr-03e2e4e6bdfe6b9d4 description VNA Portal 135/tcp from VNA Portal group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: None refGroup sg-0b9f51742e273916f
+id sgr-0cc7244460b512edc description Ivanti port 135 to VNA Portal group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: 10.66.1.25/32 refGroup None
+id sgr-08be6f389543ed8b7 description VNA Portal 135/tcp from HostMon group id sg-0b9f51742e273916f ingress protocol tcp from 135 to 135 ip: 10.66.0.20/32 refGroup None
+id sgr-0f673fb236a69ca80 description OnBase Services Server port 445 to ADDC group id sg-0bdc2a78569b76550 egress protocol tcp from 445 to 445 ip: 10.66.0.191/32 refGroup None
+id sgr-0b73e006a08991e3c description TCP/445 to CVO group id sg-0c00f5e10960a582a egress protocol tcp from 445 to 445 ip: None refGroup sg-06b3d58054be003e8
+id sgr-0d18bf2502dd1275f description TCP/445 from Hostmon group id sg-0bdc2a78569b76550 ingress protocol tcp from 445 to 445 ip: 10.66.0.180/32 refGroup None

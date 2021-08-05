@@ -9,8 +9,9 @@ import common.event
 from .searchEnum import SearchFilters
 from time import sleep
 from datetime import datetime, timedelta
-from .cloud_logs import LogEntry
-# from botocore.exceptions import
+from .records import LogEntry
+
+# TODO: Set up file output
 
 
 class AWS:
@@ -60,30 +61,29 @@ class AWS:
                             filter(cli.filterPorts, self.ruleMap[reg][acct]))
                         self.ruleMap[reg][acct] = list(
                             filter(cli.filterProtocols, self.ruleMap[reg][acct]))
-                        self.ruleMap[reg][acct] = list(
-                            filter(cli.filterSources, self.ruleMap[reg][acct]))
-                        self.ruleMap[reg][acct] = list(
-                            filter(cli.filterDestinations, self.ruleMap[reg][acct]))
+                        if cli.destString is not None or cli.sourceString is not None:
+                            expand = cli.ExpandRule(
+                                self.instanceMap[reg][acct])
 
-                        expand = cli.ExpandRule(self.instanceMap[reg][acct])
+                            expanded = list(
+                                map(expand, self.ruleMap[reg][acct]))
 
-                        expanded = list(map(expand, self.ruleMap[reg][acct]))
+                            # flatten
+                            expanded = [
+                                item for subitem in expanded for item in subitem]
 
-                        # flatten
-                        expanded = [
-                            item for subitem in expanded for item in subitem]
+                            expanded = list(
+                                filter(cli.filterSources, expanded))
+                            expanded = list(
+                                filter(cli.filterDestinations, expanded))
 
-                        expanded = list(filter(cli.filterSources, expanded))
-                        expanded = list(
-                            filter(cli.filterDestinations, expanded))
+                            # grab the ruleids while removing duplicates
+                            expanded = list(dict.fromkeys(
+                                [item.ruleId for item in expanded]))
 
-                        # grab the ruleids while removing duplicates
-                        expanded = list(dict.fromkeys(
-                            [item.ruleId for item in expanded]))
-
-                        # trim the rules to match
-                        self.ruleMap[reg][acct] = list(
-                            filter(lambda x: x['id'] in expanded, self.ruleMap[reg][acct]))
+                            # trim the rules to match
+                            self.ruleMap[reg][acct] = list(
+                                filter(lambda x: x['id'] in expanded, self.ruleMap[reg][acct]))
 
                         msgPmp.put(common.event.AccounFinishedEvent(
                             reg=reg, resTotal=len(self.ruleMap[reg][acct]), results=self.ruleMap[reg][acct]), block=False)
@@ -140,8 +140,10 @@ class AWS:
                                 ).search(SearchFilters.events.value)
                                 val = next(paginator, None)
                                 while val is not None:
-                                    if killEvent.is_set(): return
-                                    entry = LogEntry(val['timestamp'], val['message'])
+                                    if killEvent.is_set():
+                                        return
+                                    entry = LogEntry(
+                                        val['timestamp'], val['message'])
                                     if cli.allowEntry(entry=entry):
                                         msgPmp.put(
                                             common.event.LogEntryReceivedEvent(

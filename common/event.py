@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from logging import ERROR
 import queue
 import enum
-from aws.cloud_logs import LogEntry
+from aws.records import LogEntry
 
 
 @dataclass

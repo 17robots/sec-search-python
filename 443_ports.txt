@@ -1,0 +1,1097 @@
+id sgr-0b0a70c267c536475 description SentryOne 443/tcp to certificate authority group id sg-04a13d3775706d5a2 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0e02353cf801eadd3 description Observium port 443 TCP to OCDeploy group id sg-0445a5fc60e690a91 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-030759e1473b4c8ac description Base https from Ansible group id sg-06c181a1269f33a97 ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-0cc23a6cc7fcb7836 description Base port 443 TCP to OCDeploy group id sg-06c181a1269f33a97 egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-0fc896dcb2e15cd62 description Base port 443 TCP to OCDeploy group id sg-031bb0da3369f70c1 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0eab268a5162b78e5 description None group id sg-0445a5fc60e690a91 ingress protocol tcp from 443 to 443 ip: 10.66.68.120/32 refGroup None
+id sgr-0c199e3d6e1843a4d description Splunk search head port 443 TCP to OCDeploy group id sg-045c61f97dc5ddf22 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0d8231b1e7b4b7f64 description SentryOne port 443 TCP to OCDeploy group id sg-04a13d3775706d5a2 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0d55b8fe6a371b3d2 description Splunk deployer https from Ansible group id sg-01aba576cc8d351c7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-046591e20d19846ff description Postfix https from Ansible group id sg-01432873d60238ab3 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-06275d3abc6bab825 description Suricata 443/tcp to certificate authority group id sg-01248f8161221ffce egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0d037cc7d780feb9f description Splunk deployer 443/tcp to certificate authority group id sg-01aba576cc8d351c7 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0fa9459e969c7fe10 description Base port 443 TCP to OCDeploy group id sg-031bb0da3369f70c1 egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-0bb409d4ec1a09443 description Base https from Ansible group id sg-031bb0da3369f70c1 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-082e4175c0b6039ea description Splunk search head 443/tcp to certificate authority group id sg-045c61f97dc5ddf22 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-08be84a55429b1577 description Hostmon port 443 TCP to OCDeploy group id sg-04f23321cacd67a7f egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0138890403dcf37a5 description Postfix port 443 TCP to OCDeploy group id sg-01432873d60238ab3 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-04c1bd5ca3675ecf1 description Hostmon https from Ansible group id sg-04f23321cacd67a7f ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ff6416f7a56524b1 description Nessus https from Ansible group id sg-0273cbd9ecc7a2ca5 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ff73015f7b9bead4 description Base 443/tcp to certificate authority group id sg-06c181a1269f33a97 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0b5f9b6c9da9a8a43 description Base port 443 TCP to OCDeploy group id sg-06c181a1269f33a97 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-097eeea6b0ea446a6 description Suricata port 443 TCP to OCDeploy group id sg-01248f8161221ffce egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-01c6f8dfefc18cce9 description Base https from Ansible group id sg-06c181a1269f33a97 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-075b2730ed0f76205 description Observium https from Ansible group id sg-0445a5fc60e690a91 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c3c8d7eec3b49e34 description Suricata https from Ansible group id sg-01248f8161221ffce ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a40d20c3fc4ef8f1 description Observium 443/tcp to certificate authority group id sg-0445a5fc60e690a91 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-078ff7c2caab3bb15 description MServ port 443 TCP to OCDeploy group id sg-06aa675ced7d41f12 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a4ec29ed4cf8ad17 description Postfix 443/tcp to certificate authority group id sg-01432873d60238ab3 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0c01b8f18420c6d63 description Base 443/tcp to certificate authority group id sg-031bb0da3369f70c1 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0335c7315a8c106cf description Splunk deployer port 443 TCP to OCDeploy group id sg-01aba576cc8d351c7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0315a04f4d9d5410e description MServ port 443 TCP to OCDeploy group id sg-06aa675ced7d41f12 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-038bfff68f4ee9bf2 description Base https from Ansible group id sg-031bb0da3369f70c1 ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-0428656dd6ce33360 description Splunk search head https from Ansible group id sg-045c61f97dc5ddf22 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-051eec782c5ee7edb description MServ https from Ansible group id sg-06aa675ced7d41f12 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-02e2bc315fcba053b description Hostmon 443/tcp to certificate authority group id sg-04f23321cacd67a7f egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-047861b143cb55970 description ADDC 443/tcp to certificate authority group id sg-037b4d5cb23f624ce egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0416c7ab23b8a0ddc description SentryOne https from Ansible group id sg-04a13d3775706d5a2 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0b57b81090ac4f3a2 description Base https from Ansible group id sg-06c181a1269f33a97 ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-0ac350ee10396c5ca description Base https from Ansible group id sg-031bb0da3369f70c1 ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-05f75b0506ca7b426 description Nessus port 443 TCP to OCDeploy group id sg-0273cbd9ecc7a2ca5 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-01a9a06766d8a50d3 description Splunk HEC server port 443 TCP to OCDeploy group id sg-0a80ec60624e2f0dc egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00388aab11bcda057 description Splunk heavy forwarder 443/tcp to certificate authority group id sg-0fc2c9d6db047baaa egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-07b218127849df98d description Splunk HEC server 443/tcp to certificate authority group id sg-0a80ec60624e2f0dc egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-09d7363e4e7031a04 description Splunk master port 443 TCP to OCDeploy group id sg-0a8ea90df09dfacb8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-003be04758fc62640 description Indexer TCP/443 to KMS endpoint group id sg-0ddd69b0595e04b0b egress protocol tcp from 443 to 443 ip: None refGroup sg-0e9632baacff2cf8b
+id sgr-04c729a5c7809e36f description Sophos port 443 TCP to OCDeploy group id sg-0fc7a3ff2929eb182 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06ec46c8af30b28e8 description Splunk indexer 443/tcp to certificate authority group id sg-0fbacf4413b1b437d egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0b5a3122ede614394 description F5 port 443 TCP to OCDeploy group id sg-08625e22b1022e20f egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0cfbfee11d414f91b description Indexer TCP/443 to S3 group id sg-0ddd69b0595e04b0b egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0e31ca9a553546ba6 description Splunk heavy forwarder 443/tcp to f5 group id sg-0fc2c9d6db047baaa egress protocol tcp from 443 to 443 ip: 10.66.68.209/32 refGroup None
+id sgr-0f4041ee8889decf3 description F5 https from Ansible group id sg-08625e22b1022e20f ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0db8f46de84ac7b1b description Splunk master https from Ansible group id sg-0a8ea90df09dfacb8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f182b36c2b238e2c description Splunk indexer https from Ansible group id sg-0fbacf4413b1b437d ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-022b1d5c9a831e2c8 description Splunk loghost port 443 TCP to OCDeploy group id sg-0c364915060029ded egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00bac971548f8558b description F5 port 443 TCP to OCDeploy group id sg-08625e22b1022e20f egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-082092fea04cebb73 description Hostmon TCP port 445 to All group id sg-07db539df4490cba5 ingress protocol tcp from 443 to 443 ip: None refGroup sg-07db539df4490cba5
+id sgr-0a1b79738bb890d03 description Splunk heavy forwarder 443/tcp to f5 group id sg-0fc2c9d6db047baaa egress protocol tcp from 443 to 443 ip: 10.66.69.184/32 refGroup None
+id sgr-0f5c57159c2a50844 description Ivanti https from Ansible group id sg-0fbaa3ea1291770de ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0837471689f607f3a description Splunk loghost 443/tcp to certificate authority group id sg-0c364915060029ded egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-07f20d54636ba3ec6 description Splunk HEC server port 443 TCP to OCDeploy group id sg-0a80ec60624e2f0dc egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0c2020f83cffefbce description Splunk HEC server https from Ansible group id sg-0a80ec60624e2f0dc ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d8bfe5d44c176cff description Splunk indexer port 443 TCP to OCDeploy group id sg-0fbacf4413b1b437d egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a97857affedf4495 description Splunk indexer 443/tcp to KMS endpoint group id sg-0fbacf4413b1b437d egress protocol tcp from 443 to 443 ip: None refGroup sg-0e9632baacff2cf8b
+id sgr-08c941e16435cf330 description F5 port 443 TCP to OCDeploy group id sg-08625e22b1022e20f egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-08817e35e2ab3eae7 description Splunk heavy forwarder https from Ansible group id sg-0fc2c9d6db047baaa ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d148c7838c41e71a description Splunk indexer 443/tcp to S3 group id sg-0fbacf4413b1b437d egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-066eb325efed8d910 description Splunk HEC server port 443 TCP to OCDeploy group id sg-0a80ec60624e2f0dc egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-065c819851475522f description Ivanti port 443 TCP to OCDeploy group id sg-0fbaa3ea1291770de egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b93abe9a9968fe8c description Splunk loghost https from Ansible group id sg-0c364915060029ded ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c41e63f5b9f1d2af description TCP/443 to GCS Internal group id sg-08625e22b1022e20f egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0d1a586bd5df3c602 description Hostmon TCP port 445 to All group id sg-07db539df4490cba5 egress protocol tcp from 443 to 443 ip: None refGroup sg-07db539df4490cba5
+id sgr-0d4caff376b24cf74 description F5 port 443 TCP to OCDeploy group id sg-08625e22b1022e20f egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-065f5a8de58e80906 description Splunk heavy forwarder port 443 TCP to OCDeploy group id sg-0fc2c9d6db047baaa egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03a276efb06dbeb3a description Hostmon TCP port 443 to Web/App group id sg-07db539df4490cba5 egress protocol tcp from 443 to 443 ip: 10.67.0.0/24 refGroup None
+id sgr-09a2754a4bef48928 description TCP/443 from Public Internet group id sg-08625e22b1022e20f ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-006cf3449200e4792 description Hostmon TCP port 443 to Web/App group id sg-07db539df4490cba5 egress protocol tcp from 443 to 443 ip: 10.67.1.0/24 refGroup None
+id sgr-0deb8aef13733b7b2 description KMS endpoint 443/tcp access group id sg-0e9632baacff2cf8b ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-097696fd139489824 description Splunk master 443/tcp to certificate authority group id sg-0a8ea90df09dfacb8 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0722eb6e34456cf47 description Splunk HEC server port 443 TCP to OCDeploy group id sg-0a80ec60624e2f0dc egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-06aed0a8a6fe22408 description Ivanti 443/tcp to certificate authority group id sg-0fbaa3ea1291770de egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-09acf3d9f6f934ca6 description Sophos https from Ansible group id sg-0fc7a3ff2929eb182 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0bc81fda696a7c750 description TCP/443 to GCS Internal group id sg-0302e8fba4ee5dd10 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-055bf0f09860a4760 description F5 port 443 TCP to OCDeploy group id sg-011a1cbcccecae068 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0cf413be031198da5 description Base https from Ansible group id sg-03a4dad840bfc8aca ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-0afa0bfb1c3e9e8a8 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0302e8fba4ee5dd10 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-054e3c5b4e3c9d9e4 description VNA Migration https from Ansible group id sg-052ec060d85d8674a ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-02c27b92a047edc27 description TCP/443 to GCS internal group id sg-0108b5ef4f70f47e2 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0ffe23eca26350166 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0302e8fba4ee5dd10 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0f1687bad9ab9a221 description MFT Front End port 443 TCP to OCDeploy group id sg-0142ce8054e41aa11 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0270e5cc710146792 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0302e8fba4ee5dd10 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-01579d6ce0ed8730d description MFT Front End https from Ansible group id sg-0142ce8054e41aa11 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0876bc317352dbafe description Base https from Ansible group id sg-03a4dad840bfc8aca ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-072adacb167b87605 description VNA Application https from Ansible group id sg-03a50dc2b759e8192 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-017498231e30ba794 description OnBase Application Server port 443 TCP to OCDeploy group id sg-03f6ded8315c58921 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-017e0419471506ff8 description VNA Application port 443 TCP to OCDeploy group id sg-03a50dc2b759e8192 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0407e7fefc1ed630b description TCP/443 to GCS Internal group id sg-011a1cbcccecae068 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-08e5d7aa914d9c4a5 description VNA DB https from Ansible group id sg-03365c2346b16bf88 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-05b5e8853000faf5b description OnBase Application Server port 443 TCP to OCDeploy group id sg-03f6ded8315c58921 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-063bae13889db843b description OnBase Application Server port 443 TCP to OCDeploy group id sg-03f6ded8315c58921 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-0b980990df9ad0283 description TCP/443 from GCS Internal group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-03e1b0617e39a2e8f description OnBase Application Server port 443 TCP to OCDeploy group id sg-03f6ded8315c58921 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0fe8595e94d5dcb31 description VNA DB https from Ansible group id sg-0153d10e9928921d8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f6730740b0b3e957 description VNA Migration port 443 TCP to OCDeploy group id sg-0001792fb5f005031 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0ceb795f9056c3b99 description TCP/443 to cloud connector group id sg-0108b5ef4f70f47e2 egress protocol tcp from 443 to 443 ip: None refGroup sg-07d2ac4b31f823a76
+id sgr-049ef474df0c2e033 description TCP/443 from Cloud Connector group id sg-0108b5ef4f70f47e2 ingress protocol tcp from 443 to 443 ip: None refGroup sg-07d2ac4b31f823a76
+id sgr-066101cb49d0b8760 description VNA Migration port 443 TCP to OCDeploy group id sg-052ec060d85d8674a egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-04a2716718692e5e8 description VNA DB 443/tcp to certificate authority group id sg-0153d10e9928921d8 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-088afaaa1c769203d description F5 port 443 TCP to OCDeploy group id sg-011a1cbcccecae068 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0df4626f301a7a389 description MFT Front End port 443 TCP to OCDeploy group id sg-0142ce8054e41aa11 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-07ed040233f68128c description VNA DB port 443 TCP to OCDeploy group id sg-03365c2346b16bf88 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0fb783f63c4556718 description VNA Migration 443/tcp to certificate authority group id sg-0001792fb5f005031 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-02e0c68b5b3ab669f description VNA DB port 443 TCP to OCDeploy group id sg-03365c2346b16bf88 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0f60b103836880dc2 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0302e8fba4ee5dd10 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03f0a178771c17edd description TCP/443 to VDA group id sg-0108b5ef4f70f47e2 egress protocol tcp from 443 to 443 ip: None refGroup sg-0108b5ef4f70f47e2
+id sgr-0750ad2f77050fc8d description VNA Migration 443/tcp to certificate authority group id sg-052ec060d85d8674a egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0bd9371ecb169a342 description VNA Migration port 443 TCP to OCDeploy group id sg-0001792fb5f005031 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00f313688a6f53950 description Base port 443 TCP to OCDeploy group id sg-03a4dad840bfc8aca egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-047a54c3debaad08f description VNA Migration port 443 to S3 endpoint group id sg-052ec060d85d8674a egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0c2a12b46e7193b14 description Base 443/tcp to certificate authority group id sg-03a4dad840bfc8aca egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-01618a769e4099b77 description TCP/443 from GCS Internal group id sg-03f6ded8315c58921 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0602429c85d90f252 description VNA DB port 443 TCP to OCDeploy group id sg-0153d10e9928921d8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b96bdfe2dd10d66f description VNA FSX port 443 TCP to OCDeploy group id sg-009d754caf5dbaf03 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0c1aa09ad3d405073 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0302e8fba4ee5dd10 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0cf9666de932fd929 description VNA Application port 443 TCP to OCDeploy group id sg-03a50dc2b759e8192 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-06461a7f3ad6856be description VNA Migration https from Ansible group id sg-0001792fb5f005031 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0b8e082c97cffb2f5 description VNA FSX port 443 TCP to OCDeploy group id sg-009d754caf5dbaf03 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0658ca507cf3fa657 description VNA Application port 443 to S3 endpoint group id sg-03a50dc2b759e8192 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0285396c7168f0c67 description Base https from Ansible group id sg-03a4dad840bfc8aca ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-038ec27f83401843f description VNA FSX https from Ansible group id sg-009d754caf5dbaf03 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08e72ae4e88987709 description Base port 443 TCP to OCDeploy group id sg-03a4dad840bfc8aca egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-0d8c95f8cd82ce360 description OnBase Application Server port 443 TCP to OCDeploy group id sg-03f6ded8315c58921 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-04f25b531903ea177 description OnBase Application Server https from Ansible group id sg-03f6ded8315c58921 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0b52f3db912ad5c7c description TCP/443 to GCS Internal group id sg-03f6ded8315c58921 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0cdacf015f6d264b7 description OnBase Web Server https from Ansible group id sg-0302e8fba4ee5dd10 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08fbcb44f043486da description VNA Application 443/tcp to certificate authority group id sg-03a50dc2b759e8192 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0404dee6129b3fea8 description F5 https from Ansible group id sg-011a1cbcccecae068 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-060b4ab84dd53905b description VNA DB 443/tcp to certificate authority group id sg-03365c2346b16bf88 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-040d74a7dbad85cdc description VNA DB port 443 TCP to OCDeploy group id sg-0153d10e9928921d8 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-061508f9ea1b7a300 description VNA Migration port 443 to S3 endpoint group id sg-0001792fb5f005031 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-09df8a2004343d0e4 description TCP/443 from Public Internet group id sg-011a1cbcccecae068 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0a8e77a1736de1495 description VNA HL7 port 443 TCP to OCDeploy group id sg-05ad9719d84d17138 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-030394ff67113c91f description VNA HL7 https from Ansible group id sg-09a960609851061f3 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0dd95d4bfb1fcef2a description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.152.2.20/32 refGroup None
+id sgr-015b810e337abc50a description Sophos port 443 TCP to OCDeploy group id sg-0782587593469d1a3 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0003f84a74deab03e description VNA Portal https from Ansible group id sg-0a11db6005c8211f1 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-070340e7baafddd53 description TCP/443 to VDA group id sg-07d2ac4b31f823a76 egress protocol tcp from 443 to 443 ip: None refGroup sg-0108b5ef4f70f47e2
+id sgr-084fe7f5360b2fa8c description VNA Application https from Ansible group id sg-07d6f3effad4e74c8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-00a1716944d405612 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.67/32 refGroup None
+id sgr-0462e7e7a748e7c08 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.210.0.80/32 refGroup None
+id sgr-006322f102e79f07c description VNA Application port 443 TCP to OCDeploy group id sg-07d6f3effad4e74c8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b5257575712b4739 description VNA Portal port 443 TCP to OCDeploy group id sg-0a11db6005c8211f1 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0040002183303e799 description VNA Application port 443 TCP to OCDeploy group id sg-07d6f3effad4e74c8 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0c23c43cadb4e20d3 description TCP/443 to CVO from VMNABOX group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.187.65.24/32 refGroup None
+id sgr-07f8b29d4a42efb3c description VNA Portal 443/tcp from HostMon group id sg-0a11db6005c8211f1 ingress protocol tcp from 443 to 443 ip: 10.66.0.20/32 refGroup None
+id sgr-08b4bf805fb8198b4 description TCP/443 to CVO from AIQUM group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.152.2.28/32 refGroup None
+id sgr-070c4caf3748cd0da description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.65/32 refGroup None
+id sgr-09e99dc3f8552248d description NetApp Cloud Volumes ONTAP https from Ansible group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e4a6d01a89a213de description VNA HL7 443/tcp to certificate authority group id sg-05ad9719d84d17138 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0913da536f300d6ef description HTTPS to CVO from External OCCM servers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.65.0.244/32 refGroup None
+id sgr-0503f1b0cecd40bb2 description NetApp Cloud Volumes ONTAP Mediator port 443 TCP to OCDeploy group id sg-06d593bac95cb2e80 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-003284def472985f5 description Sophos https from Ansible group id sg-0782587593469d1a3 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0930f3e692e33f0ad description NetApp Cloud Volumes ONTAP Mediator port 443 TCP to OCDeploy group id sg-06d593bac95cb2e80 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0b63e9d29f96309ef description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.64/32 refGroup None
+id sgr-01a5cc12ed734b0fe description NetApp Cloud Volumes ONTAP port 443 TCP to OCDeploy group id sg-06b3d58054be003e8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0297b9f30a0b16f32 description VNA Portal port 443 TCP to OCDeploy group id sg-0a11db6005c8211f1 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0c0957cddd4c4ae8c description TCP/443 to CVO from Insight machines group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.234/32 refGroup None
+id sgr-0de2c9708dd3aa11e description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.210.0.82/32 refGroup None
+id sgr-0f4b2ce061c16c802 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.210.0.83/32 refGroup None
+id sgr-08cb124a8ec9bb9cb description shared  Database Server port 443 TCP to OCDeploy group id sg-055416377db964931 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0815bd3eba5d7fdd1 description VNA Portal port 443 to S3 endpoint group id sg-0a11db6005c8211f1 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0d47d04d451ea258f description shared  Database Server 443/tcp to certificate authority group id sg-055416377db964931 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0c5a213da143559d5 description NetApp Cloud Manager https from Ansible group id sg-07fbd7cb547ad43ca ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-02718eac1356ad047 description TCP/443 to CC group id sg-07d2ac4b31f823a76 egress protocol tcp from 443 to 443 ip: None refGroup sg-07d2ac4b31f823a76
+id sgr-01498921e9d908b6f description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.210.0.81/32 refGroup None
+id sgr-0580504840cc8988d description VNA Portal 443/tcp to certificate authority group id sg-0a11db6005c8211f1 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0715f51f4e997f378 description VNA HL7 port 443 TCP to OCDeploy group id sg-05ad9719d84d17138 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-09a5be2dfc1e521ea description TCP/443 to CVO from AIQUM group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.28/32 refGroup None
+id sgr-0a4674c640ee440ec description NetApp Cloud Manager port 443 TCP to OCDeploy group id sg-07fbd7cb547ad43ca egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0f028b799338db123 description VNA HL7 port 443 TCP to OCDeploy group id sg-09a960609851061f3 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0d8ae71fa41f02853 description HTTPS to lgw-vpc1-shared-cvo-sg group id sg-07fbd7cb547ad43ca egress protocol tcp from 443 to 443 ip: None refGroup sg-06b3d58054be003e8
+id sgr-09b3f977b3d58c0c4 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.68/32 refGroup None
+id sgr-088ba6d3bf02b7059 description VNA HL7 443/tcp to S3 endpoint group id sg-05ad9719d84d17138 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0c80728ebf0153ac5 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.69/32 refGroup None
+id sgr-0ec61a0e4db5fa39e description VNA HL7 443/tcp to certificate authority group id sg-09a960609851061f3 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0434af24e1ecc92aa description NetApp Cloud Manager port 443 TCP to OCDeploy group id sg-07fbd7cb547ad43ca egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-064fc06a0247fbc35 description NetApp Cloud Volumes ONTAP port 443 TCP to OCDeploy group id sg-06b3d58054be003e8 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-08a8736b71794acfb description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.70/32 refGroup None
+id sgr-0af5d236b043be0ea description VNA HL7 443/tcp to S3 endpoint group id sg-09a960609851061f3 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-04e3d9c8c21d5af47 description TCP/443 to CVO from VMUCSD Servers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.187.129.46/32 refGroup None
+id sgr-0402759d51acd31aa description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.152.2.19/32 refGroup None
+id sgr-048f1e3420fd7487b description NetApp Cloud Volumes ONTAP Mediator https from Ansible group id sg-06d593bac95cb2e80 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-05eb1581622218c3c description TCP/443 to CVO from VMUCSD Servers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.187.129.48/32 refGroup None
+id sgr-09d266cbfd4c4b8dc description VNA Application port 443 to S3 endpoint group id sg-07d6f3effad4e74c8 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-00ca5b64d4aaf249c description shared  Database Server port 443 TCP to OCDeploy group id sg-055416377db964931 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0ea8a78e1d8cda5dd description VNA Application 443/tcp to certificate authority group id sg-07d6f3effad4e74c8 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0255ca452ae315216 description VNA Portal 443/tcp from HostMon group id sg-0a11db6005c8211f1 ingress protocol tcp from 443 to 443 ip: 10.66.0.180/32 refGroup None
+id sgr-03a6b480c347f3809 description TCP/443 from VDA group id sg-07d2ac4b31f823a76 ingress protocol tcp from 443 to 443 ip: None refGroup sg-0108b5ef4f70f47e2
+id sgr-0ff80c32a9d42c511 description VNA Migration port 443 TCP to OCDeploy group id sg-052ec060d85d8674a egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0f0cd05ce55a5c32a description Sophos port 443 TCP to OCDeploy group id sg-0782587593469d1a3 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0fd14d280dccd8371 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-06b3d58054be003e8 ingress protocol tcp from 443 to 443 ip: 10.198.2.66/32 refGroup None
+id sgr-0ff6f29facc4002da description VNA HL7 https from Ansible group id sg-05ad9719d84d17138 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-06dbb216aff535d77 description shared  Database Server https from Ansible group id sg-055416377db964931 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-039902d8a7df2d437 description VNA HL7 port 443 TCP to OCDeploy group id sg-09a960609851061f3 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0ebdce573aea0114e description OnBase Services Server https from Ansible group id sg-0bdc2a78569b76550 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-06062d965570a8bce description OnBase Services Server port 443 TCP to OCDeploy group id sg-0bdc2a78569b76550 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a777a9d367950181 description OnBase Services Server port 443 TCP to OCDeploy group id sg-0bdc2a78569b76550 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-099380718a1311243 description VNA Portal https from Ansible group id sg-0b9f51742e273916f ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08f4a9439086c2bfc description VNA FSX port 443 TCP to OCDeploy group id sg-0b4776feaeb78f01e egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-05584ea1b9fe8f6c5 description VNA Portal port 443 to S3 endpoint group id sg-0b9f51742e273916f egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-06ff6a255b7bc78fe description VNA Portal 443/tcp to certificate authority group id sg-0b9f51742e273916f egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-01eb5e470000de956 description MFT Back End port 443 TCP to OCDeploy group id sg-0c00f5e10960a582a egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0762ce2ba5859cc34 description VNA Portal 443/tcp from HostMon group id sg-0b9f51742e273916f ingress protocol tcp from 443 to 443 ip: 10.66.0.180/32 refGroup None
+id sgr-06cd19dc5c2a68970 description VNA FSX https from Ansible group id sg-0b4776feaeb78f01e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0bccac0fa928d52d4 description VNA Portal 443/tcp from HostMon group id sg-0b9f51742e273916f ingress protocol tcp from 443 to 443 ip: 10.66.0.20/32 refGroup None
+id sgr-0fe28c4ab8a9c31e5 description VNA Portal port 443 TCP to OCDeploy group id sg-0b9f51742e273916f egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03d5b0b4c31b0d2fd description OnBase Services Server port 443 TCP to OCDeploy group id sg-0bdc2a78569b76550 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-01b7c54bee219b7bd description OnBase Services Server port 443 TCP to OCDeploy group id sg-0bdc2a78569b76550 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0bc40db029abd9b8e description MFT Back End https from Ansible group id sg-0c00f5e10960a582a ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-050d1514f37f017f1 description OnBase Services Server port 443 TCP to OCDeploy group id sg-0bdc2a78569b76550 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-02fd0e4f998fe6e23 description MFT Back End port 443 TCP to OCDeploy group id sg-0c00f5e10960a582a egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09b4fb93da87248bc description VNA Portal port 443 TCP to OCDeploy group id sg-0b9f51742e273916f egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-090e7d30190086f06 description TCP/443 to GCS Internal group id sg-0bdc2a78569b76550 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0cbaa29644dce139b description VNA FSX port 443 TCP to OCDeploy group id sg-0b4776feaeb78f01e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-08d011f4dc4619706 description None group id sg-06f8249c66ee6debc ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0276a41b882c8a511 description https to hnd-vpc1-app-sg group id sg-0cfa80ae26fec09f3 egress protocol tcp from 443 to 443 ip: None refGroup sg-01c1106bf813ecc01
+id sgr-0b35acade9e2d2618 description https to hnd-vpc1-sts-sg group id sg-09012e4672a3bdc57 egress protocol tcp from 443 to 443 ip: None refGroup sg-0d6be4534639944f8
+id sgr-094eb0b0f8aafcac3 description https to hnd-vpc1-trfmgr-vip-sg group id sg-06a00b60e1b2608e8 egress protocol tcp from 443 to 443 ip: None refGroup sg-0cac3142c5522407b
+id sgr-0a6f71c3e52f8fd9b description https to hnd-vpc1 s3 endpoint gateway group id sg-09012e4672a3bdc57 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0110e2914eca25e75 description https to hnd-vpc1-trfmgr-vip-sg group id sg-055bc3b0f5d409ffb egress protocol tcp from 443 to 443 ip: None refGroup sg-0cac3142c5522407b
+id sgr-02be1d519634a5845 description 2020-03-16 Rice WT:34001912 group id sg-087db517e880d5bc5 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-07e5d7f520ce8bdf3 description https to hnd-vpc1-citrix-vda-sg group id sg-0493264423ad76b89 egress protocol tcp from 443 to 443 ip: None refGroup sg-055bc3b0f5d409ffb
+id sgr-07609e4fcb1a95d7c description 443 access to web servers group id sg-0513a5c314ad00473 egress protocol tcp from 443 to 443 ip: None refGroup sg-00950d285d5f672ac
+id sgr-03f615f3720311868 description https to hnd-vpc1-citrix-vda-sg group id sg-055bc3b0f5d409ffb egress protocol tcp from 443 to 443 ip: None refGroup sg-055bc3b0f5d409ffb
+id sgr-04ed882e7a8321809 description 2020-04-09 Wonacott WT:34217522 group id sg-029a535c0a45f7c16 egress protocol tcp from 443 to 443 ip: None refGroup sg-0513a5c314ad00473
+id sgr-05e6d02cf6f3209a5 description https to hnd-vpc1-ec2-sg group id sg-09012e4672a3bdc57 egress protocol tcp from 443 to 443 ip: None refGroup sg-09653613ae5311143
+id sgr-0eeac39c0610a7c1a description https to s3 gateway endpoint group id sg-04ff272e102421673 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0eb91664c21657049 description https to hnd-vpc1-web-sg group id sg-0cfa80ae26fec09f3 egress protocol tcp from 443 to 443 ip: None refGroup sg-00950d285d5f672ac
+id sgr-00b7f10b2d8deff82 description https to hnd-vpc1-ec2-sg group id sg-069a833e6cbf04a30 egress protocol tcp from 443 to 443 ip: None refGroup sg-09653613ae5311143
+id sgr-09fac5bad75342ab0 description https access for customers group id sg-0cac3142c5522407b ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-058c5a0381762fc7a description 443 access to app servers group id sg-0513a5c314ad00473 egress protocol tcp from 443 to 443 ip: None refGroup sg-01c1106bf813ecc01
+id sgr-0bc3ce3cad0b252f3 description https to hnd-vpc1-trfmgr-vip-sg group id sg-00950d285d5f672ac egress protocol tcp from 443 to 443 ip: None refGroup sg-0cac3142c5522407b
+id sgr-01da3697e2f3862a2 description 2020-03-17 Rice WT:34015024 group id sg-0eddcd048ffc8197c egress protocol tcp from 443 to 443 ip: None refGroup sg-09653613ae5311143
+id sgr-07ac6db78dacb94db description https to hnd-vpc1-cvo-sg group id sg-09012e4672a3bdc57 egress protocol tcp from 443 to 443 ip: None refGroup sg-04ff272e102421673
+id sgr-0e1c88de386420257 description https to hnd-vpc1-kms-sg group id sg-09012e4672a3bdc57 egress protocol tcp from 443 to 443 ip: None refGroup sg-06235864e88f43922
+id sgr-008776f4ff36df216 description 443 access to app servers group id sg-0cac3142c5522407b egress protocol tcp from 443 to 443 ip: None refGroup sg-01c1106bf813ecc01
+id sgr-0c61c7cf7d49fb59c description Rice - 2019/11/08 - WT:32551647 - Licusage Access group id sg-00341bf2e3fb16597 egress protocol tcp from 443 to 443 ip: 206.16.245.251/32 refGroup None
+id sgr-0c444d18af01d6279 description 443 access to web servers group id sg-0cac3142c5522407b egress protocol tcp from 443 to 443 ip: None refGroup sg-00950d285d5f672ac
+id sgr-007e4ee6acb9a4122 description https to hnd-vpc1-trfmgr-vip-sg group id sg-01c1106bf813ecc01 egress protocol tcp from 443 to 443 ip: None refGroup sg-0cac3142c5522407b
+id sgr-073cadc8b6a4541b9 description https to hnd-vpc1-citrix-cc-sg group id sg-0493264423ad76b89 egress protocol tcp from 443 to 443 ip: None refGroup sg-0493264423ad76b89
+id sgr-0d0a462a9e9494361 description https to hnd-vpc1-citrix-cc-sg group id sg-055bc3b0f5d409ffb egress protocol tcp from 443 to 443 ip: None refGroup sg-0493264423ad76b89
+id sgr-0dc0f10791b69aebe description Hostmon TCP port 445 to All group id sg-04e962be815ca8b65 ingress protocol tcp from 443 to 443 ip: None refGroup sg-04e962be815ca8b65
+id sgr-01eaa14054601cd32 description Base port 443 TCP to OCDeploy group id sg-0831995d379b649c1 egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-085cf586cdac7aef6 description SentryOne port 443 TCP to OCDeploy group id sg-0401964fb70312caa egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0c1ae97299195c8e6 description Base 443/tcp to certificate authority group id sg-0831995d379b649c1 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-00fae0540b14743ad description Nessus port 443 TCP to OCDeploy group id sg-08c0229ca518f4c06 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-01bbb49aa2defdce9 description Splunk Search Head 443/tcp to lb group id sg-02b536de5381c5659 egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0ec194cc6978357bd description TCP/443 to GCS Internal group id sg-0624ffb2e44859284 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0d2be209e604fa5bb description Postfix 443/tcp to certificate authority group id sg-0288e62e1f2434500 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0c008cd1f457f835a description F5 port 443 TCP to OCDeploy group id sg-0624ffb2e44859284 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-05dcf3901aeee61d3 description MServ https from Ansible group id sg-0767db1db15b3ac6e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01df79623eeec18a3 description Base https from Ansible group id sg-0831995d379b649c1 ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-05fefa8c514f70f70 description Splunk loghost https from Ansible group id sg-00e175cf8f4888137 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-006a8c2fc0c4591a2 description Client HTTPS from all group id sg-05c8402d0959a4c94 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0058ea6fa28f4ffaa description F5 https from Ansible group id sg-0624ffb2e44859284 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-069b2630d17d0cda2 description Hostmon TCP port 445 to All group id sg-04e962be815ca8b65 egress protocol tcp from 443 to 443 ip: None refGroup sg-04e962be815ca8b65
+id sgr-0c5c55ba0088136a1 description SentryOne 443/tcp to certificate authority group id sg-0401964fb70312caa egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0da6323d797c31dcf description Splunk master https from Ansible group id sg-0747255403504585a ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-00978f9fccb2518e9 description SentryOne https from Ansible group id sg-0401964fb70312caa ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-055c7178a3bd644e8 description MServ port 443 TCP to OCDeploy group id sg-0767db1db15b3ac6e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-081e0791075c93f74 description Splunk heavy forwarder https from Ansible group id sg-017ce0972fbfe34d1 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ac81272d26058bf8 description Citrix ADC https from Ansible group id sg-03ab5e5a15ec1babe ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-060b0a497b6c5d13c description Hostmon https from Ansible group id sg-02af8022e1bb63c68 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ff47649f032b534b description Splunk Search Head 443/tcp from internet group id sg-02b536de5381c5659 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-099777f3b1f45c80a description Hostmon 443/tcp to certificate authority group id sg-02af8022e1bb63c68 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0b40a0664acdf4630 description Hostmon port 443 TCP to OCDeploy group id sg-02af8022e1bb63c68 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0c09ec1b78aedf938 description Citrix ADC 443/tcp to certificate authority group id sg-03ab5e5a15ec1babe egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0ddca9ab9fce39631 description Management HTTPS from all group id sg-03ab5e5a15ec1babe ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-07f2bb18fcc017259 description F5 port 443 TCP to OCDeploy group id sg-0624ffb2e44859284 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-044789deab1c4b925 description MServ port 443 TCP to OCDeploy group id sg-0767db1db15b3ac6e egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-07cd0f25d67d78fa5 description Splunk loghost 443/tcp to certificate authority group id sg-00e175cf8f4888137 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-049ffc223f6bc8a20 description F5 port 443 TCP to OCDeploy group id sg-0624ffb2e44859284 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03853428aba6b741f description Postfix https from Ansible group id sg-0288e62e1f2434500 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d4d778c206990acb description F5 port 443 TCP to OCDeploy group id sg-0624ffb2e44859284 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-0b19298005296c56c description Postfix port 443 TCP to OCDeploy group id sg-0288e62e1f2434500 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0df3180136674a237 description Hostmon TCP port 443 to Web/App group id sg-04e962be815ca8b65 egress protocol tcp from 443 to 443 ip: 0.0.0.0/32 refGroup None
+id sgr-0cb054bb69f04cb2c description Base port 443 TCP to OCDeploy group id sg-0831995d379b649c1 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0e2f2f62443ff1521 description Splunk master 443/tcp to certificate authority group id sg-0747255403504585a egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-05e0624e0d08ad6f1 description Splunk HEC server port 443 TCP to OCDeploy group id sg-01160655c19fbe7cf egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b2af62a70f96b218 description Splunk loghost port 443 TCP to OCDeploy group id sg-00e175cf8f4888137 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06fc484ed997f8e86 description Splunk master port 443 TCP to OCDeploy group id sg-0747255403504585a egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06266ad717bb8087a description Splunk HEC server 443/tcp to certificate authority group id sg-01160655c19fbe7cf egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-070da47abc5005322 description Splunk HEC server port 443 TCP to OCDeploy group id sg-01160655c19fbe7cf egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0438ca42725518f9c description Splunk HEC server port 443 TCP to OCDeploy group id sg-01160655c19fbe7cf egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-03e745a24fdd549da description Splunk HEC server port 443 TCP to OCDeploy group id sg-01160655c19fbe7cf egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-06e7435018349e90b description Splunk HEC server https from Ansible group id sg-01160655c19fbe7cf ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0660e0de1cd9715de description F5 port 443 TCP to OCDeploy group id sg-0624ffb2e44859284 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0cf02c77aab14c4e5 description Splunk heavy forwarder port 443 TCP to OCDeploy group id sg-017ce0972fbfe34d1 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0fae11ffce62c8bb1 description TCP/443 from Public Internet group id sg-0624ffb2e44859284 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-07d8d1e654c6d2d98 description Citrix ADC port 443 TCP to OCDeploy group id sg-03ab5e5a15ec1babe egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-005e206f3121b1920 description Splunk HEC server port 443 TCP to OCDeploy group id sg-01160655c19fbe7cf egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-0b7ee915003b46f4a description Base https from Ansible group id sg-0831995d379b649c1 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a3d369ff87a8c74e description Base https from Ansible group id sg-0831995d379b649c1 ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-024f860e406d7d5a1 description Splunk heavy forwarder 443/tcp to certificate authority group id sg-017ce0972fbfe34d1 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-06550a5c5ff71c7d3 description Sophos port 443 TCP to OCDeploy group id sg-0dc00457c40436a62 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-020908560c4dca918 description Observium port 443 TCP to OCDeploy group id sg-0e6c91af896dfb62f egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0dd26082cdef0b09a description Splunk indexer 443/tcp to S3 group id sg-0c2d20361756864c3 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-07938dbc9c5ebdb64 description Splunk indexer 443/tcp to KMS endpoint group id sg-0c2d20361756864c3 egress protocol tcp from 443 to 443 ip: None refGroup sg-0e26ed19cd6a3a743
+id sgr-061314d1fe6e80243 description Splunk indexer port 443 TCP to OCDeploy group id sg-0c2d20361756864c3 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0ec2a171c44bde2ac description Splunk Search Head 443/tcp from lb group id sg-0acee611eabdad421 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0bf2d18c29f013347 description Nessus https from Ansible group id sg-08c0229ca518f4c06 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0978697893f8fa606 description Suricata port 443 TCP to OCDeploy group id sg-0a0d17a5f5f5ea5a8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0819684349887027e description Observium https from Ansible group id sg-0e6c91af896dfb62f ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d0624c9a3ea67bcb description Splunk deployer port 443 TCP to OCDeploy group id sg-0de2e2d906af80c11 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0daaae16cfce9b67d description Suricata https from Ansible group id sg-0a0d17a5f5f5ea5a8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0eface864651e15ee description Splunk indexer 443/tcp to certificate authority group id sg-0c2d20361756864c3 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0b3b84c603c5cc1a6 description Splunk deployer https from Ansible group id sg-0de2e2d906af80c11 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0392638a31205c439 description Suricata 443/tcp to certificate authority group id sg-0a0d17a5f5f5ea5a8 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0a136f086f42c98e4 description Splunk deployer 443/tcp to certificate authority group id sg-0de2e2d906af80c11 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0dd0fea57d8008a98 description KMS endpoint 443/tcp access group id sg-0e26ed19cd6a3a743 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0400fec36a4a93009 description Sophos https from Ansible group id sg-0dc00457c40436a62 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f585265cf7c0bb37 description ADDC 443/tcp to certificate authority group id sg-0be64a643d53d8c50 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-075fafe36ef680345 description Splunk search head 443/tcp to certificate authority group id sg-0acee611eabdad421 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-088a96c0d4156c312 description Observium 443/tcp to certificate authority group id sg-0e6c91af896dfb62f egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-06434ffc83b86bf69 description Splunk search head port 443 TCP to OCDeploy group id sg-0acee611eabdad421 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-092a36c5d71014d2b description Splunk indexer https from Ansible group id sg-0c2d20361756864c3 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ebb7f9af7b4a6b1e description Splunk search head https from Ansible group id sg-0acee611eabdad421 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-09ba4c5c6c4e9549d description Ivanti 443/tcp to certificate authority group id sg-0f847c7549d554564 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-053da47490cfcbde1 description Ivanti https from Ansible group id sg-0f847c7549d554564 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a17ab49f12577d96 description Ivanti port 443 TCP to OCDeploy group id sg-0f847c7549d554564 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a6450d615827e775 description Base port 443 TCP to OCDeploy group id sg-0183f022df43a7798 egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-0b89aef3bd09c8766 description OnBase Application Server port 443 TCP to OCDeploy group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0d43a50c090f26f1f description MFT Back End https from Ansible group id sg-0b166623bf89e46c2 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ee454eaf19907077 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 3.213.124.14/32 refGroup None
+id sgr-0432e226a35b03417 description NetApp Cloud Manager port 443 TCP to OCDeploy group id sg-094db457920f1f7e7 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-025175474eb41b6c2 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 3.233.138.214/32 refGroup None
+id sgr-0c95171364f1c703f description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 50.19.109.107/32 refGroup None
+id sgr-058b67909cf061df5 description None group id sg-06e240138c4c23a18 egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-04824b2cc7094a102 description TCP/443 from GCS Internal group id sg-00a9846eee52fa430 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-051e30b7b743fe8cd description OnBase Services Server port 443 TCP to OCDeploy group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0bfd05bb6e395ec7e description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 3.214.165.21/32 refGroup None
+id sgr-03514ea77c89a74e0 description TCP/443 to GCS Internal group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-068023b1828ea7442 description NetApp Cloud Volumes ONTAP port 443 TCP to OCDeploy group id sg-0d7b8edccdb82b083 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-04dbaeee708080514 description TCP/443 to CVO from AIQUM group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.152.2.28/32 refGroup None
+id sgr-084c7a90333da5951 description OnBase Services Server port 443 TCP to OCDeploy group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0b3b63fbf68dd3bfc description TCP/443 to VDA group id sg-02c78a5b9dae314bd egress protocol tcp from 443 to 443 ip: None refGroup sg-02c78a5b9dae314bd
+id sgr-07120b01754b9b7e9 description NetApp Cloud Volumes ONTAP Mediator https from Ansible group id sg-008f18566ab3c3fa9 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08418d76984b9d0a4 description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 54.209.90.185/32 refGroup None
+id sgr-08229b3717a94e58e description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.152.2.20/32 refGroup None
+id sgr-02d716d4cc567749d description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.69/32 refGroup None
+id sgr-0e9fb7b52fec33d4b description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 54.209.237.40/32 refGroup None
+id sgr-01f4be49dd189caff description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 23.20.142.91/32 refGroup None
+id sgr-07941683f3c118442 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.67/32 refGroup None
+id sgr-0e209b87cf0d92b92 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.66/32 refGroup None
+id sgr-0d4d53110aa7fe944 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 54.209.90.185/32 refGroup None
+id sgr-0e0a5aec5985cc5f2 description Base https from Ansible group id sg-0183f022df43a7798 ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-04866d97b35781834 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.65/32 refGroup None
+id sgr-08a4ddac28c78f513 description TCP/443 to GCS Internal group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-00faf053314d4b6b7 description OnBase Services Server port 443 TCP to OCDeploy group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-0397c28564085ab2e description shared  Database Server https from Ansible group id sg-0aa30007e2c425fcd ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-009674ae290e65bfa description OnBase Web Server port 443 TCP to OCDeploy group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-061c3f25cc0116e6a description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 3.213.124.14/32 refGroup None
+id sgr-062569d705c6e16b8 description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 3.233.138.214/32 refGroup None
+id sgr-03f307010fe3f3cc1 description TCP/443 from GCS Internal group id sg-0edef9b5a13abe337 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-090dfe2bca6e07509 description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 50.19.109.107/32 refGroup None
+id sgr-0570443730214e303 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.152.2.19/32 refGroup None
+id sgr-0682d4c5dec178ab5 description Base port 443 TCP to OCDeploy group id sg-0183f022df43a7798 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-023b126b5c34f7f8b description NetApp Cloud Volumes ONTAP Mediator port 443 TCP to OCDeploy group id sg-008f18566ab3c3fa9 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0678ba78a42e59d3a description OnBase Application Server port 443 TCP to OCDeploy group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-095f911c96038cee2 description MFT Front End port 443 TCP to OCDeploy group id sg-0df15cc21c20dd803 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a3c164e747c2f1fc description OnBase Application Server port 443 TCP to OCDeploy group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-06ed55fcb38101990 description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 23.20.142.91/32 refGroup None
+id sgr-0cf2c89927e4b37a7 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.210.0.82/32 refGroup None
+id sgr-0b5da25988e66c9a1 description TCP/443 to CVO from AIQUM group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.28/32 refGroup None
+id sgr-062321c2b568c1350 description TCP/443 to Traffic Manager Public IPs group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 34.205.180.189/32 refGroup None
+id sgr-072d06304b0c4e2f8 description NetApp Cloud Volumes ONTAP Mediator port 443 TCP to OCDeploy group id sg-008f18566ab3c3fa9 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0391b24fed1cd903f description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.64/32 refGroup None
+id sgr-0f46b0761a013836d description TCP/443 to CVO from VMNABOX group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.187.65.24/32 refGroup None
+id sgr-062617c564b19ee2b description OnBase Application Server https from Ansible group id sg-00a9846eee52fa430 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0665789bc6b21b1ef description Base https from Ansible group id sg-0183f022df43a7798 ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-0742cce4337b0a9b1 description OnBase Web Server https from Ansible group id sg-0edef9b5a13abe337 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e3bdf477516e406e description TCP/443 to CVO from Insight machines group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.234/32 refGroup None
+id sgr-0082e4489836e6f1a description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 3.214.165.21/32 refGroup None
+id sgr-031f5f9f31c52a66c description NetApp Cloud Volumes ONTAP port 443 TCP to OCDeploy group id sg-0d7b8edccdb82b083 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-09609b2b3b53244d9 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-0e86e9ecf3ea6c3ed description NetApp Cloud Volumes ONTAP https from Ansible group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01e41a4ee26997c9d description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.210.0.83/32 refGroup None
+id sgr-00c9a264210f618f5 description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 34.205.180.189/32 refGroup None
+id sgr-0004c91f70588d70c description OnBase Services Server port 443 TCP to OCDeploy group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-014693d97a0237726 description Base https from Ansible group id sg-0183f022df43a7798 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ee571325457fc6d3 description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 3.233.138.214/32 refGroup None
+id sgr-053043af8f32ae55c description OnBase Web Server port 443 TCP to OCDeploy group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0521960b260ad7b65 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.210.0.81/32 refGroup None
+id sgr-033814ba41fa836a0 description MFT Front End port 443 TCP to OCDeploy group id sg-0df15cc21c20dd803 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-031f7a4b6301a50e6 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 34.205.180.189/32 refGroup None
+id sgr-05b22cd90b796bcbf description MFT Back End port 443 TCP to OCDeploy group id sg-0b166623bf89e46c2 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0b4c274a9ee16b177 description MFT Front End https from Ansible group id sg-0df15cc21c20dd803 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e751d53573e75716 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 50.19.109.107/32 refGroup None
+id sgr-09222e0e7c3475cad description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 3.214.165.21/32 refGroup None
+id sgr-059bb8ce083c680f7 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 23.20.142.91/32 refGroup None
+id sgr-03ae07a4d8b245541 description TCP/443 to Traffic Manager Public IPs group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 54.209.237.40/32 refGroup None
+id sgr-025c761ef39e58763 description shared  Database Server 443/tcp to certificate authority group id sg-0aa30007e2c425fcd egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-05864014dd69758f8 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.210.0.80/32 refGroup None
+id sgr-0b953fe037b69e8e1 description shared  Database Server port 443 TCP to OCDeploy group id sg-0aa30007e2c425fcd egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0e55e2c7e673e7986 description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 54.209.237.40/32 refGroup None
+id sgr-052b310946f355763 description TCP/443 from Cloud Connector group id sg-02c78a5b9dae314bd ingress protocol tcp from 443 to 443 ip: None refGroup sg-0fa8e4c21ce095b3c
+id sgr-02a8dee3868ca6e4b description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.70/32 refGroup None
+id sgr-08257ee250978cd00 description OnBase Services Server https from Ansible group id sg-00d370359986594a6 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0fd8403b472809f09 description HTTPS to dca-vpc1-shared-cvo-sg group id sg-094db457920f1f7e7 egress protocol tcp from 443 to 443 ip: None refGroup sg-0d7b8edccdb82b083
+id sgr-04f78001c8e60bc9e description OnBase Services Server port 443 TCP to OCDeploy group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-04fa0719c6f328b58 description NetApp Cloud Manager https from Ansible group id sg-094db457920f1f7e7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-05113810e07bf5487 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.198.2.68/32 refGroup None
+id sgr-04b5765d860e4fd60 description TCP/443 to GCS Internal group id sg-00d370359986594a6 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-001324c494bea473b description HTTPS to CVO from External OCCM servers group id sg-0d7b8edccdb82b083 ingress protocol tcp from 443 to 443 ip: 10.65.0.244/32 refGroup None
+id sgr-0a4083fc880ee8262 description TCP/443 to cloud connector group id sg-02c78a5b9dae314bd egress protocol tcp from 443 to 443 ip: None refGroup sg-0fa8e4c21ce095b3c
+id sgr-0c54cb2b906849512 description OnBase Application Server port 443 TCP to OCDeploy group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-0058ab6065da585e0 description OnBase Web Server port 443 TCP to OCDeploy group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-0b8917fc94fd99b98 description OnBase Application Server port 443 TCP to OCDeploy group id sg-00a9846eee52fa430 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0bbbe1ea61233c7fb description Base 443/tcp to certificate authority group id sg-0183f022df43a7798 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0832f1bdad90e3b9f description MFT Back End port 443 TCP to OCDeploy group id sg-0b166623bf89e46c2 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0826289f4a86f0bc9 description shared  Database Server port 443 TCP to OCDeploy group id sg-0aa30007e2c425fcd egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00875347a70504e34 description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 54.209.90.185/32 refGroup None
+id sgr-0e23d11ac408ad7ea description None group id sg-06e240138c4c23a18 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0255a55e84e279b08 description NetApp Cloud Manager port 443 TCP to OCDeploy group id sg-094db457920f1f7e7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-094bc3ca2e878ace6 description TCP/443 to Traffic Manager Public IPs group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 3.213.124.14/32 refGroup None
+id sgr-01525af6a42394ee3 description TCP/443 to GCS internal group id sg-02c78a5b9dae314bd egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0ca43a158b49af412 description TCP/443 to GCS Internal group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-086d041321b9e2182 description OnBase Line of Business Server port 443 TCP to OCDeploy group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-001b4be546d591fee description TCP/443 to VDA group id sg-0fa8e4c21ce095b3c egress protocol tcp from 443 to 443 ip: None refGroup sg-02c78a5b9dae314bd
+id sgr-01c1e75026bc413b8 description OnBase Line of Business Server port 443 TCP to OCDeploy group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-045b350ed5eeb4f16 description TCP/443 from GCS Internal group id sg-0f708af88161d5753 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0f9cba216df76637a description OnBase Web Server port 443 TCP to OCDeploy group id sg-0edef9b5a13abe337 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-01b579436245d8b55 description OnBase Line of Business Server https from Ansible group id sg-0f708af88161d5753 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ca74f9f30bfbe224 description OnBase Line of Business Server port 443 TCP to OCDeploy group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-00ef5755db1d9c5c1 description TCP/443 from VDA group id sg-0fa8e4c21ce095b3c ingress protocol tcp from 443 to 443 ip: None refGroup sg-02c78a5b9dae314bd
+id sgr-03c68bbfd7c43546e description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 23.20.142.91/32 refGroup None
+id sgr-09e4c56c4ca19fc92 description TCP/443 to CC group id sg-0fa8e4c21ce095b3c egress protocol tcp from 443 to 443 ip: None refGroup sg-0fa8e4c21ce095b3c
+id sgr-0eb24d9427460d1e2 description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 3.214.165.21/32 refGroup None
+id sgr-0e3725d1c8a1beac3 description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 3.213.124.14/32 refGroup None
+id sgr-0091a4da24395bd73 description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 3.233.138.214/32 refGroup None
+id sgr-07d18e9cb86590190 description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 54.209.90.185/32 refGroup None
+id sgr-0a03002fd13a1e6d0 description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 34.205.180.189/32 refGroup None
+id sgr-07949bbb274e74b82 description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 54.209.237.40/32 refGroup None
+id sgr-0ba04869c3220edec description TCP/443 to Traffic Manager Public IPs group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 50.19.109.107/32 refGroup None
+id sgr-0f059d80c28e7b3cd description OnBase Line of Business Server port 443 TCP to OCDeploy group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-0ce8f1184cc2e4bb0 description OnBase Line of Business Server port 443 TCP to OCDeploy group id sg-0f708af88161d5753 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-05fd75a253437231a description Splunk HEC server port 443 TCP to OCDeploy group id sg-03e670203ddb8499e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03a0949804b69121b description SentryOne port 443 TCP to OCDeploy group id sg-02c431c7bf8865c02 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0f71d0a4c7268f721 description Base https from Ansible group id sg-006a38227eebb36ac ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-016afeaa41bebabb5 description Base 443/tcp to certificate authority group id sg-006a38227eebb36ac egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-00cd533a0f6a4757e description Splunk loghost port 443 TCP to OCDeploy group id sg-01b6a01b9c268d2c7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a7703478cf4d8170 description Postfix https from Ansible group id sg-02304df2e4fc7f4f1 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01e8a9dd0ab96acc3 description Base https from Ansible group id sg-006a38227eebb36ac ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08d0c1713f231ea51 description Splunk indexer port 443 TCP to OCDeploy group id sg-002166bb1b527aa90 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-07bf03f0f04034eec description SentryOne https from Ansible group id sg-02c431c7bf8865c02 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0654ebf2f2b1f4d74 description Splunk HEC server https from Ansible group id sg-03e670203ddb8499e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a4236305d2cf9ab7 description Postfix 443/tcp to certificate authority group id sg-02304df2e4fc7f4f1 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0ac0ebfabb5ce0e9f description Base port 443 TCP to OCDeploy group id sg-006a38227eebb36ac egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-0f46442b2101d44b7 description Splunk HEC server port 443 TCP to OCDeploy group id sg-03e670203ddb8499e egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-020b6e8978556cb0b description Splunk indexer 443/tcp to S3 group id sg-002166bb1b527aa90 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0585f52f85da3b517 description Splunk HEC server port 443 TCP to OCDeploy group id sg-03e670203ddb8499e egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-05a6fdf44504c3d48 description Splunk heavy forwarder 443/tcp to certificate authority group id sg-039fecaf4f348c934 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0af6b0e14d3310ac5 description Splunk search head 443/tcp to certificate authority group id sg-04bcfbf1f378f8067 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-097aac05e045cf47e description Splunk master 443/tcp to certificate authority group id sg-03c2a64ee3c902036 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-03ca47050fe3036c6 description Splunk deployer port 443 TCP to OCDeploy group id sg-015a5ebf22270c678 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-097a09e424266f4c5 description Splunk HEC server port 443 TCP to OCDeploy group id sg-03e670203ddb8499e egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-062b33160958a3102 description Splunk deployer https from Ansible group id sg-015a5ebf22270c678 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0071764b0b2910bea description ADDC 443/tcp to certificate authority group id sg-04f39fe1ee7acfcdf egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-097b2ae4f05beaea1 description Splunk loghost 443/tcp to certificate authority group id sg-01b6a01b9c268d2c7 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-07a0e6cb9d4fd8ae1 description Splunk heavy forwarder port 443 TCP to OCDeploy group id sg-039fecaf4f348c934 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-041e11d949c2db4db description Splunk master https from Ansible group id sg-03c2a64ee3c902036 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f55869a459e4357a description Splunk HEC server 443/tcp to certificate authority group id sg-03e670203ddb8499e egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0e20f93a89bb969c7 description Splunk search head port 443 TCP to OCDeploy group id sg-04bcfbf1f378f8067 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-033c8c7c1f9bf8f72 description Splunk master port 443 TCP to OCDeploy group id sg-03c2a64ee3c902036 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0103430a8eb0e818d description Postfix port 443 TCP to OCDeploy group id sg-02304df2e4fc7f4f1 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0957520974fb28150 description Splunk deployer 443/tcp to certificate authority group id sg-015a5ebf22270c678 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0d596d5e77a455682 description Splunk heavy forwarder https from Ansible group id sg-039fecaf4f348c934 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e5ee0ff2d6a43d3e description HTTPS Egress to AdManager group id sg-03e28083199f0c4c1 egress protocol tcp from 443 to 443 ip: 10.65.1.13/32 refGroup None
+id sgr-012fbaa33fd762010 description HTTPS Ingress from Public Internet group id sg-03e28083199f0c4c1 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0a6f6146b7656e57c description Splunk indexer https from Ansible group id sg-002166bb1b527aa90 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-044e4830e20671641 description Splunk indexer 443/tcp to KMS endpoint group id sg-002166bb1b527aa90 egress protocol tcp from 443 to 443 ip: None refGroup sg-0dde2ac3d8b35bdb8
+id sgr-0a49c490f711614a3 description Base port 443 TCP to OCDeploy group id sg-006a38227eebb36ac egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-017094729560d2168 description HTTPS Egress to AdManager group id sg-03e28083199f0c4c1 egress protocol tcp from 443 to 443 ip: 10.65.1.22/32 refGroup None
+id sgr-0337d06bd106cd876 description Splunk indexer 443/tcp to certificate authority group id sg-002166bb1b527aa90 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0d9139ce7e5885e0d description Splunk HEC server port 443 TCP to OCDeploy group id sg-03e670203ddb8499e egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-037cefb8c4cbe5850 description Splunk loghost https from Ansible group id sg-01b6a01b9c268d2c7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-06b658ccef84f2a7a description SentryOne 443/tcp to certificate authority group id sg-02c431c7bf8865c02 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0ddeb94d5c295d432 description Base https from Ansible group id sg-006a38227eebb36ac ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-05066a7e55b70f5ed description Splunk search head https from Ansible group id sg-04bcfbf1f378f8067 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-07769e8e3122d7960 description MServ port 443 TCP to OCDeploy group id sg-0e84d238980b7b64e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-060f327913c9a93bb description F5 https from Ansible group id sg-0695b9dbc29806586 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-051efa55d0c3fd10f description Nessus port 443 TCP to OCDeploy group id sg-083da89375a2b4838 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-042863d2caf5ab113 description Ivanti 443/tcp to certificate authority group id sg-06a228ed2e85cdeaf egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-02eecc3281489a687 description Hostmon TCP port 445 to All group id sg-06b39a30b58ef5def egress protocol tcp from 443 to 443 ip: None refGroup sg-06b39a30b58ef5def
+id sgr-0e7fb482b3d522cac description TCP/443 to GCS Internal group id sg-0695b9dbc29806586 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0d4c733839fe1a248 description Citrix ADC 443/tcp to certificate authority group id sg-0d41e027affc5918e egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0e8f24143dadd8342 description Citrix ADC https from Ansible group id sg-0d41e027affc5918e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0dc54e930abca2d81 description Hostmon TCP port 443 to Web/App group id sg-06b39a30b58ef5def egress protocol tcp from 443 to 443 ip: 0.0.0.0/32 refGroup None
+id sgr-01757ff358ed79d2a description MServ https from Ansible group id sg-0e84d238980b7b64e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-025e6a6d34aba50c2 description Backfile https from Ansible group id sg-0fa68669e7c698a79 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a516f072e6892a96 description F5 port 443 TCP to OCDeploy group id sg-0695b9dbc29806586 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0e346155e256f7418 description Suricata 443/tcp to certificate authority group id sg-0dc1718aa36ba2c88 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0e968aee2237e3028 description Client HTTPS from all group id sg-0d47b7fec460c02bc ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0687ed78529de79ff description Hostmon 443/tcp to certificate authority group id sg-0761d8c5b38ae9d44 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-068bc477890d07d01 description F5 port 443 TCP to OCDeploy group id sg-0695b9dbc29806586 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-00ca46e11189675c6 description KMS endpoint 443/tcp access group id sg-0dde2ac3d8b35bdb8 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0737fb5a0690465f5 description F5 port 443 TCP to OCDeploy group id sg-0695b9dbc29806586 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-0741074f7539cb230 description Suricata https from Ansible group id sg-0dc1718aa36ba2c88 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-09b81f79ecfe6b71f description Suricata port 443 TCP to OCDeploy group id sg-0dc1718aa36ba2c88 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00ef08be1009be4c1 description Ivanti https from Ansible group id sg-06a228ed2e85cdeaf ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f3f91417857dc4a7 description Management HTTPS from all group id sg-0d41e027affc5918e ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0b38252781b7b34e1 description F5 port 443 TCP to OCDeploy group id sg-0695b9dbc29806586 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0c0854a86a4440adc description Sophos https from Ansible group id sg-06ca54f216deab6f5 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a9c77ffa44878af5 description F5 port 443 TCP to OCDeploy group id sg-0695b9dbc29806586 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-04c0a1d8554245e0c description TCP/443 from Public Internet group id sg-0695b9dbc29806586 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0639ffd10df98327d description Nessus https from Ansible group id sg-083da89375a2b4838 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c840a74da703a010 description Sophos port 443 TCP to OCDeploy group id sg-06ca54f216deab6f5 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0d5828da83b68bc33 description Hostmon port 443 TCP to OCDeploy group id sg-0761d8c5b38ae9d44 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-01d4ccbb4983d11bb description Hostmon TCP port 445 to All group id sg-06b39a30b58ef5def ingress protocol tcp from 443 to 443 ip: None refGroup sg-06b39a30b58ef5def
+id sgr-0fe0861ae818e848c description Observium 443/tcp to certificate authority group id sg-07aff382e9ca47c42 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-02dce9f8af4f8c933 description MServ port 443 TCP to OCDeploy group id sg-0e84d238980b7b64e egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-00811cbf1730d07c8 description Backfile port 443 TCP to OCDeploy group id sg-0fa68669e7c698a79 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00bdbb33104f8dbeb description Citrix ADC port 443 TCP to OCDeploy group id sg-0d41e027affc5918e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0230d07e0981de7ee description Observium port 443 TCP to OCDeploy group id sg-07aff382e9ca47c42 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-054d32b9e212f78ba description Ivanti port 443 TCP to OCDeploy group id sg-06a228ed2e85cdeaf egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-033c8c6086d9b8647 description Observium https from Ansible group id sg-07aff382e9ca47c42 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-05b3ae71d0399b28a description Hostmon https from Ansible group id sg-0761d8c5b38ae9d44 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ba29432bcd854d61 description Backfile 443/tcp to certificate authority group id sg-0fa68669e7c698a79 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-04f5dff3c7a76620d description Search Head Load Balancer TCP/443 from Internet group id sg-04ee6f23e8941b393 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-01559954d27ffdc20 description Search Head TCP/443 from Search Head Load Balancer group id sg-0b13c1240459c2b72 ingress protocol tcp from 443 to 443 ip: None refGroup sg-04ee6f23e8941b393
+id sgr-043a713a21497b611 description Base port 443 TCP to OCDeploy group id sg-015301b2c774b765c egress protocol tcp from 443 to 443 ip: 10.5.128.117/32 refGroup None
+id sgr-06deb12fe6772cd48 description Base https from Ansible group id sg-0a8a1327f3ae7b18f ingress protocol tcp from 443 to 443 ip: 10.5.128.120/32 refGroup None
+id sgr-0ebff1d12f29b776d description Base port 443 TCP to OCDeploy group id sg-015301b2c774b765c egress protocol tcp from 443 to 443 ip: 10.50.0.13/32 refGroup None
+id sgr-06762665de3220446 description Hostmon TCP/443 to region supernet group id sg-096126780b7f4eabd egress protocol tcp from 443 to 443 ip: 172.28.0.0/15 refGroup None
+id sgr-085d3c8c24d4899ac description Base 443/tcp to certificate authority group id sg-0a8a1327f3ae7b18f egress protocol tcp from 443 to 443 ip: 10.1.2.101/32 refGroup None
+id sgr-0d3797ed467b1e900 description Base port 443 TCP to OCDeploy group id sg-0a8a1327f3ae7b18f egress protocol tcp from 443 to 443 ip: 10.5.128.117/32 refGroup None
+id sgr-0f663f637823fe9a2 description Hostmon TCP/443 to self group id sg-096126780b7f4eabd egress protocol tcp from 443 to 443 ip: None refGroup sg-096126780b7f4eabd
+id sgr-0a1c50fd7ff247ad3 description Base 443/tcp to certificate authority group id sg-015301b2c774b765c egress protocol tcp from 443 to 443 ip: 10.1.2.101/32 refGroup None
+id sgr-0ee975336847d195d description Search Head Load Balancer TCP/443 to Search Head group id sg-04ee6f23e8941b393 egress protocol tcp from 443 to 443 ip: None refGroup sg-0b13c1240459c2b72
+id sgr-065325ebf46ea5b76 description Base port 443 TCP to OCDeploy group id sg-0a8a1327f3ae7b18f egress protocol tcp from 443 to 443 ip: 10.50.0.13/32 refGroup None
+id sgr-0f6ba1173bd9a2bef description Indexer TCP/443 to S3 group id sg-0cefc23b598900a5c egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0910265563977567c description Hostmon TCP/443 from self group id sg-096126780b7f4eabd ingress protocol tcp from 443 to 443 ip: None refGroup sg-096126780b7f4eabd
+id sgr-0cd0d5d45e2098542 description Indexer TCP/443 to KMS endpoint group id sg-0cefc23b598900a5c egress protocol tcp from 443 to 443 ip: None refGroup sg-01e54fa879c8974dd
+id sgr-03c280d016ca9b776 description KMS endpoint TCP/443 from all group id sg-01e54fa879c8974dd ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0ce1315f00c813716 description Base https from Ansible group id sg-015301b2c774b765c ingress protocol tcp from 443 to 443 ip: 10.5.128.120/32 refGroup None
+id sgr-0f63d61940ea0312b description VNA DB https from Ansible group id sg-0ae054a88c79119d4 ingress protocol tcp from 443 to 443 ip: 10.5.128.120/32 refGroup None
+id sgr-06c54b4f626acfe33 description VNA Writer port 443 TCP to OCDeploy group id sg-028d91a5406cfee66 egress protocol tcp from 443 to 443 ip: 10.50.0.13/32 refGroup None
+id sgr-06e1650dfaa24c6c7 description VNA DB port 443 TCP to OCDeploy group id sg-0ae054a88c79119d4 egress protocol tcp from 443 to 443 ip: 10.50.0.13/32 refGroup None
+id sgr-0be9599352542e970 description VNA HL7 port 443 TCP to OCDeploy group id sg-0c0884ece9c94df38 egress protocol tcp from 443 to 443 ip: 10.50.0.13/32 refGroup None
+id sgr-04c1846fa3453b30f description VNA HL7 https from Ansible group id sg-0c0884ece9c94df38 ingress protocol tcp from 443 to 443 ip: 10.5.128.120/32 refGroup None
+id sgr-0631321076ee3b134 description VNA Writer https from Ansible group id sg-028d91a5406cfee66 ingress protocol tcp from 443 to 443 ip: 10.5.128.120/32 refGroup None
+id sgr-0ba423c55bf94e56d description Base port 443 TCP to OCDeploy group id sg-041fe75f36a1b933b egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0c8665f6253bb0945 description VNA DB 443/tcp to certificate authority group id sg-0a703953c8f7a56e4 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0dc7439735b5751f5 description VNA xds https from Ansible group id sg-01d6ca31c2b21319c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08912b8b00815e923 description VNA HL7 port 443 TCP to OCDeploy group id sg-0f63d13ac40855a4b egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-00111893bca8fd1e1 description VNA HL7 port 443 TCP to OCDeploy group id sg-0f63d13ac40855a4b egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-04a6a9c0688df6670 description VNA Portal port 443 TCP to OCDeploy group id sg-0344faf7b0b59ed2c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-05a7eae7519a04772 description Base port 443 TCP to OCDeploy group id sg-041fe75f36a1b933b egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-00bcb73dd76722954 description VNA DB port 443 TCP to OCDeploy group id sg-0a703953c8f7a56e4 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09fbbe5d6ce444bd7 description VNA Migration port 443 to S3 endpoint group id sg-0c32ec14403da4203 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0f88a518900a60fc1 description VNA Application 443/tcp to certificate authority group id sg-0bfeabac2e3312547 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-052dc848404480820 description VNA xds 443/tcp to certificate authority group id sg-01d6ca31c2b21319c egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-096e36bf857ab2065 description VNA HL7 443/tcp to S3 endpoint group id sg-0f63d13ac40855a4b egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0da72868de7e5fae6 description VNA Migration port 443 TCP to OCDeploy group id sg-0c32ec14403da4203 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0452ff679d5c24e61 description VNA nilread port 443 TCP to OCDeploy group id sg-029aef86f02226898 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a42410aa856885e0 description VNA HL7 443/tcp to certificate authority group id sg-0f63d13ac40855a4b egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0871ab4793ae2df75 description Base https from Ansible group id sg-041fe75f36a1b933b ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01899bd5f43329798 description VNA nilread 443/tcp to certificate authority group id sg-029aef86f02226898 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-04c77e4040d8914a8 description VNA Portal 443/tcp to certificate authority group id sg-0344faf7b0b59ed2c egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-081bbe87e26dfc66b description VNA xds port 443 TCP to OCDeploy group id sg-01d6ca31c2b21319c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-09bca4feafa104ba5 description VNA Portal port 443 TCP to OCDeploy group id sg-0344faf7b0b59ed2c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06572679f6507e88a description VNA xds 1433/tcp to S3 group id sg-01d6ca31c2b21319c egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0b27ef9cf6092c373 description VNA nilread port 443 TCP to OCDeploy group id sg-029aef86f02226898 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0d543932b7fa78511 description VNA Application port 443 TCP to OCDeploy group id sg-0bfeabac2e3312547 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a65ed7ffe12679ab description VNA Portal port 443 to S3 endpoint group id sg-0344faf7b0b59ed2c egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-004c580496f829bd8 description VNA Portal 443/tcp from HostMon group id sg-0344faf7b0b59ed2c ingress protocol tcp from 443 to 443 ip: 10.64.0.254/32 refGroup None
+id sgr-09ab1585f0fa5143e description VNA Application port 443 to S3 endpoint group id sg-0bfeabac2e3312547 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0635f3565a0cec509 description VNA FSX https from Ansible group id sg-0b254f105953509b8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-03556089e039c33bd description VNA Portal https from Ansible group id sg-0344faf7b0b59ed2c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-00b770774343f2efc description VNA Migration https from Ansible group id sg-0c32ec14403da4203 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-095d24e679036ba68 description VNA DB port 443 TCP to OCDeploy group id sg-0a703953c8f7a56e4 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-054c43fb11e47760a description Base 443/tcp to certificate authority group id sg-041fe75f36a1b933b egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-09b0e2a96a780706d description VNA xds port 443 TCP to OCDeploy group id sg-01d6ca31c2b21319c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-022888107af7293da description VNA HL7 https from Ansible group id sg-0f63d13ac40855a4b ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-06c38776d85e33a74 description VNA DB https from Ansible group id sg-0a703953c8f7a56e4 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0945dd64793f913a2 description VNA Migration port 443 TCP to OCDeploy group id sg-0c32ec14403da4203 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03cda1b3ec0037f1e description VNA Application https from Ansible group id sg-0bfeabac2e3312547 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0804ac6fbbb48a33b description VNA nilread https from Ansible group id sg-029aef86f02226898 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-04f32fd58f453b891 description VNA Application port 443 TCP to OCDeploy group id sg-0bfeabac2e3312547 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0d911e36418b92024 description VNA Migration 443/tcp to certificate authority group id sg-0c32ec14403da4203 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-032cc06ae58848de1 description VNA FSX port 443 TCP to OCDeploy group id sg-0b254f105953509b8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-068e60321e1100397 description VNA Portal 443/tcp from HostMon group id sg-0344faf7b0b59ed2c ingress protocol tcp from 443 to 443 ip: 10.64.0.27/32 refGroup None
+id sgr-06c89c51d49b75d3f description Base https from Ansible group id sg-041fe75f36a1b933b ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-04101be45adee5ed4 description VNA nilread 1433/tcp to S3 group id sg-029aef86f02226898 egress protocol tcp from 443 to 443 ip: None refGroup None
+id sgr-0d3bea3a3696a06bf description VNA FSX port 443 TCP to OCDeploy group id sg-0b254f105953509b8 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0b47b93d68d69a34a description Base https from Ansible group id sg-041fe75f36a1b933b ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-008f26498b6833810 description TCP/443 to CVO from AIQUM group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.28/32 refGroup None
+id sgr-0b195ee4be57ac869 description Perceptive Content calsaws ST2 Agent Server port 443 TCP to OCDeploy group id sg-0076e7b3253308ffc egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-08ccb3a1b58bdab15 description Perceptive Content calsaws STG Integration Web Server port 443 TCP to OCDeploy group id sg-01001b9f5b75a17d0 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0253945eefc6aa2b5 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.152.2.19/32 refGroup None
+id sgr-0b3c0fc80f0913ce4 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.70/32 refGroup None
+id sgr-0d137a2e0dd1136e9 description Perceptive Content calsaws AT1 Agent Server https from Ansible group id sg-01498b3fb6c6adde9 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d5b5420c53099364 description Perceptive Content calsaws  Brainware Capture Server https from Ansible group id sg-01688c3d25cb1a07e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-099dac33c2e747577 description Perceptive Content calsaws STG Preferences Web Server port 443 TCP to OCDeploy group id sg-0158406beda2c54a5 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a2ac856eb400fd50 description HTTPS to VPC group id sg-002e5056002471513 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-09b400b352b21bbcb description TCP/443 from VDA group id sg-0153a6d68eff1e9fe ingress protocol tcp from 443 to 443 ip: None refGroup sg-0a9977cfb9c3162ec
+id sgr-07c0e2eb9fcf80c79 description HTTPS from ECM VPC group id sg-0100027b70acfb1e9 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-06fea033d6c5541c6 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 35.80.138.81/32 refGroup None
+id sgr-0cff534e6ceaca465 description Perceptive Content calsaws ST2 Application Server port 443 TCP to OCDeploy group id sg-0037e379914bab358 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0429362c8aeceaf42 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 44.234.226.178/32 refGroup None
+id sgr-03889c5dcf60eb84b description Perceptive Content calsaws ST2 Agent Server https from Ansible group id sg-0076e7b3253308ffc ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f52b5d110c3ca43a description Perceptive Content calsaws ST2 Application Server port 443 TCP to OCDeploy group id sg-0037e379914bab358 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03d4beebbf7b055c2 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 54.69.201.31/32 refGroup None
+id sgr-0d1035704c25c0f3b description HTTPS to VPC group id sg-0100027b70acfb1e9 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0a44173f3ca3efa43 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 52.89.208.175/32 refGroup None
+id sgr-04767b516e4425b82 description HTTPS to VPC group id sg-0076e7b3253308ffc egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02d83fab1d147e105 description HTTPS from Public Internet group id sg-000ae2944c840db6f ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0823d4a8bb64bd6b7 description Perceptive Content calsaws UAT Agent Server port 443 TCP to OCDeploy group id sg-0100027b70acfb1e9 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-038860aaa5d68698c description OnBase Services Server port 443 TCP to OCDeploy group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-052479a763d2fcd2e description TCP/443 services to S3 endpoint group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 3.5.80.0/21 refGroup None
+id sgr-0d7a6d085e531c0b8 description HTTPS to VPC group id sg-01001b9f5b75a17d0 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0ea01ae32288682d1 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.64/32 refGroup None
+id sgr-0ea33b76a0ac93eab description HTTPS to VPC group id sg-000384ea809a656d7 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0e0e87dc5923d9e92 description Perceptive Content calsaws UAT Agent Server https from Ansible group id sg-0100027b70acfb1e9 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a508d97c2478e03a description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.210.0.80/32 refGroup None
+id sgr-0127b15eb5a16ac6c description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.65/32 refGroup None
+id sgr-0faf2c17a3b40dfca description Perceptive Content calsaws STG Integration Web Server https from Ansible group id sg-01001b9f5b75a17d0 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-09f0f19cf36f058bf description HTTPS to VPC group id sg-0037e379914bab358 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-03dd8737b2b220659 description HTTPS from ECM VPC group id sg-01498b3fb6c6adde9 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01522ee67254df298 description Perceptive Content calsaws ST4 Web Server https from Ansible group id sg-002e5056002471513 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0b17c4f25db696e0a description OnBase Services Server port 443 TCP to OCDeploy group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-082123a3437d19341 description NetApp Cloud Volumes ONTAP port 443 TCP to OCDeploy group id sg-01548ff788877cb25 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-009d655f2b0303e04 description Perceptive Content calsaws ST2 Application Server https from Ansible group id sg-0037e379914bab358 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-04c551f81701903b9 description HTTPS to VPC group id sg-01688c3d25cb1a07e egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0e0933a2f5a5ff09f description Perceptive Content calsaws UAT Agent Server port 443 TCP to OCDeploy group id sg-0100027b70acfb1e9 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06b9b497611137d6d description HTTPS to VPC group id sg-01498b3fb6c6adde9 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-027ec4a7d74e57d5d description OnBase Services Server port 443 TCP to OCDeploy group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-06f0039127fd328cb description Perceptive Content calsaws  Brainware Capture Server port 443 TCP to OCDeploy group id sg-01688c3d25cb1a07e egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-08474a9689ac88912 description HTTPS from VPC group id sg-000ae2944c840db6f ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-054b9c46684f33e5f description TCP/443 services to S3 endpoint group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 52.92.128.0/17 refGroup None
+id sgr-0901506692b223f81 description TCP/443 to CC group id sg-0153a6d68eff1e9fe egress protocol tcp from 443 to 443 ip: None refGroup sg-0153a6d68eff1e9fe
+id sgr-01747b72bfb334f6c description OnBase Services Server port 443 TCP to OCDeploy group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-01b15089a880f90ea description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 35.80.136.127/32 refGroup None
+id sgr-0b68c80e7eb6b014d description TCP/443 to VDA group id sg-0153a6d68eff1e9fe egress protocol tcp from 443 to 443 ip: None refGroup sg-0a9977cfb9c3162ec
+id sgr-088d354828e1b2d16 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.67/32 refGroup None
+id sgr-06063202b65baf28f description Perceptive Content calsaws AT1 Application Server https from Ansible group id sg-000384ea809a656d7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0015a633ecbbd49ee description Perceptive Content calsaws ST4 Web Server port 443 TCP to OCDeploy group id sg-002e5056002471513 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-030cc490861891c77 description Perceptive Content calsaws STG Preferences Web Server port 443 TCP to OCDeploy group id sg-0158406beda2c54a5 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0513a2baf5974aa96 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.66/32 refGroup None
+id sgr-07577efcbcb6273a3 description TCP/443 to GCS Internal group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0c8cefac5417e58a4 description HTTPS from ECM VPC group id sg-0076e7b3253308ffc ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-03646646faf2c7ef6 description Perceptive Content calsaws AT1 Agent Server port 443 TCP to OCDeploy group id sg-01498b3fb6c6adde9 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0255a4b8be8e6a907 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.69/32 refGroup None
+id sgr-02dee3495aef01ec8 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 35.165.128.209/32 refGroup None
+id sgr-047ae657b35429ded description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 34.214.13.99/32 refGroup None
+id sgr-0d6bc1ed05a9de756 description OnBase Services Server port 443 TCP to OCDeploy group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-0682d41a75ac1446e description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.152.2.20/32 refGroup None
+id sgr-026e7a7e15a382622 description Perceptive Content calsaws AT1 Application Server port 443 TCP to OCDeploy group id sg-000384ea809a656d7 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-01497b393cc4e80ab description TCP/443 services to S3 endpoint group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 3.5.76.0/22 refGroup None
+id sgr-0899cb301bd566d3e description Perceptive Content calsaws STG Preferences Web Server https from Ansible group id sg-0158406beda2c54a5 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-04377a5b57847fae6 description OnBase Services Server https from Ansible group id sg-00b12269874eadeb3 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-009c402c6b97ed709 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 52.10.17.236/32 refGroup None
+id sgr-0107e196e9230b80b description HTTPS/443 to calsaws TRN Reporting Servers group id sg-000ae2944c840db6f egress protocol tcp from 443 to 443 ip: None refGroup sg-050b39d55de7cd4f9
+id sgr-073f817463224788d description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 44.232.255.122/32 refGroup None
+id sgr-0356bc66b23aeed2b description TCP/443 to CVO from AIQUM group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.152.2.28/32 refGroup None
+id sgr-0ca67fece09be7b68 description Perceptive Content calsaws ST2 Agent Server port 443 TCP to OCDeploy group id sg-0076e7b3253308ffc egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0ea371db840ec95fc description Perceptive Content calsaws STG Integration Web Server port 443 TCP to OCDeploy group id sg-01001b9f5b75a17d0 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0bf3a07fcc0c201d2 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.210.0.82/32 refGroup None
+id sgr-0b8ec76a8dbcc8795 description TCP/8443 to VPC group id sg-0158406beda2c54a5 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-061e6cc2e228d23d2 description Perceptive Content calsaws  Brainware Capture Server port 443 TCP to OCDeploy group id sg-01688c3d25cb1a07e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-076ca697f8928a02e description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.210.0.83/32 refGroup None
+id sgr-0f553f33dcd5fe5dc description TCP/443 services to S3 endpoint group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 52.218.128.0/17 refGroup None
+id sgr-090aec77970211ff5 description TCP/443 to CVO from Insight machines group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.234/32 refGroup None
+id sgr-0bdc2056a10e8a976 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 34.211.69.99/32 refGroup None
+id sgr-0987a7b1b3e6cff2f description NetApp Cloud Volumes ONTAP port 443 TCP to OCDeploy group id sg-01548ff788877cb25 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-00f3fabb93abb6c60 description Perceptive Content calsaws AT1 Application Server port 443 TCP to OCDeploy group id sg-000384ea809a656d7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0326b2977b1d0d48c description NetApp Cloud Volumes ONTAP https from Ansible group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0412b8f397fe7ba72 description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 35.84.72.41/32 refGroup None
+id sgr-0ea9ac1421402be6f description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.210.0.81/32 refGroup None
+id sgr-07f3b0f47dc16ea91 description HTTPS to CVO from Splunk Data Collection Nodes and Schedulers group id sg-01548ff788877cb25 ingress protocol tcp from 443 to 443 ip: 10.198.2.68/32 refGroup None
+id sgr-05b62d85a7b0f0a02 description Perceptive Content calsaws ST4 Web Server port 443 TCP to OCDeploy group id sg-002e5056002471513 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-00ee7e48c38ab6287 description Perceptive Content calsaws AT1 Agent Server port 443 TCP to OCDeploy group id sg-01498b3fb6c6adde9 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09d8b93ee0e86dade description TCP/443 to Traffic Manager Public IPs group id sg-00b12269874eadeb3 egress protocol tcp from 443 to 443 ip: 50.112.174.15/32 refGroup None
+id sgr-0c8508f046fdd974a description Cloud Portal port 443 TCP to OCDeploy group id sg-0285035202aca23a8 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0f964b50ab89bad29 description HTTPS to VPC group id sg-01d3427ca82525ea5 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0527e9f77f8cd315d description HTTPS Ingress from Public Internet group id sg-0339139bcbea8aa36 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-08c7da67cbad9f131 description TCP/443 from Citrix VDA group id sg-0367e55113b1b959c ingress protocol tcp from 443 to 443 ip: None refGroup sg-0a9977cfb9c3162ec
+id sgr-0062350f4fd05762e description NetApp Cloud Volumes ONTAP Mediator port 443 TCP to OCDeploy group id sg-031d550d1b2b13edb egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-03a6892495fe72d8c description HTTPS from ECM VPC group id sg-02c53c2938f9d6c87 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-00499c2187f126ad9 description Perceptive Content calsaws CNV Reporting Server port 443 TCP to OCDeploy group id sg-03a5761c7052f2362 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-06ebe5fb130d5d10b description HTTPS/443 from Public Internet group id sg-03a5761c7052f2362 ingress protocol tcp from 443 to 443 ip: None refGroup sg-0d987111cbc2210dd
+id sgr-0b2d5fcf37b19f240 description Perceptive Content calsaws ST4 Application Server https from Ansible group id sg-01d3427ca82525ea5 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-09049c747a87ed9a9 description calsaws  Database Server port 443 TCP to OCDeploy group id sg-02b7810fa2f6ee0c4 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-057aaafb75df721ad description HTTPS to VPC group id sg-01a0097d76407bfaf egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01e397cb12824e9e5 description f3 ondemand port 443 to S3 endpoint group id sg-02f107532af7e2a99 egress protocol tcp from 443 to 443 ip: 3.5.76.0/22 refGroup None
+id sgr-005b7491ea6ded84c description Cloud Portal https from Ansible group id sg-0285035202aca23a8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-09c35e17e8741680b description f3 ondemand port 443 to S3 endpoint group id sg-02f107532af7e2a99 egress protocol tcp from 443 to 443 ip: 52.218.128.0/17 refGroup None
+id sgr-07fdeded4d672c97f description HTTPS from Public Internet group id sg-019322148cc3a286d ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0ae3dcb1b6ab78b6d description HTTPS from Public Internet group id sg-030e7c593db32ff79 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-04fda29e4cb989e6a description Perceptive Content calsaws  Integration Web Server port 443 TCP to OCDeploy group id sg-02f5ad688a600bbf2 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0edd0d4f946daf276 description MFT Back End https from Ansible group id sg-0326c390ae2288340 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-03085928008f8fe5c description calsaws  Database Server port 443 TCP to OCDeploy group id sg-02b7810fa2f6ee0c4 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0262801672ce6a433 description Perceptive Content calsaws ST4 Application Server port 443 TCP to OCDeploy group id sg-01d3427ca82525ea5 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0f009444468ef94af description calsaws  Database Server https from Ansible group id sg-02b7810fa2f6ee0c4 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-049904bf3eda84897 description HTTPS from VPC group id sg-019322148cc3a286d ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-07ef901343eb05d1e description Perceptive Content calsaws AT1 Web Server port 443 TCP to OCDeploy group id sg-03273757f4583acf9 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-05e52a304f696b7c8 description shared  RabbitMQ Server https from Ansible group id sg-034e004721ed77e7d ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01d156a9a2f46f349 description Perceptive Content calsaws CNV Reporting Server https from Ansible group id sg-03a5761c7052f2362 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0387a28413f4533ec description Perceptive Content calsaws ST4 Application Server port 443 TCP to OCDeploy group id sg-01d3427ca82525ea5 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06d16f3eefa9401fd description HTTPS/443 to calsaws  Reporting Servers group id sg-030e7c593db32ff79 egress protocol tcp from 443 to 443 ip: None refGroup sg-0800db8b730fbe549
+id sgr-0fc1cbfa9c1191943 description Perceptive Content calsaws STG Application Server https from Ansible group id sg-0367e55113b1b959c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-058af05a320c3d76f description Perceptive Content calsaws STG Rendering Web Server port 443 TCP to OCDeploy group id sg-01a0097d76407bfaf egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-043cfd2a25cccae9a description f3 ondemand port 443 to S3 endpoint group id sg-02f107532af7e2a99 egress protocol tcp from 443 to 443 ip: 3.5.80.0/21 refGroup None
+id sgr-04a87dd49a00bd996 description Perceptive Content calsaws ST4 Agent Server https from Ansible group id sg-02c53c2938f9d6c87 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-03ad34d457b844a1c description Perceptive Content calsaws  Integration Web Server port 443 TCP to OCDeploy group id sg-02f5ad688a600bbf2 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0958cd193dc6812b5 description Perceptive Content calsaws STG Application Server port 443 TCP to OCDeploy group id sg-0367e55113b1b959c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0931d9bbe827f629a description MFT Back End port 443 TCP to OCDeploy group id sg-0326c390ae2288340 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-09e1d9a4ca65c71a4 description HTTPS to VPC group id sg-0367e55113b1b959c egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-073f7aaa2e71053f4 description MFT Back End port 443 TCP to OCDeploy group id sg-0326c390ae2288340 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0cda63b4496217c14 description f3 ondemand port 443 from onbase app group id sg-02f107532af7e2a99 ingress protocol tcp from 443 to 443 ip: None refGroup sg-0ed0120691dd882c1
+id sgr-0385dca22302c9a0e description Perceptive Content calsaws STG Rendering Web Server port 443 TCP to OCDeploy group id sg-01a0097d76407bfaf egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0347ed838098d362f description Perceptive Content calsaws ST4 Agent Server port 443 TCP to OCDeploy group id sg-02c53c2938f9d6c87 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0d09479f1f898244c description Cloud Portal 443/tcp to certificate authority group id sg-0285035202aca23a8 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0b77745bc2525043c description Perceptive Content calsaws AT1 Web Server https from Ansible group id sg-03273757f4583acf9 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-096a416de7fe46ba8 description shared  RabbitMQ Server port 443 TCP to OCDeploy group id sg-034e004721ed77e7d egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-04a97774179842b10 description Perceptive Content calsaws STG Rendering Web Server https from Ansible group id sg-01a0097d76407bfaf ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d5b90e0bf5e18595 description NetApp Cloud Volumes ONTAP Mediator https from Ansible group id sg-031d550d1b2b13edb ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-051691a187c8033bc description HTTPS to VPC group id sg-02c53c2938f9d6c87 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0f8459ff1ff45b68a description Perceptive Content calsaws AT1 Web Server port 443 TCP to OCDeploy group id sg-03273757f4583acf9 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0fc93fb962935865d description Perceptive Content calsaws ST4 Agent Server port 443 TCP to OCDeploy group id sg-02c53c2938f9d6c87 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a21a1e9806603db2 description shared  RabbitMQ Server port 443 TCP to OCDeploy group id sg-034e004721ed77e7d egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a8e4714bb3381a2c description calsaws  Database Server 443/tcp to certificate authority group id sg-02b7810fa2f6ee0c4 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0aa6236de01b6e159 description NetApp Cloud Volumes ONTAP Mediator port 443 TCP to OCDeploy group id sg-031d550d1b2b13edb egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0dd309d0a529b29fc description Perceptive Content calsaws STG Application Server port 443 TCP to OCDeploy group id sg-0367e55113b1b959c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-094a7b5110f6e682a description HTTPS from VPC group id sg-030e7c593db32ff79 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02e4d4a2308837f48 description HTTPS/443 to calsaws AT1 Reporting Servers group id sg-019322148cc3a286d egress protocol tcp from 443 to 443 ip: None refGroup sg-0d27b756c6d237c84
+id sgr-090167757b9833359 description f3 ondemand port 443 to S3 endpoint group id sg-02f107532af7e2a99 egress protocol tcp from 443 to 443 ip: 52.92.128.0/17 refGroup None
+id sgr-0b130347c4681c6ee description Cloud Portal port 443 TCP to OCDeploy group id sg-0285035202aca23a8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09dc07a404afef0a9 description HTTPS to VPC group id sg-03273757f4583acf9 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0054c5c62609e88a2 description HTTPS to VPC group id sg-02f5ad688a600bbf2 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0eec670bdb3711ef4 description TCP/443 Egress to All group id sg-0339139bcbea8aa36 egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0120f1726ea5747bc description Perceptive Content calsaws  Integration Web Server https from Ansible group id sg-02f5ad688a600bbf2 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ce8fa61586b159bd description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 35.80.138.81/32 refGroup None
+id sgr-062a725c7aa0d9b3d description Perceptive Content calsaws ST3 Agent Server https from Ansible group id sg-05ff71b81b17b4f0d ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0bcbe242bcbfaabbf description Perceptive Content calsaws  Agent Server port 443 TCP to OCDeploy group id sg-04138fc38d7ad558b egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-02b2dcc386ed531e8 description HTTPS to VPC group id sg-05ff71b81b17b4f0d egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0565af85098d7bd91 description HTTPS to pdx-vpc1-shared-cvo-sg group id sg-04e4c4720dc21eab5 egress protocol tcp from 443 to 443 ip: None refGroup sg-01548ff788877cb25
+id sgr-05dafe83556b5f78d description Perceptive Content calsaws ST1 Brainware Capture Server port 443 TCP to OCDeploy group id sg-04a21e89b4503f280 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-09b96b78f7a57769b description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 52.10.17.236/32 refGroup None
+id sgr-0575547de6f823066 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 35.165.128.209/32 refGroup None
+id sgr-07515aab8c36d44f7 description Perceptive Content calsaws AT2 Agent Server https from Ansible group id sg-04e44a46b61ce9125 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-09d01ff220240d9f0 description HTTPS/443 to calsaws UAT2 Reporting Servers group id sg-05a87b9a0d84509b6 egress protocol tcp from 443 to 443 ip: None refGroup sg-0e30e2c3994478f74
+id sgr-0d3464a3e0e6a623a description Perceptive Content calsaws TRN Reporting Server port 443 TCP to OCDeploy group id sg-050b39d55de7cd4f9 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-02a8bc973a81bbde7 description HTTPS to VPC group id sg-03cf918daf7ee903b egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-056ef62981ad860da description Perceptive Content calsaws UAT2 Application Server port 443 TCP to OCDeploy group id sg-03fd0f76575321d43 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06a761fa657fd4a54 description HTTPS to VPC group id sg-050b39d55de7cd4f9 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-045cacf5e3c971e6f description HTTPS from ECM VPC group id sg-05ff71b81b17b4f0d ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0b9956125350ae6f8 description Perceptive Content calsaws TRN Reporting Server https from Ansible group id sg-050b39d55de7cd4f9 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0448c600e31acea74 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 54.69.201.31/32 refGroup None
+id sgr-0186c1a6f5a24bd99 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 44.234.226.178/32 refGroup None
+id sgr-05ae37de911c106bc description HTTPS to VPC group id sg-04e44a46b61ce9125 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-03949ad50a92f5c1f description OnBase Web Server port 443 TCP to OCDeploy group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0dbdf88164ecdb2ff description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 44.232.255.122/32 refGroup None
+id sgr-078465536f60627a5 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 35.84.72.41/32 refGroup None
+id sgr-0312b96d81b446138 description Perceptive Content calsaws TRN Reporting Server port 443 TCP to OCDeploy group id sg-050b39d55de7cd4f9 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-01af7f499442ef805 description Perceptive Content calsaws STG Brainware Capture Server port 443 TCP to OCDeploy group id sg-0590d413ebed81896 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0fdc4252c0978fd9f description HTTPS from VPC group id sg-05a87b9a0d84509b6 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0e77a1b02a58dd113 description HTTPS to VPC group id sg-03a5761c7052f2362 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0a355d5ce5b84bf9b description Perceptive Content calsaws STG Brainware Capture Server https from Ansible group id sg-0590d413ebed81896 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e961912b79bf5c77 description HTTPS to VPC group id sg-04138fc38d7ad558b egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0da8d74f52f57cd9c description Perceptive Content calsaws AT2 Agent Server port 443 TCP to OCDeploy group id sg-04e44a46b61ce9125 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0027a11d0912ad0f9 description MANUAL - NetApp Cloud Manager port 443 to all DCA VPC group id sg-04e4c4720dc21eab5 egress protocol tcp from 443 to 443 ip: 10.69.0.0/22 refGroup None
+id sgr-00f528bf1fa71d04c description OnBase Web Server port 443 TCP to OCDeploy group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-038c79f3898c7abdd description Perceptive Content calsaws TRN Brainware Capture Server port 443 TCP to OCDeploy group id sg-03cf918daf7ee903b egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-055b6c21862e2dc02 description Perceptive Content calsaws AT2 Agent Server port 443 TCP to OCDeploy group id sg-04e44a46b61ce9125 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-00186aba004a9d8fe description HTTPS to VPC group id sg-0590d413ebed81896 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0943a84833a19f56d description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 50.112.174.15/32 refGroup None
+id sgr-0dbb7766747d8c0b5 description Perceptive Content calsaws TRN Brainware Capture Server https from Ansible group id sg-03cf918daf7ee903b ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-064e37208b73a1759 description OnBase Web Server port 443 TCP to OCDeploy group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-07ac1167b4b73d2e6 description NetApp Cloud Manager https from Ansible group id sg-04e4c4720dc21eab5 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0363ccd5c08586a06 description Perceptive Content calsaws TRN Brainware Capture Server port 443 TCP to OCDeploy group id sg-03cf918daf7ee903b egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0d5782e64d5085c01 description Perceptive Content calsaws STG Experience Web Server port 443 TCP to OCDeploy group id sg-04d1ba02b16a5ad08 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0626da23dff0bcfb4 description HTTPS from Public Internet group id sg-0555abca921d977ed ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0053dd79645b956e4 description HTTPS to VPC group id sg-04d1ba02b16a5ad08 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02bed010cb8d3aa41 description Perceptive Content calsaws ST1 Brainware Capture Server https from Ansible group id sg-04a21e89b4503f280 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0f5a969e6ae739f87 description HTTPS to VPC group id sg-04a21e89b4503f280 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-075c87b8dbc9dfe63 description HTTPS from VPC group id sg-05126c2bd7551f431 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-05fbbe9d73457d95c description OnBase Web Server https from Ansible group id sg-05d893c20cccf0102 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d2668b496c10608a description HTTPS from Public Internet group id sg-05a87b9a0d84509b6 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0850e48c133c32bd0 description Perceptive Content calsaws CNV Reporting Server port 443 TCP to OCDeploy group id sg-03a5761c7052f2362 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0bf1c7e44fd56d80d description Perceptive Content calsaws ST1 Brainware Capture Server port 443 TCP to OCDeploy group id sg-04a21e89b4503f280 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-05c950b644faacf35 description HTTPS from ECM VPC group id sg-04e44a46b61ce9125 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0b8b788a9def3fe21 description Perceptive Content calsaws  Agent Server https from Ansible group id sg-04138fc38d7ad558b ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-008223aa5536f2462 description HTTPS from VPC group id sg-0555abca921d977ed ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0d052dd5b050cd712 description HTTPS to VPC group id sg-03fd0f76575321d43 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-078f57efd3884d2af description Perceptive Content calsaws STG Experience Web Server https from Ansible group id sg-04d1ba02b16a5ad08 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-069464d0a8e86127d description Perceptive Content calsaws UAT2 Application Server https from Ansible group id sg-03fd0f76575321d43 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0b0f9908370efbb55 description HTTPS to External CVO Servers group id sg-04e4c4720dc21eab5 egress protocol tcp from 443 to 443 ip: 10.69.0.105/32 refGroup None
+id sgr-02a54df1e9867d616 description Perceptive Content calsaws STG Brainware Capture Server port 443 TCP to OCDeploy group id sg-0590d413ebed81896 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-027dcf08b5ed08640 description NetApp Cloud Manager port 443 TCP to OCDeploy group id sg-04e4c4720dc21eab5 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-08d87c68e064346f1 description HTTPS/443 to calsaws UAT Reporting Servers group id sg-05126c2bd7551f431 egress protocol tcp from 443 to 443 ip: None refGroup sg-09ac99606cb46b525
+id sgr-0083312e1db0f5129 description HTTPS from Public Internet group id sg-05126c2bd7551f431 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0de87e3b2bc57b334 description Perceptive Content calsaws UAT2 Application Server port 443 TCP to OCDeploy group id sg-03fd0f76575321d43 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0364e08291d405a22 description HTTPS to External CVO Servers group id sg-04e4c4720dc21eab5 egress protocol tcp from 443 to 443 ip: 10.69.1.113/32 refGroup None
+id sgr-0719eaac2a89ccb59 description NetApp Cloud Manager port 443 TCP to OCDeploy group id sg-04e4c4720dc21eab5 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-01eb7054fb0d73d02 description TCP/443 to GCS Internal group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0e596d7a97fb9223c description OnBase Web Server port 443 TCP to OCDeploy group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0e3a74c60ced830a6 description HTTPS/443 from Public Internet group id sg-050b39d55de7cd4f9 ingress protocol tcp from 443 to 443 ip: None refGroup sg-000ae2944c840db6f
+id sgr-0fc1a3c8e5806b0d3 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 35.80.136.127/32 refGroup None
+id sgr-023031b88842c3247 description TCP/443 from GCS Internal group id sg-05d893c20cccf0102 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0937f94eb843d4455 description OnBase Web Server port 443 TCP to OCDeploy group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-0dbf3c581a12b6548 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 34.211.69.99/32 refGroup None
+id sgr-0718cc34869e052f1 description Perceptive Content calsaws ST3 Agent Server port 443 TCP to OCDeploy group id sg-05ff71b81b17b4f0d egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-05c88a175c3ff901c description HTTPS/443 to calsaws STG Reporting Servers group id sg-0555abca921d977ed egress protocol tcp from 443 to 443 ip: None refGroup sg-08d57f3be8a7c3c4c
+id sgr-02722e3105b433d99 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 34.214.13.99/32 refGroup None
+id sgr-085e4804907835b47 description TCP/443 to Traffic Manager Public IPs group id sg-05d893c20cccf0102 egress protocol tcp from 443 to 443 ip: 52.89.208.175/32 refGroup None
+id sgr-019450b831b4cf151 description Perceptive Content calsaws STG Experience Web Server port 443 TCP to OCDeploy group id sg-04d1ba02b16a5ad08 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03b63912416b91553 description Perceptive Content calsaws  Agent Server port 443 TCP to OCDeploy group id sg-04138fc38d7ad558b egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0c2d3a4adff3c564d description Perceptive Content calsaws  Experience Web Server port 443 TCP to OCDeploy group id sg-0822cf2bccf6154fd egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-038088f35a9a5e8ad description Perceptive Content calsaws CNV Brainware Capture Server port 443 TCP to OCDeploy group id sg-08bd8bd84d26ae67a egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0e460e649b96cdb9a description Perceptive Content calsaws CNV Application Server https from Ansible group id sg-06dee3628492d5038 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-024d37e1d0e206775 description Perceptive Content calsaws UAT2 Web Server port 443 TCP to OCDeploy group id sg-08aa541fede856f14 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-081bbf04f6909fb52 description HTTPS from Public Internet group id sg-072a6a3af8f0973ef ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-036c704852d7753b1 description Perceptive Content calsaws UAT2 Web Server port 443 TCP to OCDeploy group id sg-08aa541fede856f14 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0414b38dad25591a3 description Perceptive Content calsaws  Reporting Server https from Ansible group id sg-0800db8b730fbe549 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-004ee32d033f1643d description Perceptive Content calsaws CNV Web Server port 443 TCP to OCDeploy group id sg-08ad36eabf2cf88d7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-060277810b33f111d description TCP/443 from Citrix VDA group id sg-0821bcd13a734d415 ingress protocol tcp from 443 to 443 ip: None refGroup sg-0a9977cfb9c3162ec
+id sgr-040c1f0de0b6ea49d description Perceptive Content calsaws AT2 Application Server https from Ansible group id sg-07cc03327cf916abf ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-04609c6da8eed25c3 description HTTPS to VPC group id sg-08bd8bd84d26ae67a egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-00479ff725f832ddf description HTTPS/443 to calsaws ST4 Reporting Servers group id sg-072a6a3af8f0973ef egress protocol tcp from 443 to 443 ip: None refGroup sg-0a682d4401e9b1b1c
+id sgr-03c589027470c4e8f description Perceptive Content calsaws  Reporting Server port 443 TCP to OCDeploy group id sg-0800db8b730fbe549 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b0daea3db73cf61c description Perceptive Content calsaws ST3 Agent Server port 443 TCP to OCDeploy group id sg-05ff71b81b17b4f0d egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0834f5a5c2b46889a description HTTPS/443 to calsaws ST3 Reporting Servers group id sg-08af464aeaedd4828 egress protocol tcp from 443 to 443 ip: None refGroup sg-0f3b781b35bf2c973
+id sgr-0e87869b1bf97354c description Perceptive Content calsaws  Reporting Server port 443 TCP to OCDeploy group id sg-0800db8b730fbe549 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0fbe995cc19895853 description Perceptive Content calsaws CNV Web Server port 443 TCP to OCDeploy group id sg-08ad36eabf2cf88d7 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-069ee7f085b6abc8a description Perceptive Content calsaws CNV Web Server https from Ansible group id sg-08ad36eabf2cf88d7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-094496fb6d976d0f4 description Perceptive Content calsaws  Application Server port 443 TCP to OCDeploy group id sg-0821bcd13a734d415 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-02a1b71b1056e6aea description HTTPS to VPC group id sg-0778161ba5e32a388 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02fead23d059d822b description HTTPS from Public Internet group id sg-08af464aeaedd4828 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-032adbe004e815b69 description Perceptive Content calsaws  Experience Web Server port 443 TCP to OCDeploy group id sg-0822cf2bccf6154fd egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0dcb40cf9a763d191 description calsaws  RabbitMQ Server port 443 TCP to OCDeploy group id sg-07febe58a4f339cdb egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-018db6e7d30b166d3 description Perceptive Content calsaws CNV Brainware Capture Server port 443 TCP to OCDeploy group id sg-08bd8bd84d26ae67a egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0ec5ae19451a3c367 description HTTPS to VPC group id sg-06dee3628492d5038 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0750ddb036359d3dd description HTTPS to VPC group id sg-0822cf2bccf6154fd egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-04518c81abf2e0068 description HTTPS from VPC group id sg-08af464aeaedd4828 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0c9aff6be95fa3773 description calsaws  RabbitMQ Server https from Ansible group id sg-07febe58a4f339cdb ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-088970cbb3eac049d description Perceptive Content calsaws CNV Application Server port 443 TCP to OCDeploy group id sg-06dee3628492d5038 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-02d369e4bf9888d61 description Perceptive Content calsaws AT2 Application Server port 443 TCP to OCDeploy group id sg-07cc03327cf916abf egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00197bdcb307f4554 description Perceptive Content calsaws ST1 Reporting Server port 443 TCP to OCDeploy group id sg-074fff06d48fdeb7f egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-04420778f99750e25 description HTTPS to VPC group id sg-0800db8b730fbe549 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-009ed2d5c2cf6413e description Perceptive Content calsaws ST1 Web Server port 443 TCP to OCDeploy group id sg-0778161ba5e32a388 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-08bc0e5ed768086cc description Perceptive Content calsaws CNV Brainware Capture Server https from Ansible group id sg-08bd8bd84d26ae67a ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-05259a74fafc9e3d7 description Perceptive Content calsaws UAT2 Web Server https from Ansible group id sg-08aa541fede856f14 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e65f8346b60e5d02 description Perceptive Content calsaws ST1 Web Server port 443 TCP to OCDeploy group id sg-0778161ba5e32a388 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0e4bb7534679777e7 description Perceptive Content calsaws  Application Server https from Ansible group id sg-0821bcd13a734d415 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0d777090440573b12 description HTTPS to VPC group id sg-08ad36eabf2cf88d7 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0463710ef1c669baf description Perceptive Content calsaws AT2 Application Server port 443 TCP to OCDeploy group id sg-07cc03327cf916abf egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0331a85999be2da9d description HTTPS to VPC group id sg-0821bcd13a734d415 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01a28fcf7791a773c description Perceptive Content calsaws CNV Application Server port 443 TCP to OCDeploy group id sg-06dee3628492d5038 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-073e55c3f9f01ec6f description HTTPS to VPC group id sg-074fff06d48fdeb7f egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-04f6f850c6884edbb description Perceptive Content calsaws  Application Server port 443 TCP to OCDeploy group id sg-0821bcd13a734d415 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0ed3204c44aa963ab description Perceptive Content calsaws  Experience Web Server https from Ansible group id sg-0822cf2bccf6154fd ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0374c609cda956070 description Perceptive Content calsaws ST1 Web Server https from Ansible group id sg-0778161ba5e32a388 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-058e1b742048a6bd7 description TCP/443 Egress to All group id sg-071982c3fc462da4d egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-09dfe203607332036 description HTTPS from VPC group id sg-072a6a3af8f0973ef ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0daef6541c35897b7 description HTTPS/443 from Public Internet group id sg-074fff06d48fdeb7f ingress protocol tcp from 443 to 443 ip: None refGroup sg-0c6775416ab8769e9
+id sgr-0a6936ca4aabb5146 description calsaws  RabbitMQ Server port 443 TCP to OCDeploy group id sg-07febe58a4f339cdb egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-012d1e6fbf1516845 description HTTPS/443 from Public Internet group id sg-0800db8b730fbe549 ingress protocol tcp from 443 to 443 ip: None refGroup sg-030e7c593db32ff79
+id sgr-0b4bb2875a11b64fc description HTTPS to VPC group id sg-08aa541fede856f14 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-005feab87d74a07f2 description Perceptive Content calsaws ST1 Reporting Server https from Ansible group id sg-074fff06d48fdeb7f ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a9a90c4bbcbd99f4 description HTTPS to VPC group id sg-07cc03327cf916abf egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0af7174b6babd4c4b description Perceptive Content calsaws ST1 Reporting Server port 443 TCP to OCDeploy group id sg-074fff06d48fdeb7f egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b3382a327828d3a4 description Perceptive Content calsaws ST4 Reporting Server port 443 TCP to OCDeploy group id sg-0a682d4401e9b1b1c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-07a2a09a5348ce310 description Perceptive Content calsaws STG Reporting Server port 443 TCP to OCDeploy group id sg-08d57f3be8a7c3c4c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a92d1d37519ad3d8 description Base https from Ansible group id sg-0924a2c44d422e312 ingress protocol tcp from 443 to 443 ip: 10.198.2.21/32 refGroup None
+id sgr-02f7bc4c50a132a75 description Perceptive Content calsaws UAT Web Server port 443 TCP to OCDeploy group id sg-0aae5150b45cf1918 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a24c16cef3e5f1fd description TCP/443 RDS to S3 endpoint group id sg-09a960c4d841239d4 egress protocol tcp from 443 to 443 ip: 3.5.76.0/22 refGroup None
+id sgr-06f6f80aa7081a2cb description Perceptive Content calsaws STG Reporting Server https from Ansible group id sg-08d57f3be8a7c3c4c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0046375f7ea88f3af description HTTPS to VPC group id sg-0a682d4401e9b1b1c egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0526aaf4ae22d1b5a description Base https from Ansible group id sg-0924a2c44d422e312 ingress protocol tcp from 443 to 443 ip: 10.198.2.9/32 refGroup None
+id sgr-0ccd9a27c33c4294f description Perceptive Content calsaws UAT Application Server https from Ansible group id sg-08e2673c0875a5b0d ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-097e9c5e0ce13f031 description Perceptive Content calsaws UAT Application Server port 443 TCP to OCDeploy group id sg-08e2673c0875a5b0d egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-04330b788b509c52a description HTTPS to VPC group id sg-09ac99606cb46b525 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0585346ecd6cd6884 description HTTPS to VPC group id sg-0a4879f1d43ca30be egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-00d3b8f0c645d28a9 description Perceptive Content calsaws  Database Conversion Server port 443 TCP to OCDeploy group id sg-09a50b880bfee75fd egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0397a77043664bf09 description shared  Database Server https from Ansible group id sg-092e9cb15cf8473b0 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ec2eebcfdaa640db description TCP/443 RDS to a workbox on EC2 instance group id sg-09a960c4d841239d4 egress protocol tcp from 443 to 443 ip: None refGroup sg-09a50b880bfee75fd
+id sgr-06610045601921caf description Perceptive Content calsaws UAT Reporting Server https from Ansible group id sg-09ac99606cb46b525 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0376eda4f0ad24be9 description Base 443/tcp to certificate authority group id sg-0924a2c44d422e312 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-09078cbb6497d5bb0 description Perceptive Content calsaws  Database Conversion Server port 443 TCP to OCDeploy group id sg-09a50b880bfee75fd egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a70a9cb83af1948b description Base port 443 TCP to OCDeploy group id sg-0924a2c44d422e312 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0338eebe2f596212f description HTTPS/443 from Public Internet group id sg-08d57f3be8a7c3c4c ingress protocol tcp from 443 to 443 ip: None refGroup sg-0555abca921d977ed
+id sgr-0c9e085fea58c5b0c description HTTPS to id-dev.calsaws.net group id sg-09ac99606cb46b525 egress protocol tcp from 443 to 443 ip: 44.239.115.40/32 refGroup None
+id sgr-0a2e175531f437bc7 description HTTPS to VPC group id sg-08e2673c0875a5b0d egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-05edad893a0d2526f description Perceptive Content calsaws ST4 Reporting Server port 443 TCP to OCDeploy group id sg-0a682d4401e9b1b1c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-01c97cffef9b507b7 description Perceptive Content calsaws UAT Web Server https from Ansible group id sg-0aae5150b45cf1918 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0964c523d8d9cdbea description TCP/443 from Cloud Connector group id sg-0a9977cfb9c3162ec ingress protocol tcp from 443 to 443 ip: None refGroup sg-0153a6d68eff1e9fe
+id sgr-071da1d310c5bc6a6 description Perceptive Content calsaws UAT Reporting Server port 443 TCP to OCDeploy group id sg-09ac99606cb46b525 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0e04469bc88ea3573 description Perceptive Content calsaws UAT Web Server port 443 TCP to OCDeploy group id sg-0aae5150b45cf1918 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0bee5a1e39305478b description HTTPS/443 from Public Internet group id sg-08fffe2d9a7b9b49c ingress protocol tcp from 443 to 443 ip: None refGroup sg-0effe60580d87ddca
+id sgr-06bd2e223d9386ed6 description HTTPS to VPC group id sg-08fffe2d9a7b9b49c egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0891553059d6c48d9 description shared  Database Server 443/tcp to certificate authority group id sg-092e9cb15cf8473b0 egress protocol tcp from 443 to 443 ip: 10.220.0.131/32 refGroup None
+id sgr-0eb7c1f45bb53d5a0 description TCP/443 to GCS internal group id sg-0a9977cfb9c3162ec egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-07d3e45a44af5a67a description Perceptive Content calsaws UAT Application Server port 443 TCP to OCDeploy group id sg-08e2673c0875a5b0d egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-01704385189688add description TCP/443 to cloud connector group id sg-0a9977cfb9c3162ec egress protocol tcp from 443 to 443 ip: None refGroup sg-0153a6d68eff1e9fe
+id sgr-0fb27bfe897b63775 description HTTPS/443 from Public Internet group id sg-09ac99606cb46b525 ingress protocol tcp from 443 to 443 ip: None refGroup sg-05126c2bd7551f431
+id sgr-0d8882fd9bc500748 description HTTPS to All group id sg-09a50b880bfee75fd egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0b89aa92141126da2 description TCP/443 to VDA group id sg-0a9977cfb9c3162ec egress protocol tcp from 443 to 443 ip: None refGroup sg-0a9977cfb9c3162ec
+id sgr-006bb647b0f0d1da6 description Perceptive Content calsaws ST4 Reporting Server https from Ansible group id sg-0a682d4401e9b1b1c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08b4264b7b73c79ee description TCP/443 RDS to S3 endpoint group id sg-09a960c4d841239d4 egress protocol tcp from 443 to 443 ip: 52.92.128.0/17 refGroup None
+id sgr-0a6f3ab4d8c7d9e2c description HTTPS to VPC group id sg-08d57f3be8a7c3c4c egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-078c79c041b79b741 description Base port 443 TCP to OCDeploy group id sg-0924a2c44d422e312 egress protocol tcp from 443 to 443 ip: 10.210.0.130/31 refGroup None
+id sgr-0317dbe0bd1d39b12 description Perceptive Content calsaws  Database Conversion Server https from Ansible group id sg-09a50b880bfee75fd ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-004bfbb383c1dcb60 description shared  Database Server port 443 TCP to OCDeploy group id sg-092e9cb15cf8473b0 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-059206513cc54c26e description TCP/443 RDS to S3 endpoint group id sg-09a960c4d841239d4 egress protocol tcp from 443 to 443 ip: 52.218.128.0/17 refGroup None
+id sgr-01ae9b9762409ae27 description Perceptive Content calsaws STG Reporting Server port 443 TCP to OCDeploy group id sg-08d57f3be8a7c3c4c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-064e029f4aca1a777 description Perceptive Content calsaws TRN Web Server port 443 TCP to OCDeploy group id sg-0a4879f1d43ca30be egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09cf4ee0739171423 description Perceptive Content calsaws UAT Reporting Server port 443 TCP to OCDeploy group id sg-09ac99606cb46b525 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09a476d23e4b351f2 description Perceptive Content calsaws TRN Web Server https from Ansible group id sg-0a4879f1d43ca30be ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-03902335f88340097 description HTTPS/443 from Public Internet group id sg-0a682d4401e9b1b1c ingress protocol tcp from 443 to 443 ip: None refGroup sg-072a6a3af8f0973ef
+id sgr-037fe9098d91b1337 description Base https from Ansible group id sg-0924a2c44d422e312 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-064d362bf50a152b7 description Perceptive Content calsaws ST2 Reporting Server port 443 TCP to OCDeploy group id sg-08fffe2d9a7b9b49c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0ea12bb15d6234a14 description shared  Database Server port 443 TCP to OCDeploy group id sg-092e9cb15cf8473b0 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-009d316dee7da9402 description Perceptive Content calsaws ST2 Reporting Server port 443 TCP to OCDeploy group id sg-08fffe2d9a7b9b49c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0f7b80b7087a10305 description TCP/443 RDS to S3 endpoint group id sg-09a960c4d841239d4 egress protocol tcp from 443 to 443 ip: 3.5.80.0/21 refGroup None
+id sgr-0a078e9bb711394f8 description Perceptive Content calsaws ST2 Reporting Server https from Ansible group id sg-08fffe2d9a7b9b49c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0bb2a7833c88f728d description HTTPS to VPC group id sg-0aae5150b45cf1918 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0966c1a9005f35604 description Perceptive Content calsaws TRN Web Server port 443 TCP to OCDeploy group id sg-0a4879f1d43ca30be egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-04af0e8553d4b9ac5 description HTTPS to VPC group id sg-0adbbee6b29096cc8 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0e1892d6bd0a1dab1 description Perceptive Content calsaws ST3 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0b52a452a136a39c7 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-03269d9f947c08b7c description HTTPS from ECM VPC group id sg-0c395b39747db5ef0 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01afe78137e78dd0f description Perceptive Content calsaws  Workflow Server https from Ansible group id sg-0adb363dcfc0892bf ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0b225f8aed09a24e4 description HTTPS to VPC group id sg-0af40b1cc8c67c6ae egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02f85f6770f5af946 description Perceptive Content calsaws ST2 Brainware Capture Server https from Ansible group id sg-0adbbee6b29096cc8 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0e04958cec886382e description Perceptive Content calsaws ST2 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0adbbee6b29096cc8 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0a8522a58e5e9c505 description HTTPS from VPC group id sg-0c6775416ab8769e9 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0c56bd3f34e4ed367 description Perceptive Content calsaws STG Middleware Web Server port 443 TCP to OCDeploy group id sg-0b58a650c42f32e86 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-012561b5d76e51b4c description Perceptive Content calsaws  Rendering Web Server port 443 TCP to OCDeploy group id sg-0cee8f524aead370c egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0f11cec5e5ee1f70b description HTTPS/443 to calsaws AT2 Reporting Servers group id sg-0af6e5d764898cee9 egress protocol tcp from 443 to 443 ip: None refGroup sg-0af40b1cc8c67c6ae
+id sgr-084ca8b1e1269c1ee description Perceptive Content calsaws AT2 Web Server https from Ansible group id sg-0c30f36cd194a9b58 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0491ffee9f31414f3 description HTTPS to VPC group id sg-0be351ea7c58931ba egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01c5494a04d81946e description HTTPS to VPC group id sg-0b58a650c42f32e86 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01983c3837cc45113 description HTTPS from Public Internet group id sg-0af6e5d764898cee9 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0703319a49aa1c552 description dip port 443 to S3 endpoint group id sg-0c0ba01c321aa5215 egress protocol tcp from 443 to 443 ip: 52.218.128.0/17 refGroup None
+id sgr-06926581a309cd7da description Perceptive Content calsaws  Preferences Web Server https from Ansible group id sg-0c8fa975bf0352d73 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ed235b80cee2a1f6 description Perceptive Content calsaws TRN Agent Server port 443 TCP to OCDeploy group id sg-0c395b39747db5ef0 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0730c2b7fcb4706b2 description Perceptive Content calsaws AT2 Web Server port 443 TCP to OCDeploy group id sg-0c30f36cd194a9b58 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-009d7ba1c2e566aaa description HTTPS to VPC group id sg-0ca8e38f3492be892 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-01512a70b0e8c2721 description Perceptive Content calsaws STG Middleware Web Server https from Ansible group id sg-0b58a650c42f32e86 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ada42400d3281027 description HTTPS Ingress from Public Internet group id sg-0b1d6af118929c773 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-007bf4d7bd0227d04 description HTTPS to VPC group id sg-0c30f36cd194a9b58 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0d84e85c5c3f18b8a description Perceptive Content calsaws ST2 Web Server port 443 TCP to OCDeploy group id sg-0be351ea7c58931ba egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0229a49c009fcbe6e description HTTPS from Public Internet group id sg-0c6775416ab8769e9 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-04fba02f2682f13ce description Perceptive Content calsaws ST4 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0b06cc1c51f03000e egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0c5616673b419bbf7 description Perceptive Content calsaws AT2 Reporting Server port 443 TCP to OCDeploy group id sg-0af40b1cc8c67c6ae egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-01a07b4d47ab116fc description Perceptive Content calsaws TRN Agent Server https from Ansible group id sg-0c395b39747db5ef0 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a4e1dede63495304 description Perceptive Content calsaws ST3 Application Server port 443 TCP to OCDeploy group id sg-0ca8e38f3492be892 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a2222edd88398f94 description HTTPS to ECM VPC group id sg-0adb363dcfc0892bf egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-059cd7244471ea364 description HTTPS/443 from Public Internet group id sg-0af40b1cc8c67c6ae ingress protocol tcp from 443 to 443 ip: None refGroup sg-0af6e5d764898cee9
+id sgr-0573154da50471546 description Perceptive Content calsaws STG Middleware Web Server port 443 TCP to OCDeploy group id sg-0b58a650c42f32e86 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0ad1bd2a4dee6afd8 description Perceptive Content calsaws  Workflow Server port 443 TCP to OCDeploy group id sg-0adb363dcfc0892bf egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-02c501cb5ebadb669 description HTTPS/443 to calsaws ST1 Reporting Servers group id sg-0c6775416ab8769e9 egress protocol tcp from 443 to 443 ip: None refGroup sg-074fff06d48fdeb7f
+id sgr-0c4dd30c54444debf description HTTPS to VPC group id sg-0b52a452a136a39c7 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-05cd9787eeb07c48e description HTTPS to VPC group id sg-0b06cc1c51f03000e egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02de6fc022d482487 description dip port 443 to S3 endpoint group id sg-0c0ba01c321aa5215 egress protocol tcp from 443 to 443 ip: 52.92.128.0/17 refGroup None
+id sgr-0fb9b2a1d23e03fbf description Perceptive Content calsaws  Preferences Web Server port 443 TCP to OCDeploy group id sg-0c8fa975bf0352d73 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0c8f8124082d9ff27 description dip port 443 to S3 endpoint group id sg-0c0ba01c321aa5215 egress protocol tcp from 443 to 443 ip: 3.5.80.0/21 refGroup None
+id sgr-01bbddb65d6547d14 description Perceptive Content calsaws ST2 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0adbbee6b29096cc8 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-08a2c7acab499c98d description TCP/8443 to VPC group id sg-0c8fa975bf0352d73 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0b95d6c263f8a29de description Perceptive Content calsaws ST2 Web Server https from Ansible group id sg-0be351ea7c58931ba ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0fb50cbf6041fefd4 description Perceptive Content calsaws  Workflow Server port 443 TCP to OCDeploy group id sg-0adb363dcfc0892bf egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0f8d7e8ff1b5a151c description Perceptive Content calsaws ST4 Brainware Capture Server https from Ansible group id sg-0b06cc1c51f03000e ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c63ff7fc4b765625 description Perceptive Content calsaws  Preferences Web Server port 443 TCP to OCDeploy group id sg-0c8fa975bf0352d73 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0c1631f1464fe17a5 description dip port 443 to S3 endpoint group id sg-0c0ba01c321aa5215 egress protocol tcp from 443 to 443 ip: 3.5.76.0/22 refGroup None
+id sgr-0edff1afe953c6f0d description Perceptive Content calsaws AT2 Web Server port 443 TCP to OCDeploy group id sg-0c30f36cd194a9b58 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0c62f3893968fa481 description Perceptive Content calsaws AT2 Reporting Server port 443 TCP to OCDeploy group id sg-0af40b1cc8c67c6ae egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-03b2f64936dcc5523 description Perceptive Content calsaws ST2 Web Server port 443 TCP to OCDeploy group id sg-0be351ea7c58931ba egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-06e287a20b98467df description Perceptive Content calsaws ST4 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0b06cc1c51f03000e egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-02a223a6163d3e3c5 description Perceptive Content calsaws ST3 Application Server port 443 TCP to OCDeploy group id sg-0ca8e38f3492be892 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-060490ea95a109660 description TCP/443 Egress to All group id sg-0b1d6af118929c773 egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0118c325db98c812f description Perceptive Content calsaws  Rendering Web Server https from Ansible group id sg-0cee8f524aead370c ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-04fc1eb762fe7fa10 description Perceptive Content calsaws ST3 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0b52a452a136a39c7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-008183becbdd96a2e description Perceptive Content calsaws ST3 Brainware Capture Server https from Ansible group id sg-0b52a452a136a39c7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-019854c1fd756df8d description Perceptive Content calsaws TRN Agent Server port 443 TCP to OCDeploy group id sg-0c395b39747db5ef0 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0d101a53921f4d890 description HTTPS to VPC group id sg-0c395b39747db5ef0 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0238c4632f9f6d151 description Perceptive Content calsaws AT2 Reporting Server https from Ansible group id sg-0af40b1cc8c67c6ae ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c00e809406a81040 description HTTPS from VPC group id sg-0af6e5d764898cee9 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-05f4b0fdc7af89106 description Perceptive Content calsaws ST3 Application Server https from Ansible group id sg-0ca8e38f3492be892 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01ba766dcbe544dee description HTTPS Ingress from Public Internet group id sg-0d7ae4075c07b5686 ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0c31a3fb75f0b7547 description HTTPS from ECM VPC group id sg-0df2dab6c85c5369b ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0a94758ff26a78175 description HTTPS to VPC group id sg-0cee8f524aead370c egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-059787ece7d96f15b description Perceptive Content calsaws UAT2 Agent Server https from Ansible group id sg-0df2dab6c85c5369b ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c0751ed41fc4179e description Perceptive Content calsaws TRN Application Server port 443 TCP to OCDeploy group id sg-0d2ee2449072aae78 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-011c03ade14efeb57 description Perceptive Content calsaws UAT2 Reporting Server port 443 TCP to OCDeploy group id sg-0e30e2c3994478f74 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-021feed2d23fc76e5 description HTTPS to ECM VPC group id sg-0e732a103ff12de65 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-04c8bc9c5130c9895 description Perceptive Content calsaws UAT2 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0d1ac211cbba08cba egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0feb3b131e58c9a04 description HTTPS/443 from Public Internet group id sg-0d27b756c6d237c84 ingress protocol tcp from 443 to 443 ip: None refGroup sg-019322148cc3a286d
+id sgr-06ec4175a19480fd7 description HTTPS to VPC group id sg-0ddfdb697122a3c30 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0dcae8285a35334fd description Perceptive Content calsaws STG Workflow Server port 443 TCP to OCDeploy group id sg-0e732a103ff12de65 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0079c14a2cadf8127 description Perceptive Content calsaws UAT2 Reporting Server https from Ansible group id sg-0e30e2c3994478f74 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-011220f7e2c6da3fb description Perceptive Content calsaws CNV Agent Server port 443 TCP to OCDeploy group id sg-0ddfdb697122a3c30 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-064f4aa96cb24e314 description Perceptive Content calsaws AT2 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0d13dae624e31c8b7 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0570e6fc144ae6614 description TCP/443 Egress to All group id sg-0dff22f3f9c8c6494 egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-02e061c65bce2da3e description Perceptive Content calsaws UAT Brainware Capture Server port 443 TCP to OCDeploy group id sg-0d243032e5214fdaa egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0c5a7118c0c6f2705 description HTTPS to VPC group id sg-0d2ee2449072aae78 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0466b46ed562a930a description Perceptive Content calsaws TRN Application Server https from Ansible group id sg-0d2ee2449072aae78 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-007bc1ce13c7771c0 description HTTPS to VPC group id sg-0d13dae624e31c8b7 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-04dc86e3524795944 description HTTPS to VPC group id sg-0e30e2c3994478f74 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-00df94aa6c6924f89 description Perceptive Content calsaws AT1 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0e7f2bc6dca69dc37 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-06042ed49249105ce description HTTPS from ECM VPC group id sg-0ddfdb697122a3c30 ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0697c311ac150b57f description Perceptive Content calsaws CNV Agent Server https from Ansible group id sg-0ddfdb697122a3c30 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0a9c656cc84d1d489 description Perceptive Content calsaws UAT2 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0d1ac211cbba08cba egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-08f5a45751f1b89fe description HTTPS to VPC group id sg-0d27b756c6d237c84 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0d4097858f75c4979 description Perceptive Content calsaws  Rendering Web Server port 443 TCP to OCDeploy group id sg-0cee8f524aead370c egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-09780b8e2bc017d12 description Perceptive Content calsaws STG Workflow Server https from Ansible group id sg-0e732a103ff12de65 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-038608c726402b26c description Perceptive Content calsaws AT1 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0e7f2bc6dca69dc37 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-053c9fe1b5d770b63 description Perceptive Content calsaws AT2 Brainware Capture Server port 443 TCP to OCDeploy group id sg-0d13dae624e31c8b7 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-09ae02a816437b2ac description Perceptive Content calsaws AT1 Reporting Server https from Ansible group id sg-0d27b756c6d237c84 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-01a9d0478ec4c7bc3 description Perceptive Content calsaws AT1 Brainware Capture Server https from Ansible group id sg-0e7f2bc6dca69dc37 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-06efd5d3958548b20 description TCP/443 Egress to All group id sg-0d7ae4075c07b5686 egress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0f2f27759f415b134 description Perceptive Content calsaws STG Workflow Server port 443 TCP to OCDeploy group id sg-0e732a103ff12de65 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0478fc0d574bc90c5 description Perceptive Content calsaws UAT Brainware Capture Server port 443 TCP to OCDeploy group id sg-0d243032e5214fdaa egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-01de93f0096e22a96 description Perceptive Content calsaws CNV Agent Server port 443 TCP to OCDeploy group id sg-0ddfdb697122a3c30 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0b93d25a1d76c85fb description HTTPS/443 from Public Internet group id sg-0e30e2c3994478f74 ingress protocol tcp from 443 to 443 ip: None refGroup sg-05a87b9a0d84509b6
+id sgr-07991deeb943e91de description Perceptive Content calsaws UAT2 Agent Server port 443 TCP to OCDeploy group id sg-0df2dab6c85c5369b egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-024c466b9ede6ffb3 description HTTPS to VPC group id sg-0d243032e5214fdaa egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-07424a298b456e5b2 description Perceptive Content calsaws UAT Brainware Capture Server https from Ansible group id sg-0d243032e5214fdaa ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08f7e546b5dfad128 description HTTPS/443 to calsaws CNV Reporting Servers group id sg-0d987111cbc2210dd egress protocol tcp from 443 to 443 ip: None refGroup sg-03a5761c7052f2362
+id sgr-06cae1aeab4b4870e description HTTPS to VPC group id sg-0d1ac211cbba08cba egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0b5ed7f62f77582a2 description HTTPS from VPC group id sg-0d987111cbc2210dd ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-07f552027c152177b description Perceptive Content calsaws AT1 Reporting Server port 443 TCP to OCDeploy group id sg-0d27b756c6d237c84 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0b42954f17cb985b0 description Perceptive Content calsaws AT1 Reporting Server port 443 TCP to OCDeploy group id sg-0d27b756c6d237c84 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-00a55ef68ebab0ff5 description HTTPS to VPC group id sg-0df2dab6c85c5369b egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-04eb5c1ba60f56b3f description Shared FSx https from Ansible group id sg-0e31109396f76df11 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0364828fe04e67ff9 description Perceptive Content calsaws UAT2 Reporting Server port 443 TCP to OCDeploy group id sg-0e30e2c3994478f74 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0b6e1edb5c364ca29 description Perceptive Content calsaws AT2 Brainware Capture Server https from Ansible group id sg-0d13dae624e31c8b7 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-041e097f52821b89c description Perceptive Content calsaws UAT2 Agent Server port 443 TCP to OCDeploy group id sg-0df2dab6c85c5369b egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0b1b4f109a5d23a02 description Perceptive Content calsaws UAT2 Brainware Capture Server https from Ansible group id sg-0d1ac211cbba08cba ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0c3e3eaf585842aeb description HTTPS from Public Internet group id sg-0d987111cbc2210dd ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-02afd70689b958fc0 description Shared FSx port 443 TCP to OCDeploy group id sg-0e31109396f76df11 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-05159c4c9f4e13648 description HTTPS to VPC group id sg-0e7f2bc6dca69dc37 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-015fde65b938c16ba description Perceptive Content calsaws TRN Application Server port 443 TCP to OCDeploy group id sg-0d2ee2449072aae78 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-05cbfcff21d50f8f9 description MFT Front End port 443 TCP to OCDeploy group id sg-0e9e96b85e837fc63 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-02fadee3d7ac33940 description HTTPS to VPC group id sg-0f82ff940be0b2567 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0bf024b59772a9a5b description HTTPS to VPC group id sg-0f0e596e8c621d31b egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-096fdaddc06c237d8 description OnBase Application Server port 443 TCP to OCDeploy group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 10.152.2.35/32 refGroup None
+id sgr-019b46941a8499a0b description TCP/443 from GCS Internal group id sg-0ed0120691dd882c1 ingress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-0746bb2c63c615756 description Perceptive Content calsaws STG Agent Server https from Ansible group id sg-0fc114142811c24b5 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-080a1e1fff7840ab4 description TCP/443 app to S3 endpoint group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 3.5.80.0/21 refGroup None
+id sgr-0de8dc00d55731cfa description HTTPS/443 to calsaws ST2 Reporting Servers group id sg-0effe60580d87ddca egress protocol tcp from 443 to 443 ip: None refGroup sg-08fffe2d9a7b9b49c
+id sgr-00043ba2b3b1789a6 description HTTPS from ECM VPC group id sg-0f3055af2d63ed46d ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-02e1d8c4fbac787dd description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 54.69.201.31/32 refGroup None
+id sgr-0f12459ef04d54d94 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 35.165.128.209/32 refGroup None
+id sgr-0a1f2711de0f46d7b description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 34.211.69.99/32 refGroup None
+id sgr-03502180ace35c1ec description TCP/443 app to S3 endpoint group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 3.5.76.0/22 refGroup None
+id sgr-038724cfa0a04b506 description HTTPS to VPC group id sg-0ed646ae93f8cb527 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-0cc63172863f34253 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 35.80.138.81/32 refGroup None
+id sgr-08fedb1cd12c35a7f description OnBase Application Server port 443 TCP to OCDeploy group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0af802268b450ce8d description Perceptive Content calsaws ST3 Web Server port 443 TCP to OCDeploy group id sg-0f82ff940be0b2567 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0881ad8aa14f03300 description HTTPS to VPC group id sg-0f3b781b35bf2c973 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-07a35d3f9c26b6a53 description Perceptive Content calsaws ST3 Reporting Server https from Ansible group id sg-0f3b781b35bf2c973 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0ddceea4b8dfc61e2 description HTTPS from VPC group id sg-0effe60580d87ddca ingress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-07529b365ba6c82fb description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 52.89.208.175/32 refGroup None
+id sgr-057db38defb61cf3f description Perceptive Content calsaws ST3 Web Server https from Ansible group id sg-0f82ff940be0b2567 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-035bfb68d53dcdc43 description TCP/443 app to S3 endpoint group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 52.218.128.0/17 refGroup None
+id sgr-0b3525b24fa00dc53 description Perceptive Content calsaws ST1 Application Server port 443 TCP to OCDeploy group id sg-0f0e596e8c621d31b egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-05ceac6d658625fba description OnBase Application Server port 443 TCP to OCDeploy group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 10.210.0.130/32 refGroup None
+id sgr-06ca4afbeb7af29b3 description Perceptive Content calsaws ST1 Application Server port 443 TCP to OCDeploy group id sg-0f0e596e8c621d31b egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0a8e5d0ab7f014899 description HTTPS to VPC group id sg-0fc114142811c24b5 egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None
+id sgr-054702cc0be4a9117 description Perceptive Content calsaws STG Agent Server port 443 TCP to OCDeploy group id sg-0fc114142811c24b5 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0e460b45d5d4b2d92 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 52.10.17.236/32 refGroup None
+id sgr-0ffee6789b4e45350 description Perceptive Content calsaws  Middleware Web Server https from Ansible group id sg-0ed646ae93f8cb527 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0fc799246eac05919 description Perceptive Content calsaws  Middleware Web Server port 443 TCP to OCDeploy group id sg-0ed646ae93f8cb527 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0d16dfdfc5c227fa0 description Perceptive Content calsaws ST1 Agent Server port 443 TCP to OCDeploy group id sg-0f3055af2d63ed46d egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0eb87b9ac4cd3cdd3 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 34.214.13.99/32 refGroup None
+id sgr-009aad6f64c243586 description MFT Front End https from Ansible group id sg-0e9e96b85e837fc63 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0518f00fe478ae9b9 description Perceptive Content calsaws STG Agent Server port 443 TCP to OCDeploy group id sg-0fc114142811c24b5 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-041d276835e9a90f6 description MFT Front End port 443 TCP to OCDeploy group id sg-0e9e96b85e837fc63 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-05409223d3b7d5ecf description Perceptive Content calsaws ST1 Agent Server https from Ansible group id sg-0f3055af2d63ed46d ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-08b87a39016470bba description OnBase Application Server port 443 TCP to OCDeploy group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-089da0d8471d31227 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 35.84.72.41/32 refGroup None
+id sgr-0e552fe2c3c94f9ed description Perceptive Content calsaws  Middleware Web Server port 443 TCP to OCDeploy group id sg-0ed646ae93f8cb527 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-0bf89ece86005033f description Perceptive Content calsaws ST3 Reporting Server port 443 TCP to OCDeploy group id sg-0f3b781b35bf2c973 egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-07862608c91a2b886 description HTTPS/443 from Public Internet group id sg-0f3b781b35bf2c973 ingress protocol tcp from 443 to 443 ip: None refGroup sg-08af464aeaedd4828
+id sgr-0ee6cc68d1d8993f0 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 44.234.226.178/32 refGroup None
+id sgr-09e6c3bc9674a353b description OnBase Application Server https from Ansible group id sg-0ed0120691dd882c1 ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-05d084fda03aac105 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 35.80.136.127/32 refGroup None
+id sgr-0dc96d0608ea7af7d description OnBase Application Server port 443 TCP to OCDeploy group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 10.152.2.36/32 refGroup None
+id sgr-049059ed3b986ade6 description Perceptive Content calsaws ST1 Agent Server port 443 TCP to OCDeploy group id sg-0f3055af2d63ed46d egress protocol tcp from 443 to 443 ip: 74.214.17.82/32 refGroup None
+id sgr-009e990564f4a3b94 description Perceptive Content calsaws ST1 Application Server https from Ansible group id sg-0f0e596e8c621d31b ingress protocol tcp from 443 to 443 ip: 10.210.0.31/32 refGroup None
+id sgr-0fab04af3b8cc0986 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 44.232.255.122/32 refGroup None
+id sgr-0439617c74677daff description TCP/443 to GCS Internal group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 10.0.0.0/8 refGroup None
+id sgr-08d0c384a280889e7 description TCP/443 app to S3 endpoint group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 52.92.128.0/17 refGroup None
+id sgr-091fa3e588b9480ec description Perceptive Content calsaws ST3 Reporting Server port 443 TCP to OCDeploy group id sg-0f3b781b35bf2c973 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-0abee99288907b912 description HTTPS from Public Internet group id sg-0effe60580d87ddca ingress protocol tcp from 443 to 443 ip: 0.0.0.0/0 refGroup None
+id sgr-0a496568ee08939a9 description TCP/443 to Traffic Manager Public IPs group id sg-0ed0120691dd882c1 egress protocol tcp from 443 to 443 ip: 50.112.174.15/32 refGroup None
+id sgr-06de4c3ecd423b005 description Perceptive Content calsaws ST3 Web Server port 443 TCP to OCDeploy group id sg-0f82ff940be0b2567 egress protocol tcp from 443 to 443 ip: 10.210.0.131/32 refGroup None
+id sgr-094db988bb06318f5 description HTTPS to VPC group id sg-0f3055af2d63ed46d egress protocol tcp from 443 to 443 ip: 10.65.0.0/22 refGroup None

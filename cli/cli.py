@@ -1,8 +1,8 @@
 from dataclasses import dataclass
+from datetime import datetime
 import ipaddress
-from aws.cloud_logs import LogEntry
-
-initQuery: str = """parse @message /(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/"""
+from aws.records import LogEntry
+from .lex import lex
 
 
 @dataclass
@@ -33,9 +33,26 @@ class CLI:
         self.regionString = regions
         self.regions = [region.strip(' ') for region in self.regionString.split(
             ',')] if regions != None else []
-        self.initQuery: str = initQuery,
         self.outputFile = output
         self.cloudQuery = cloudquery
+        if self.cloudQuery is not None:
+            filters = lex(self.cloudQuery)
+            for filter in filters:
+                if 'port' in filter:
+                    self.portString = ""
+                    if len(self.ports) > 0:
+                        for port in filters[filter]:
+                            self.ports.append(port)
+                            self.portString += "{},".format(port)
+                    else:
+                        self.ports = filters[filter]
+                    self.ports = filters[filter]
+                elif 'src' in filter or 'source' in filter:
+                    self.sources = filters[filter]
+                elif 'dst' in filter or 'dest' in filter or 'destination' in filter:
+                    self.dests = filters[filter]
+                elif 'protocol' in filter:
+                    self.protocols = filter[filters]
 
     def filterAccounts(self, acct):
         if len(self.accounts) > 0:
@@ -146,12 +163,12 @@ class CLI:
         if len(self.sources) > 0:
             for source in self.sources:
                 try:
-                    x = ipaddress.ip_network(source)
-                    y = ipaddress.ip_network(entry.pkt_source)
-                    if x.subnet_of(y):
-                        return True
-                    if y.subnet_of(x):
-                        return True
+                    # x = ipaddress.ip_network(source)
+                    # y = ipaddress.ip_network(entry.pkt_source)
+                    # if x.subnet_of(y):
+                    #     return True
+                    # if y.subnet_of(x):
+                    #     return True
                     if source in entry.pkt_source:
                         return True
                     if entry.pkt_source in source:
@@ -164,12 +181,12 @@ class CLI:
     def filterEntryDest(self, entry: LogEntry):
         for dest in self.dests:
             try:
-                x = ipaddress.ip_network(dest)
-                y = ipaddress.ip_network(entry.pkt_source)
-                if x.subnet_of(y):
-                    return True
-                if y.subnet_of(x):
-                    return True
+                # x = ipaddress.ip_network(dest)
+                # y = ipaddress.ip_network(entry.pkt_source)
+                # if x.subnet_of(y):
+                #     return True
+                # if y.subnet_of(x):
+                #     return True
                 if dest in entry.pkt_dest:
                     return True
                 if entry.pkt_dest in dest:
@@ -182,9 +199,9 @@ class CLI:
     def filterEntryPorts(self, entry: LogEntry):
         if len(self.ports) > 0:
             for port in self.ports:
-                if int(port) == entry.dstport:
+                if int(port) == (entry.dstport):
                     return True
-                if int(port) == entry.srcport:
+                if int(port) == int(entry.srcport):
                     return True
             return False
         return True
@@ -207,36 +224,3 @@ class CLI:
         if not self.filterEntryDest(entry):
             return False
         return True
-
-    def buildQuery(self):
-        if self.cloudQuery is not None:
-            return initQuery + " | " + self.cloudQuery
-
-        filterQuery = ""
-        if len(self.sources) > 0:
-            filterQuery += "| filter "
-            for source in self.sources:
-                filterQuery += "pkt_srcaddr = {} or ".format(source)
-            filterQuery.rstrip('or ')
-
-        if len(self.dests) > 0:
-            filterQuery += " | filter "
-            for dest in self.dests:
-                filterQuery += "pkt_dstaddr = {} or ".format(dest)
-            filterQuery.rstrip('or ')
-
-        if len(self.ports) > 0:
-            filterQuery += " | filter "
-            for port in self.ports:
-                filterQuery += "poirt = {} or ".format(port)
-            filterQuery.rstrip('or ')
-
-        if len(self.protocols) > 0:
-            filterQuery += " | filter "
-            for protocol in self.protocols:
-                filterQuery += "pkt_srcaddr = {} or ".format(protocol)
-            filterQuery.rstrip('or ')
-
-        if filterQuery != "":
-            return initQuery + " | " + filterQuery
-        return initQuery
