@@ -10,6 +10,7 @@ from .searchEnum import SearchFilters
 from time import sleep
 from datetime import datetime, timedelta
 from .records import LogEntry
+from itertools import chain
 
 # TODO: Set up file output
 
@@ -66,11 +67,7 @@ class AWS:
                                 self.instanceMap[reg][acct])
 
                             expanded = list(
-                                map(expand, self.ruleMap[reg][acct]))
-
-                            # flatten
-                            expanded = [
-                                item for subitem in expanded for item in subitem]
+                                chain.from_iterable(map(expand, self.ruleMap[reg][acct])))
 
                             expanded = list(
                                 filter(cli.filterSources, expanded))
@@ -78,7 +75,7 @@ class AWS:
                                 filter(cli.filterDestinations, expanded))
 
                             # grab the ruleids while removing duplicates
-                            expanded = list(dict.fromkeys(
+                            expanded = list(set(
                                 [item.ruleId for item in expanded]))
 
                             # trim the rules to match
@@ -120,7 +117,6 @@ class AWS:
                                         [val for val in paginator]))
                     msgPmp.put(common.event.AddLogStream(
                         region=region, amt=len(names)))
-                    # queryString = cli.buildQuery()
 
                     def sub_thread_func(name):
                         while not killEvent.is_set():

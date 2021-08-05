@@ -16,11 +16,30 @@ class CLI:
     def __init__(self, subcommand, sources, regions, dests, accounts, ports, protocols, cloudquery, output) -> None:
         self.subcommand = subcommand
         self.sourceString = sources
-        self.sources = [source.strip(' ') for source in self.sourceString.split(
-            ',')] if sources != None else []
+        if self.sourceString is not None and '@' in self.sourceString:
+            self.sources = []
+            try:
+                with open(self.sourceString[1:], 'r') as f:
+                    for line in f:
+                        self.sources.append(line.strip())
+            except Exception as e:
+                raise Exception(f"Invalid Filename {self.sourceString[1:]}")
+        else:
+            self.sources = [source.strip(' ') for source in self.sourceString.split(
+                ',')] if sources != None else []
         self.destString = dests
-        self.dests = [dest.strip(' ') for dest in self.destString.split(
-            ',')] if dests != None else []
+        if self.destString is not None and '@' in self.destString:
+            self.dests = []
+            try:
+                with open(self.destString[1:], 'r') as f:
+                    for line in f:
+                        self.dests.append(line.strip())
+            except Exception as e:
+                raise Exception(f"Invalid Filename {self.destString[1:]}")
+
+        else:
+            self.dests = [dest.strip(' ') for dest in self.destString.split(
+                ',')] if dests != None else []
         self.accountString = accounts
         self.accounts = [acct.strip(' ') for acct in self.accountString.split(
             ',')] if accounts != None else []
@@ -121,21 +140,23 @@ class CLI:
         return True
 
     def ExpandRule(self, instances):
-        instanceCache = {}
-
         def traceGroup(group):
             ipaddresses = []
-            for instance in instances:
-                if 'secgrps' in instance:
-                    if group in instance['secgrps']:
-                        for ipaddr in instance['privaddresses']:
-                            for ip in ipaddr['ips']:
-                                ipaddresses.append(ip)
-                if 'othergrps' in instance:
-                    if group in instance['othergrps']:
-                        for ipaddr in instance['privaddresses']:
-                            for ip in ipaddr['ips']:
-                                ipaddresses.append(ip)
+            with open("log.txt", 'a') as f:
+                f.write("Grabbing IPs")
+                for instance in instances:
+                    if 'secgrps' in instance:
+                        if group in instance['secgrps']:
+                            for ipaddr in instance['privaddresses']:
+                                for ip in ipaddr['ips']:
+                                    f.write(ip)
+                                    ipaddresses.append(ip)
+                    if 'othergrps' in instance:
+                        if group in instance['othergrps']:
+                            for ipaddr in instance['privaddresses']:
+                                for ip in ipaddr['ips']:
+                                    f.write(ip)
+                                    ipaddresses.append(ip)
             return ipaddresses
 
         def innerExpand(rule):
@@ -169,13 +190,12 @@ class CLI:
                     #     return True
                     # if y.subnet_of(x):
                     #     return True
-                    if source in entry.pkt_source:
-                        return True
-                    if entry.pkt_source in source:
+                    if source == entry.pkt_source:
                         return True
                     return False
                 except Exception as e:
-                    continue
+                    with open("log.txt", 'a') as f:
+                        f.write(f"Source errored for {source} on {entry.pkt_srcaddr} on region {entry.region}")
         return True
 
     def filterEntryDest(self, entry: LogEntry):
@@ -187,13 +207,12 @@ class CLI:
                 #     return True
                 # if y.subnet_of(x):
                 #     return True
-                if dest in entry.pkt_dest:
-                    return True
-                if entry.pkt_dest in dest:
+                if dest == entry.pkt_dest:
                     return True
                 return False
             except Exception as e:
-                continue
+                with open("log.txt", 'a') as f:
+                        f.write(f"Source errored for {dest} on {entry.pkt_dstaddr} on region {entry.region}")
         return True
 
     def filterEntryPorts(self, entry: LogEntry):

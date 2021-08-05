@@ -83,7 +83,7 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
             for account in e.results[region]:
                 for result in e.results[region][account]:
                     outputString: str = ""
-                    outputString += "id {} description {} group id {} {} protocol {} from {} to {} ip: {} refGroup {}".format(
+                    outputString += "{} id {} description {} group id {} {} protocol {} from {} to {} ip: {} refGroup {}".format(region,
                         result['id'], result['description'], result['groupId'], "egress" if result['isEgress'] else 'ingress', result['protocol'], result['from'], result['to'], result['cidrv4'], result['referencedGroup'])
                     state['outputList'].append(outputString)
         fileOutput(state['outputList'])
