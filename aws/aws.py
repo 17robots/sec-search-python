@@ -12,8 +12,6 @@ from datetime import datetime, timedelta
 from .records import LogEntry
 from itertools import chain
 
-# TODO: Set up file output
-
 
 class AWS:
     def __init__(self) -> None:

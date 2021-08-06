@@ -85,40 +85,64 @@ class CLI:
 
     def filterSources(self, expandedRule: Rule):
         if len(self.sources) > 0:
-            for source in self.sources:
-                try:
-                    x = ipaddress.ip_network(source)
-                    y = ipaddress.ip_network(expandedRule.source)
-                    if x.subnet_of(y):
-                        return True
-                    if y.subnet_of(x):
-                        return True
-                    if source in expandedRule.source:
-                        return True
-                    if expandedRule.source in source:
-                        return True
-                    return False
-                except Exception as e:
-                    continue
+            with open('log.txt', 'a') as f:
+                for source in self.sources:
+                    try:
+                        x = ipaddress.ip_network(source)
+                        y = ipaddress.ip_network(expandedRule.source)
+                        if x.subnet_of(y):
+                            f.write(
+                                f"Returning true for ip {expandedRule.source} because {source} is a subnet, rule: {expandedRule.ruleId}\n")
+                            return True
+                        if y.subnet_of(x):
+                            f.write(
+                                f"Returning true for ip {expandedRule.source} because {source} is a supernet, rule: {expandedRule.ruleId}\n")
+                            return True
+                        if source in expandedRule.source:
+                            f.write(
+                                f"Returning true for ip {expandedRule.source} because {source} is in ip, rule: {expandedRule.ruleId}\n")
+                            return True
+                        if expandedRule.source in source:
+                            f.write(
+                                f"Returning true for ip {expandedRule.source} because {source} contains ip, rule: {expandedRule.ruleId}\n")
+                            return True
+                        f.write(
+                            f"Returning false for ip {expandedRule.source} because {source} didnt work, rule: {expandedRule.ruleId}\n")
+                        return False
+                    except Exception as e:
+                        f.write(
+                            f"We got an error on ip {expandedRule.source} because {e}, rule: {expandedRule.ruleId}\n")
         return True
 
     def filterDestinations(self, expandedRule: Rule):
         if len(self.dests) > 0:
-            for dest in self.dests:
-                try:
-                    x = ipaddress.ip_network(dest)
-                    y = ipaddress.ip_network(expandedRule.dest)
-                    if x.subnet_of(y):
-                        return True
-                    if y.subnet_of(x):
-                        return True
-                    if dest in expandedRule.dest:
-                        return True
-                    if expandedRule.dest in dest:
-                        return True
-                    return False
-                except Exception as e:
-                    continue
+            with open('log.txt', 'a') as f:
+                for dest in self.dests:
+                    try:
+                        x = ipaddress.ip_network(dest)
+                        y = ipaddress.ip_network(expandedRule.dest)
+                        if x.subnet_of(y):
+                            f.write(
+                                f"Returning true for ip {expandedRule.dest} because {dest} is a subnet, rule: {expandedRule.ruleId}\n")
+                            return True
+                        if y.subnet_of(x):
+                            f.write(
+                                f"Returning true for ip {expandedRule.dest} because {dest} is a supernet, rule: {expandedRule.ruleId}\n")
+                            return True
+                        if dest in expandedRule.dest:
+                            f.write(
+                                f"Returning true for ip {expandedRule.dest} because {dest} is in ip, rule: {expandedRule.ruleId}\n")
+                            return True
+                        if expandedRule.dest in dest:
+                            f.write(
+                                f"Returning true for ip {expandedRule.dest} because {dest} contains ip, rule: {expandedRule.ruleId}\n")
+                            return True
+                        f.write(
+                            f"Returning false for ip {expandedRule.dest} because {dest} didnt work, rule: {expandedRule.ruleId}\n")
+                        return False
+                    except Exception as e:
+                        f.write(
+                            f"We got an error on ip {expandedRule.dest} because {e}, rule: {expandedRule.ruleId}\n")
         return True
 
     def filterPorts(self, rule):
@@ -143,19 +167,19 @@ class CLI:
         def traceGroup(group):
             ipaddresses = []
             with open("log.txt", 'a') as f:
-                f.write("Grabbing IPs")
+                # f.write("Grabbing IPs\n")
                 for instance in instances:
                     if 'secgrps' in instance:
                         if group in instance['secgrps']:
                             for ipaddr in instance['privaddresses']:
                                 for ip in ipaddr['ips']:
-                                    f.write(ip)
+                                    # f.write(f"{ip}\n")
                                     ipaddresses.append(ip)
                     if 'othergrps' in instance:
                         if group in instance['othergrps']:
                             for ipaddr in instance['privaddresses']:
                                 for ip in ipaddr['ips']:
-                                    f.write(ip)
+                                    # f.write(f"{ip}")
                                     ipaddresses.append(ip)
             return ipaddresses
 
@@ -209,9 +233,6 @@ class CLI:
         return True
 
     def allowEntry(self, entry: LogEntry):
-        with open('log.txt', 'a') as f:
-            f.write(
-                f"{entry.srcaddr} {entry.dstaddr} {entry.srcport} {entry.dstport}\n")
         if not self.filterEntryPorts(entry):
             return False
         if not self.filterEntryProtocol(entry):
