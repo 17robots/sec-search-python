@@ -11,6 +11,7 @@ from time import sleep
 from datetime import datetime, timedelta
 from .records import LogEntry
 from itertools import chain
+import json
 
 
 class AWS:
@@ -56,6 +57,8 @@ class AWS:
 
                         self.ruleMap[reg][acct] = grab_sec_group_rules(
                             ec2_client)
+                        
+                        
                         self.ruleMap[reg][acct] = list(
                             filter(cli.filterPorts, self.ruleMap[reg][acct]))
                         self.ruleMap[reg][acct] = list(
@@ -66,6 +69,9 @@ class AWS:
 
                             expanded = list(
                                 chain.from_iterable(map(expand, self.ruleMap[reg][acct])))
+                            
+                            with open('log3.txt', 'a') as f:
+                                json.dump([str(item) for item in expanded], f, indent=2)
 
                             expanded = list(
                                 filter(cli.filterSources, expanded))

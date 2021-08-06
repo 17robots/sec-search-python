@@ -91,27 +91,28 @@ class CLI:
                         x = ipaddress.ip_network(source)
                         y = ipaddress.ip_network(expandedRule.source)
                         if x.subnet_of(y):
-                            f.write(
-                                f"Returning true for ip {expandedRule.source} because {source} is a subnet, rule: {expandedRule.ruleId}\n")
+                            # f.write(
+                                # f"Returning true for ip {expandedRule.source} because {source} is a subnet, rule: {expandedRule}\n")
                             return True
                         if y.subnet_of(x):
-                            f.write(
-                                f"Returning true for ip {expandedRule.source} because {source} is a supernet, rule: {expandedRule.ruleId}\n")
+                            # f.write(
+                                # f"Returning true for ip {expandedRule.source} because {source} is a supernet, rule: {expandedRule}\n")
                             return True
                         if source in expandedRule.source:
-                            f.write(
-                                f"Returning true for ip {expandedRule.source} because {source} is in ip, rule: {expandedRule.ruleId}\n")
+                            # f.write(
+                                # f"Returning true for ip {expandedRule.source} because {source} is in ip, rule: {expandedRule}\n")
                             return True
                         if expandedRule.source in source:
-                            f.write(
-                                f"Returning true for ip {expandedRule.source} because {source} contains ip, rule: {expandedRule.ruleId}\n")
+                            # f.write(
+                                # f"Returning true for ip {expandedRule.source} because {source} contains ip, rule: {expandedRule}\n")
                             return True
-                        f.write(
-                            f"Returning false for ip {expandedRule.source} because {source} didnt work, rule: {expandedRule.ruleId}\n")
+                        # f.write(
+                            # f"Returning false for ip {expandedRule.source} because {source} didnt work, rule: {expandedRule}\n")
                         return False
                     except Exception as e:
-                        f.write(
-                            f"We got an error on ip {expandedRule.source} because {e}, rule: {expandedRule.ruleId}\n")
+                        pass
+                        # f.write(
+                            # f"We got an error on ip {expandedRule.source} because {e}, rule: {expandedRule}\n")
         return True
 
     def filterDestinations(self, expandedRule: Rule):
@@ -185,22 +186,24 @@ class CLI:
 
         def innerExpand(rule):
             rules = []
-            myIps = traceGroup(rule['groupId'])
-            if rule['referencedGroup'] is not None:
-                secIps = traceGroup(rule['referencedGroup'])
-                for selfIp in myIps:
-                    for ip in secIps:
-                        rules.append(Rule(
-                            source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=rule['id']))
-            else:
-                if rule['cidrv4'] is not None:
+            with open('log.txt', 'a'):
+                myIps = traceGroup(rule['groupId'])
+                if rule['referencedGroup'] is not None:
+                    secIps = traceGroup(rule['referencedGroup'])
                     for selfIp in myIps:
-                        rules.append(Rule(
-                            source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=rule['id']))
+                        for ip in secIps:
+
+                            rules.append(Rule(
+                                source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=str(rule)))
                 else:
-                    for selfIp in myIps:
-                        rules.append(Rule(
-                            source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=rule['id']))
+                    if rule['cidrv4'] is not None:
+                        for selfIp in myIps:
+                            rules.append(Rule(
+                                source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
+                    else:
+                        for selfIp in myIps:
+                            rules.append(Rule(
+                                source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
             return rules
         return innerExpand
 
