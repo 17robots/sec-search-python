@@ -182,37 +182,12 @@ class CLI:
 
     def filterEntrySource(self, entry: LogEntry):
         if len(self.sources) > 0:
-            for source in self.sources:
-                try:
-                    # x = ipaddress.ip_network(source)
-                    # y = ipaddress.ip_network(entry.pkt_source)
-                    # if x.subnet_of(y):
-                    #     return True
-                    # if y.subnet_of(x):
-                    #     return True
-                    if source == entry.pkt_source:
-                        return True
-                    return False
-                except Exception as e:
-                    with open("log.txt", 'a') as f:
-                        f.write(f"Source errored for {source} on {entry.pkt_srcaddr} on region {entry.region}")
+            return entry.pkt_srcaddr in self.sources
         return True
 
     def filterEntryDest(self, entry: LogEntry):
-        for dest in self.dests:
-            try:
-                # x = ipaddress.ip_network(dest)
-                # y = ipaddress.ip_network(entry.pkt_source)
-                # if x.subnet_of(y):
-                #     return True
-                # if y.subnet_of(x):
-                #     return True
-                if dest == entry.pkt_dest:
-                    return True
-                return False
-            except Exception as e:
-                with open("log.txt", 'a') as f:
-                        f.write(f"Source errored for {dest} on {entry.pkt_dstaddr} on region {entry.region}")
+        if len(self.dests) > 0:
+            return entry.pkt_srcaddr in self.sources
         return True
 
     def filterEntryPorts(self, entry: LogEntry):
@@ -233,7 +208,10 @@ class CLI:
             return False
         return True
 
-    def allowEntry(self, entry):
+    def allowEntry(self, entry: LogEntry):
+        with open('log.txt', 'a') as f:
+            f.write(
+                f"{entry.srcaddr} {entry.dstaddr} {entry.srcport} {entry.dstport}\n")
         if not self.filterEntryPorts(entry):
             return False
         if not self.filterEntryProtocol(entry):

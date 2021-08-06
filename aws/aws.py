@@ -143,7 +143,7 @@ class AWS:
                                     if cli.allowEntry(entry=entry):
                                         msgPmp.put(
                                             common.event.LogEntryReceivedEvent(
-                                                log="[{}]{} {} {} {} {} {}[/{}]".format("green" if entry.action == "ACCEPT" else "red", entry.pkt_srcaddr, entry.pkt_dstaddr, entry.srcport, entry.dstport, entry.action, entry.flow_direction, "green" if entry.action == "ACCEPT" else "red"))
+                                                log="[{}]{} {} {} {} {} {} {}[/{}]".format("green" if entry.action == "ACCEPT" else "red", entry.timestamp, entry.pkt_srcaddr, entry.pkt_dstaddr, entry.srcport, entry.dstport, entry.action, entry.flow_direction, "green" if entry.action == "ACCEPT" else "red"))
                                         )
                                     else:
                                         common.event.LogEntryReceivedEvent(
