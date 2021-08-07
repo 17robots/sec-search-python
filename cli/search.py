@@ -73,7 +73,6 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
         state['outputList'] = [str(e.e)]
 
     def handleLoadResults(e: common.event.LoadResultsEvent):
-        # TODO: parse the display
         if not bool(e.results):
             state['outputList'].append("No results")
             return
@@ -87,7 +86,6 @@ def search(sources, regions, dests, display, accounts, ports, protocols, output,
                                                                                                                                   result['id'], result['description'], result['groupId'], "egress" if result['isEgress'] else 'ingress', result['protocol'], result['from'], result['to'], result['cidrv4'], result['referencedGroup'])
                     state['outputList'].append(outputString)
         fileOutput(state['outputList'])
-    # add eventlisteners
     pump.addListener(common.event.Events.InitEvent.value, initState)
     pump.addListener(
         common.event.Events.AccounFinishedEvent.value, finishAcct)

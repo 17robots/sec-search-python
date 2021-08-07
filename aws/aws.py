@@ -1,3 +1,4 @@
+from logging import error
 import boto3
 from .sso import SSO
 from cli.cli import CLI
@@ -7,11 +8,12 @@ from threading import Thread, Event
 import queue
 import common.event
 from .searchEnum import SearchFilters
-from time import sleep
 from datetime import datetime, timedelta
-from .records import LogEntry
 from itertools import chain
-import json
+import time
+import functools
+
+message_pattern = '/(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/'
 
 
 class AWS:
@@ -57,8 +59,7 @@ class AWS:
 
                         self.ruleMap[reg][acct] = grab_sec_group_rules(
                             ec2_client)
-                        
-                        
+
                         self.ruleMap[reg][acct] = list(
                             filter(cli.filterPorts, self.ruleMap[reg][acct]))
                         self.ruleMap[reg][acct] = list(
@@ -69,9 +70,6 @@ class AWS:
 
                             expanded = list(
                                 chain.from_iterable(map(expand, self.ruleMap[reg][acct])))
-                            
-                            with open('log3.txt', 'a') as f:
-                                json.dump([str(item) for item in expanded], f, indent=2)
 
                             expanded = list(
                                 filter(cli.filterSources, expanded))
@@ -123,44 +121,45 @@ class AWS:
                         region=region, amt=len(names)))
 
                     def sub_thread_func(name):
-                        while not killEvent.is_set():
-                            timestamp = int(
-                                (datetime.now() - timedelta(minutes=1)).timestamp())
-                            endstamp = int(
-                                (datetime.now() + timedelta(minutes=5)).timestamp())
-                            try:
-                                paginator = client.get_paginator('filter_log_events').paginate(
-                                    logGroupName=name,
-                                    startTime=timestamp * 1000,
-                                    endTime=endstamp * 1000,
-                                    filterPattern="?ACCEPT ?REJECT",
-                                    PaginationConfig={
-                                        'PageSize': 1
-                                    }
-                                ).search(SearchFilters.events.value)
-                                val = next(paginator, None)
-                                while val is not None:
-                                    if killEvent.is_set():
-                                        return
-                                    entry = LogEntry(
-                                        val['timestamp'], val['message'])
-                                    if cli.allowEntry(entry=entry):
-                                        msgPmp.put(
-                                            common.event.LogEntryReceivedEvent(
-                                                log="[{}]{} {} {} {} {} {} {}[/{}]".format("green" if entry.action == "ACCEPT" else "red", entry.timestamp, entry.pkt_srcaddr, entry.pkt_dstaddr, entry.srcport, entry.dstport, entry.action, entry.flow_direction, "green" if entry.action == "ACCEPT" else "red"))
-                                        )
-                                    else:
-                                        common.event.LogEntryReceivedEvent(
-                                            log="Log Failed Filter"
-                                        )
-                                    val = next(paginator, None)
-                                    sleep(.5)
-                            except Exception as e:
-                                common.event.ErrorEvent(
-                                    e=e
+                        def query(filter_string):
+                            starttime = int(
+                                (datetime.now() - timedelta(minutes=5)).timestamp()) * 1000
+                            endtime = int((datetime.now()).timestamp()) * 1000
+                            fullQuery = f"fields @timestamp, @message | parse @message {message_pattern} {filter_string}"
+                            with open('log.txt', 'a') as f:
+                                f.write(f"queryString: {fullQuery}\n")
+                            query_id = client.start_query(
+                                logGroupName=name, startTime=starttime, endTime=endtime, queryString=fullQuery)['queryId']
+                            results = []
+                            with open('log.txt', 'a') as f:
+                                f.write(f"queryId: {query_id}\n")
+                            while True:
+                                response = client.get_query_results(
+                                    queryId=query_id)
+                                results.extend(response['results'])
+                                with open('log.txt', 'a') as f:
+                                    f.write(
+                                        ' '.join([response['status'], str(
+                                            len(response['results'])), 'results\n']))
+                                if response['status'] == 'Complete':
+                                    with open('log.txt', 'a') as f:
+                                        f.write('Search Complete\n')
+                                    break
+                            for result in results:
+                                common.event.LogEntryReceivedEvent(
+                                    log=' '.join([val['value']
+                                                  for val in result])
                                 )
+                        while not killEvent.is_set():
+                            try:
+                                functools.partial(query, cli.buildFilters())()
+                                time.sleep(.5)
+                            except Exception as e:
+                                common.event.ErrorEvent(e=e)
+                                with open('log.txt', 'a') as f:
+                                    f.write(
+                                        f"We Encountered An Error: {str(e)}\n")
                                 break
-
                         msgPmp.put(
                             common.event.LogStreamStopped(region=region))
                         return

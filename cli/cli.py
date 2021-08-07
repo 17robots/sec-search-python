@@ -1,8 +1,7 @@
 from dataclasses import dataclass
-from datetime import datetime
 import ipaddress
 from aws.records import LogEntry
-from .lex import lex
+from aws.protocols import intToProtocolTable, protocolToIntTable
 
 
 @dataclass
@@ -54,24 +53,6 @@ class CLI:
             ',')] if regions != None else []
         self.outputFile = output
         self.cloudQuery = cloudquery
-        if self.cloudQuery is not None:
-            filters = lex(self.cloudQuery)
-            for filter in filters:
-                if 'port' in filter:
-                    self.portString = ""
-                    if len(self.ports) > 0:
-                        for port in filters[filter]:
-                            self.ports.append(port)
-                            self.portString += "{},".format(port)
-                    else:
-                        self.ports = filters[filter]
-                    self.ports = filters[filter]
-                elif 'src' in filter or 'source' in filter:
-                    self.sources = filters[filter]
-                elif 'dst' in filter or 'dest' in filter or 'destination' in filter:
-                    self.dests = filters[filter]
-                elif 'protocol' in filter:
-                    self.protocols = filter[filters]
 
     def filterAccounts(self, acct):
         if len(self.accounts) > 0:
@@ -83,67 +64,79 @@ class CLI:
             return region in self.regions
         return True
 
+    def buildFilters(self):
+        if self.cloudQuery is not None:
+            return self.cloudQuery
+        returnString = ""
+        if len(self.sources) > 0:
+            returnString += "filter ("
+            for source in self.sources:
+                returnString += f"pkt_srcaddr = {source} or "
+            returnString.rsplit(' or ')
+            returnString += ')'
+        if len(self.dests) > 0:
+            returnString += " and (" if returnString != "" else " | filter ("
+            for dest in self.dests:
+                returnString += f"pkt_dstaddr = {dest} or "
+            returnString.rsplit(' or ')
+            returnString += ')'
+        if len(self.ports) > 0:
+            returnString += " and (" if returnString != "" else " | filter ("
+            for port in self.ports:
+                returnString += f"srcport = {port} or "
+            returnString.rsplit(' or ')
+            returnString += ')'
+            returnString += " and (" if returnString != "" else " | filter ("
+            for port in self.ports:
+                returnString += f"dstport = {port} or "
+            returnString.rsplit(' or ')
+            returnString += ')'
+        if len(self.protocols) > 0:
+            returnString += " and (" if returnString != "" else " | filter ("
+            for protocol in self.protocols:
+                returnString += f"protocol = {protocol if protocol.isnumeric() else protocolToIntTable[protocol]} or "
+            returnString.rsplit(' or ')
+            returnString += ')'
+        return returnString
+
     def filterSources(self, expandedRule: Rule):
         if len(self.sources) > 0:
-            with open('log.txt', 'a') as f:
-                for source in self.sources:
-                    try:
-                        x = ipaddress.ip_network(source)
-                        y = ipaddress.ip_network(expandedRule.source)
-                        if x.subnet_of(y):
-                            # f.write(
-                                # f"Returning true for ip {expandedRule.source} because {source} is a subnet, rule: {expandedRule}\n")
-                            return True
-                        if y.subnet_of(x):
-                            # f.write(
-                                # f"Returning true for ip {expandedRule.source} because {source} is a supernet, rule: {expandedRule}\n")
-                            return True
-                        if source in expandedRule.source:
-                            # f.write(
-                                # f"Returning true for ip {expandedRule.source} because {source} is in ip, rule: {expandedRule}\n")
-                            return True
-                        if expandedRule.source in source:
-                            # f.write(
-                                # f"Returning true for ip {expandedRule.source} because {source} contains ip, rule: {expandedRule}\n")
-                            return True
-                        # f.write(
-                            # f"Returning false for ip {expandedRule.source} because {source} didnt work, rule: {expandedRule}\n")
-                        return False
-                    except Exception as e:
-                        pass
-                        # f.write(
-                            # f"We got an error on ip {expandedRule.source} because {e}, rule: {expandedRule}\n")
+            for source in self.sources:
+                try:
+                    x = ipaddress.ip_network(source)
+                    y = ipaddress.ip_network(expandedRule.source)
+                    if x.subnet_of(y):
+                        return True
+                    if y.subnet_of(x):
+                        return True
+                    if source in expandedRule.source:
+
+                        return True
+                    if expandedRule.source in source:
+
+                        return True
+                    return False
+                except Exception as e:
+                    continue
         return True
 
     def filterDestinations(self, expandedRule: Rule):
         if len(self.dests) > 0:
-            with open('log.txt', 'a') as f:
-                for dest in self.dests:
-                    try:
-                        x = ipaddress.ip_network(dest)
-                        y = ipaddress.ip_network(expandedRule.dest)
-                        if x.subnet_of(y):
-                            f.write(
-                                f"Returning true for ip {expandedRule.dest} because {dest} is a subnet, rule: {expandedRule.ruleId}\n")
-                            return True
-                        if y.subnet_of(x):
-                            f.write(
-                                f"Returning true for ip {expandedRule.dest} because {dest} is a supernet, rule: {expandedRule.ruleId}\n")
-                            return True
-                        if dest in expandedRule.dest:
-                            f.write(
-                                f"Returning true for ip {expandedRule.dest} because {dest} is in ip, rule: {expandedRule.ruleId}\n")
-                            return True
-                        if expandedRule.dest in dest:
-                            f.write(
-                                f"Returning true for ip {expandedRule.dest} because {dest} contains ip, rule: {expandedRule.ruleId}\n")
-                            return True
-                        f.write(
-                            f"Returning false for ip {expandedRule.dest} because {dest} didnt work, rule: {expandedRule.ruleId}\n")
-                        return False
-                    except Exception as e:
-                        f.write(
-                            f"We got an error on ip {expandedRule.dest} because {e}, rule: {expandedRule.ruleId}\n")
+            for dest in self.dests:
+                try:
+                    x = ipaddress.ip_network(dest)
+                    y = ipaddress.ip_network(expandedRule.dest)
+                    if x.subnet_of(y):
+                        return True
+                    if y.subnet_of(x):
+                        return True
+                    if dest in expandedRule.dest:
+                        return True
+                    if expandedRule.dest in dest:
+                        return True
+                    return False
+                except Exception as e:
+                    continue
         return True
 
     def filterPorts(self, rule):
@@ -167,43 +160,38 @@ class CLI:
     def ExpandRule(self, instances):
         def traceGroup(group):
             ipaddresses = []
-            with open("log.txt", 'a') as f:
-                # f.write("Grabbing IPs\n")
-                for instance in instances:
-                    if 'secgrps' in instance:
-                        if group in instance['secgrps']:
-                            for ipaddr in instance['privaddresses']:
-                                for ip in ipaddr['ips']:
-                                    # f.write(f"{ip}\n")
-                                    ipaddresses.append(ip)
-                    if 'othergrps' in instance:
-                        if group in instance['othergrps']:
-                            for ipaddr in instance['privaddresses']:
-                                for ip in ipaddr['ips']:
-                                    # f.write(f"{ip}")
-                                    ipaddresses.append(ip)
+            for instance in instances:
+                if 'secgrps' in instance:
+                    if group in instance['secgrps']:
+                        for ipaddr in instance['privaddresses']:
+                            for ip in ipaddr['ips']:
+                                ipaddresses.append(ip)
+                if 'othergrps' in instance:
+                    if group in instance['othergrps']:
+                        for ipaddr in instance['privaddresses']:
+                            for ip in ipaddr['ips']:
+                                ipaddresses.append(ip)
             return ipaddresses
 
         def innerExpand(rule):
             rules = []
-            with open('log.txt', 'a'):
-                myIps = traceGroup(rule['groupId'])
-                if rule['referencedGroup'] is not None:
-                    secIps = traceGroup(rule['referencedGroup'])
-                    for selfIp in myIps:
-                        for ip in secIps:
+            myIps = traceGroup(rule['groupId'])
+            if rule['referencedGroup'] is not None:
+                secIps = traceGroup(rule['referencedGroup'])
+                for selfIp in myIps:
+                    for ip in secIps:
 
-                            rules.append(Rule(
-                                source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=str(rule)))
+                        rules.append(Rule(
+                            source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=str(rule)))
+            else:
+                if rule['cidrv4'] is not None:
+                    for selfIp in myIps:
+                        rules.append(Rule(
+                            source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
                 else:
-                    if rule['cidrv4'] is not None:
-                        for selfIp in myIps:
-                            rules.append(Rule(
-                                source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
-                    else:
-                        for selfIp in myIps:
-                            rules.append(Rule(
-                                source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
+                    for selfIp in myIps:
+                        rules.append(Rule(
+                            source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
             return rules
         return innerExpand
 
