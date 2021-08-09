@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import ipaddress
 from aws.records import LogEntry
 from aws.protocols import intToProtocolTable, protocolToIntTable
+import traceback
 
 
 @dataclass
@@ -69,30 +70,30 @@ class CLI:
             return self.cloudQuery
         returnString = ""
         if len(self.sources) > 0:
-            returnString += "filter ("
+            returnString += "| filter ("
             for source in self.sources:
                 returnString += f"pkt_srcaddr = {source} or "
             returnString.rsplit(' or ')
             returnString += ')'
         if len(self.dests) > 0:
-            returnString += " and (" if returnString != "" else " | filter ("
+            returnString += " and (" if returnString != "" else "| filter ("
             for dest in self.dests:
                 returnString += f"pkt_dstaddr = {dest} or "
             returnString.rsplit(' or ')
             returnString += ')'
         if len(self.ports) > 0:
-            returnString += " and (" if returnString != "" else " | filter ("
+            returnString += " and (" if returnString != "" else "| filter ("
             for port in self.ports:
                 returnString += f"srcport = {port} or "
             returnString.rsplit(' or ')
             returnString += ')'
-            returnString += " and (" if returnString != "" else " | filter ("
+            returnString += " and (" if returnString != "" else "| filter ("
             for port in self.ports:
                 returnString += f"dstport = {port} or "
             returnString.rsplit(' or ')
             returnString += ')'
         if len(self.protocols) > 0:
-            returnString += " and (" if returnString != "" else " | filter ("
+            returnString += " and (" if returnString != "" else "| filter ("
             for protocol in self.protocols:
                 returnString += f"protocol = {protocol if protocol.isnumeric() else protocolToIntTable[protocol]} or "
             returnString.rsplit(' or ')
@@ -158,15 +159,16 @@ class CLI:
         return True
 
     def ExpandRule(self, instances):
+
         def traceGroup(group):
             ipaddresses = []
             for instance in instances:
-                if 'secgrps' in instance:
+                if 'secgrps' in instance and instance['secgrps']:
                     if group in instance['secgrps']:
                         for ipaddr in instance['privaddresses']:
                             for ip in ipaddr['ips']:
                                 ipaddresses.append(ip)
-                if 'othergrps' in instance:
+                if 'othergrps' in instance and instance['othergrps']:
                     if group in instance['othergrps']:
                         for ipaddr in instance['privaddresses']:
                             for ip in ipaddr['ips']:
@@ -175,24 +177,38 @@ class CLI:
 
         def innerExpand(rule):
             rules = []
-            myIps = traceGroup(rule['groupId'])
-            if rule['referencedGroup'] is not None:
-                secIps = traceGroup(rule['referencedGroup'])
-                for selfIp in myIps:
-                    for ip in secIps:
-
-                        rules.append(Rule(
-                            source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=str(rule)))
-            else:
-                if rule['cidrv4'] is not None:
+            try:
+                myIps = traceGroup(rule['groupId'])
+                if rule['referencedGroup'] is not None:
+                    with open('log.txt', 'a') as f:
+                        f.write(f"ReferencedGroup Has Stuff\n")
+                    secIps = traceGroup(rule['referencedGroup'])
                     for selfIp in myIps:
-                        rules.append(Rule(
-                            source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
+                        for ip in secIps:
+                            rules.append(Rule(
+                                source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=rule['ruleId']))
                 else:
-                    for selfIp in myIps:
-                        rules.append(Rule(
-                            source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=str(rule)))
-            return rules
+                    if rule['cidrv4']:
+                        with open('log.txt', 'a') as f:
+                            f.write(f"Cidrv4 Has Stuff\n")
+                        for selfIp in myIps:
+                            rules.append(Rule(
+                                source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=rule['ruleId']))
+                    elif rule['cidrv6']:
+                        with open('log.txt', 'a') as f:
+                            f.write(f"Cidrv6 Might Have Stuff\n")
+                        for selfIp in myIps:
+                            rules.append(Rule(
+                                source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=rule['ruleId']))
+                    else:
+                        with open('log.txt', 'a') as f:
+                            f.write(f"Any Any Rule\n")
+                        rules.append(
+                            Rule(source='0.0.0.0/0', dest='0.0.0.0/0', ruleId=rule['ruleId']))
+                return rules
+            except Exception as e:
+                with open('log.txt', 'a') as f:
+                    traceback.print_exc(file=f)
         return innerExpand
 
     def filterEntrySource(self, entry: LogEntry):
