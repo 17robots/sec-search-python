@@ -3,7 +3,7 @@ import ipaddress
 from aws.records import LogEntry
 from aws.protocols import intToProtocolTable, protocolToIntTable
 import traceback
-
+import json
 
 @dataclass
 class Rule:
@@ -85,6 +85,7 @@ class CLI:
             returnString += " and (" if returnString != "" else "| filter ("
             for port in self.ports:
                 returnString += f"srcport = {port} or "
+                returnString += f"dstport = {port} or "
             returnString.rsplit(' or ')
             returnString += ')'
             returnString += " and (" if returnString != "" else "| filter ("
@@ -186,29 +187,30 @@ class CLI:
                     for selfIp in myIps:
                         for ip in secIps:
                             rules.append(Rule(
-                                source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=rule['ruleId']))
+                                source=selfIp if rule['isEgress'] else ip, dest=ip if rule['isEgress'] else selfIp, ruleId=rule['id']))
                 else:
                     if rule['cidrv4']:
                         with open('log.txt', 'a') as f:
                             f.write(f"Cidrv4 Has Stuff\n")
                         for selfIp in myIps:
                             rules.append(Rule(
-                                source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=rule['ruleId']))
+                                source=selfIp if rule['isEgress'] else rule['cidrv4'], dest=rule['cidrv4'] if rule['isEgress'] else selfIp, ruleId=rule['id']))
                     elif rule['cidrv6']:
                         with open('log.txt', 'a') as f:
                             f.write(f"Cidrv6 Might Have Stuff\n")
                         for selfIp in myIps:
                             rules.append(Rule(
-                                source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=rule['ruleId']))
+                                source=selfIp if rule['isEgress'] else rule['cidrv6'], dest=rule['cidrv6'] if rule['isEgress'] else selfIp, ruleId=rule['id']))
                     else:
                         with open('log.txt', 'a') as f:
                             f.write(f"Any Any Rule\n")
                         rules.append(
-                            Rule(source='0.0.0.0/0', dest='0.0.0.0/0', ruleId=rule['ruleId']))
+                            Rule(source='0.0.0.0/0', dest='0.0.0.0/0', ruleId=rule['id']))
                 return rules
             except Exception as e:
                 with open('log.txt', 'a') as f:
                     traceback.print_exc(file=f)
+                    f.write(f"Rule that broke: {str(rule)}")
         return innerExpand
 
     def filterEntrySource(self, entry: LogEntry):

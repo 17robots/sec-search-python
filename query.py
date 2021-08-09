@@ -91,4 +91,45 @@ timestamp = int(
                         msgPmp.put(
                             common.event.LogStreamStopped(region=region))
                         return
+
+
+
+
+
+
+
+
+
+                        with clientLock:
+                                    threadClient = boto3.client('logs', region_name=region, aws_access_key_id=creds.access_key,
+                                            aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                                fullQuery = f"fields @timestamp, @message | parse @message {message_pattern} {cli.buildFilters()}"
+                                with open('log.txt', 'a') as f:
+                                    f.write(f"queryString: {fullQuery}\n")
+                                end_time = datetime.now()
+                                start_time = end_time - timedelta(minutes=5)
+                                query_id = threadClient.start_query(logGroupName=name, startTime=int(start_time.timestamp()), endTime=int(
+                                    end_time.timestamp()), queryString=fullQuery)['queryId']
+                                results = []
+                                while True:
+                                    response = threadClient.get_query_results(
+                                        queryId=query_id)
+                                    results.extend(response['results'])
+                                    if response['status'] == 'Complete':
+                                        break
+                                for result in results:
+                                    common.event.LogEntryReceivedEvent(
+                                        log=' '.join([val['value']
+                                                      for val in result])
+                                    )
+                                time.sleep(.5)
+                            except Exception as e:
+                                common.event.ErrorEvent(e=e)
+                                with open('log.txt', 'a') as f:
+                                    f.write(
+                                        f"We Encountered An Error: {str(e)}\n")
+                                break
+                        msgPmp.put(
+                            common.event.LogStreamStopped(region=region))
+                        return
 """
