@@ -5,6 +5,7 @@ from aws.protocols import intToProtocolTable, protocolToIntTable
 import traceback
 import json
 
+
 @dataclass
 class Rule:
     source: str
