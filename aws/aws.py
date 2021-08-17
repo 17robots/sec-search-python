@@ -20,11 +20,13 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 file_handler = logging.FileHandler(filename='mainLog.txt')
 file_handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s %(thread)d %(threadName)s %(levelname)s %(message)s')
+formatter = logging.Formatter(
+    '%(asctime)s %(thread)d %(threadName)s %(levelname)s %(message)s')
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 message_pattern = '/(?<version>\S+)\s+(?<account_id>\S+)\s+(?<interface_id>\S+)\s+(?<srcaddr>\S+)\s+(?<dstaddr>\S+)\s+(?<srcport>\S+)\s+(?<dstport>\S+)\s+(?<protocol>\S+)\s+(?<packets>\S+)\s+(?<bytes>\S+)\s+(?<start>\S+)\s+(?<end>\S+)\s+(?<action>\S+)\s+(?<log_status>\S+)(?:\s+(?<vpc_id>\S+)\s+(?<subnet_id>\S+)\s+(?<instance_id>\S+)\s+(?<tcp_flags>\S+)\s+(?<type>\S+)\s+(?<pkt_srcaddr>\S+)\s+(?<pkt_dstaddr>\S+))?(?:\s+(?<region>\S+)\s+(?<az_id>\S+)\s+(?<sublocation_type>\S+)\s+(?<sublocation_id>\S+))?(?:\s+(?<pkt_src_aws_service>\S+)\s+(?<pkt_dst_aws_service>\S+)\s+(?<flow_direction>\S+)\s+(?<traffic_path>\S+))?/'
+
 
 class AWS:
     def __init__(self) -> None:
@@ -145,21 +147,25 @@ class AWS:
                                 with clientLock:
                                     creds = sso.getCreds(account=myAccount)
                                     threadClient = boto3.client('logs', region_name=region, aws_access_key_id=creds.access_key,
-                                            aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                                                                aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                                # {cli.buildFilters()}
                                 fullQuery = f"fields @timestamp, @message | parse @message {message_pattern} {cli.buildFilters()}"
+                                logger.debug(f"Query: {fullQuery}")
 
                                 if start_time:
                                     if haveResults:
-                                        start_time = end_time;
+                                        start_time = end_time
                                         end_time = datetime.now()
                                         haveResults = False
                                 else:
                                     end_time = datetime.now()
-                                    start_time = end_time - timedelta(minutes=5)
+                                    start_time = end_time - \
+                                        timedelta(minutes=5)
 
                                 query_id = threadClient.start_query(logGroupName=name, startTime=int(start_time.timestamp()), endTime=int(
                                     end_time.timestamp()), queryString=fullQuery)['queryId']
-                                logger.debug(f"{account['accountId']}: {query_id}")
+                                logger.debug(
+                                    f"{account['accountId']}: {query_id}\n")
                                 while True:
                                     response = threadClient.get_query_results(
                                         queryId=query_id)
@@ -167,24 +173,27 @@ class AWS:
                                         haveResults = True
                                     for result in response['results']:
                                         logger.debug(' '.join([val['value']
-                                                        for val in result]))
+                                                               for val in result]))
+                                        time.sleep(.5)
                                         msgPmp.put(common.event.LogEntryReceivedEvent(
                                             log=' '.join([val['value']
-                                                        for val in result])
+                                                          for val in result])
                                         ))
-                                        
+
                                     if response['status'] == 'Complete':
                                         break
                             except Exception as e:
                                 common.event.ErrorEvent(e=e)
-                                logger.error(f"We Encountered An Error: {str(e)}\n")
+                                logger.error(
+                                    f"We Encountered An Error: {str(e)}\n")
                                 break
                         msgPmp.put(
                             common.event.LogStreamStopped(region=region))
                         return
 
                     for name in names:
-                        x = Thread(target=sub_thread_func, args=(name,), name=f"{region}-{account['accountId']}-{name}")
+                        x = Thread(target=sub_thread_func, args=(
+                            name,), name=f"{region}-{account['accountId']}-{name}")
                         threads.append(x)
                         msgPmp.put(
                             common.event.LogStreamStarted(region=region))

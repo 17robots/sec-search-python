@@ -73,32 +73,32 @@ class CLI:
         if len(self.sources) > 0:
             returnString += "| filter ("
             for source in self.sources:
-                returnString += f"pkt_srcaddr = {source} or "
-            returnString.rsplit(' or ')
+                returnString += f"pkt_srcaddr = \"{source}\" or "
+            returnString = returnString.rstrip(' or ')
             returnString += ')'
         if len(self.dests) > 0:
             returnString += " and (" if returnString != "" else "| filter ("
             for dest in self.dests:
-                returnString += f"pkt_dstaddr = {dest} or "
-            returnString.rsplit(' or ')
+                returnString += f"pkt_dstaddr = \"{dest}\" or "
+            returnString = returnString.rstrip(' or ')
             returnString += ')'
         if len(self.ports) > 0:
             returnString += " and (" if returnString != "" else "| filter ("
             for port in self.ports:
                 returnString += f"srcport = {port} or "
                 returnString += f"dstport = {port} or "
-            returnString.rsplit(' or ')
+            returnString = returnString.rstrip(' or ')
             returnString += ')'
             returnString += " and (" if returnString != "" else "| filter ("
             for port in self.ports:
                 returnString += f"dstport = {port} or "
-            returnString.rsplit(' or ')
+            returnString = returnString.rstrip(' or ')
             returnString += ')'
         if len(self.protocols) > 0:
             returnString += " and (" if returnString != "" else "| filter ("
             for protocol in self.protocols:
                 returnString += f"protocol = {protocol if protocol.isnumeric() else protocolToIntTable[protocol]} or "
-            returnString.rsplit(' or ')
+            returnString = returnString.rstrip(' or ')
             returnString += ')'
         return returnString
 
@@ -113,10 +113,8 @@ class CLI:
                     if y.subnet_of(x):
                         return True
                     if source in expandedRule.source:
-
                         return True
                     if expandedRule.source in source:
-
                         return True
                     return False
                 except Exception as e:
