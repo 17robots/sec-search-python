@@ -1,6 +1,6 @@
 import boto3
 from .sso import SSO
-from .searchEnum import SearchFilters
+from .searchenum import SearchFilters
 
 
 def grab_sec_group_rules(client):

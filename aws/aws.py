@@ -1,4 +1,3 @@
-from logging import error
 import boto3
 from .sso import SSO
 from cli.cli import CLI
@@ -8,12 +7,10 @@ from threading import Thread, Event
 import threading
 import queue
 import common.event
-from .searchEnum import SearchFilters
+from .searchenum import SearchFilters
 from datetime import datetime, timedelta
 from itertools import chain
-from .records import LogEntry
 import time
-import json
 import logging
 
 logger = logging.getLogger(__name__)
