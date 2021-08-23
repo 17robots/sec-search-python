@@ -8,3 +8,6 @@ class SearchFilters(Enum):
     log2s = "logGroups[*].logGroupName"
     logs = "FlowLogs[*].LogGroupName"
     events = "events[*].{timestamp:timestamp, message:message}"
+
+
+# isEgress:IsEgress, protocol:IpProtocol, from:FromPort, to:ToPort, cidrv4:CidrIpv4, cidrv6:CidrIpv6, referencedGroup:ReferencedGroupInfo.GroupId
