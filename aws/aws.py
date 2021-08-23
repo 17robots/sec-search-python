@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 import boto3
 from .sso import SSO
 from cli.cli import CLI
@@ -201,3 +202,58 @@ class AWS:
                         common.event.ErrorEvent(e=e))
         for process in threads:
             process.join()
+
+    def diff(self, cli: CLI, msgPmp: queue.Queue):
+        sso = SSO()
+        threads = []
+        group1_rules = []
+        group2_rules = []
+        regions = sso.getRegions()
+        for region in regions:
+            self.currentRegion = region
+            if not region in self.ruleMap:
+                self.ruleMap[region] = {}
+                self.groupMap[region] = {}
+                self.instanceMap[region] = {}
+
+            accounts = sso.getAccounts()['accountList']
+            for account in accounts:
+                self.currentAccount = account['accountId']
+
+                def thread_func(region, account):
+                    try:
+                        reg = region
+                        acct = account['accountId']
+                        creds = sso.getCreds(account=account)
+                        client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
+                                              aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
+                        rules = grab_sec_group_rules(client)
+                        for rule in rules:
+                            if rule['groupId'] == '':
+                                group1_rules.append(rule)
+                            if rule['groupId'] == '':
+                                group2_rules.append(rule)
+                    except Exception as e:
+                        msgPmp.put(common.event.ErrorEvent(e=e))
+
+                x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
+                    region, account['accountId']), args=(region, account))
+                threads.append(x)
+                x.start()
+
+        for process in threads:
+            process.join()
+        long, short = group1_rules, group2_rules if len(group1_rules) > len(
+            group2_rules) else group2_rules, group1_rules
+        diffs = []
+        for i in range(0, len(long), 1):
+            if i < len(short):
+                diffs.append(
+                    Diff(rule1=long[i], rule2=None, diffString=f"{long[i]} not in "))
+
+
+@dataclass
+class Diff:
+    rule1: dict
+    rule2: dict
+    diffString: str
