@@ -2,7 +2,7 @@ import click
 
 
 @click.command()
-@click.argument()
-@click.argument()
+@click.argument('secid1')
+@click.argument('secid2')
 def diff(secid1, secid2):
-    pass
+    print(f'Hello {secid1} {secid2}')

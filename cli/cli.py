@@ -1,9 +1,6 @@
 from dataclasses import dataclass
 import ipaddress
-from aws.records import LogEntry
-from aws.protocols import intToProtocolTable, protocolToIntTable
 import traceback
-import json
 
 
 @dataclass
@@ -14,47 +11,63 @@ class Rule:
 
 
 class CLI:
-    def __init__(self, subcommand, sources, regions, dests, accounts, ports, protocols, cloudquery, output) -> None:
-        self.subcommand = subcommand
-        self.sourceString = sources
-        if self.sourceString is not None and '@' in self.sourceString:
-            self.sources = []
-            try:
-                with open(self.sourceString[1:], 'r') as f:
-                    for line in f:
-                        self.sources.append(line.strip())
-            except Exception as e:
-                raise Exception(f"Invalid Filename {self.sourceString[1:]}")
-        else:
-            self.sources = [source.strip(' ') for source in self.sourceString.split(
-                ',')] if sources != None else []
-        self.destString = dests
-        if self.destString is not None and '@' in self.destString:
-            self.dests = []
-            try:
-                with open(self.destString[1:], 'r') as f:
-                    for line in f:
-                        self.dests.append(line.strip())
-            except Exception as e:
-                raise Exception(f"Invalid Filename {self.destString[1:]}")
+    def __init__(self, **kwargs) -> None:
+        subcommand = kwargs.get('subcommand', '')
 
+        self.subcommand = subcommand
+
+        if subcommand == 'diff':
+            self.group1 = kwargs.get('secid1')
+            self.group2 = kwargs.get('secid2')
         else:
-            self.dests = [dest.strip(' ') for dest in self.destString.split(
-                ',')] if dests != None else []
-        self.accountString = accounts
-        self.accounts = [acct.strip(' ') for acct in self.accountString.split(
-            ',')] if accounts != None else []
-        self.portString = ports
-        self.ports = [int(port.strip(' ')) for port in self.portString.split(
-            ',')] if ports != None else []
-        self.protocolString = protocols
-        self.protocols = [protocol.strip(' ') for protocol in self.protocolString.split(
-            ',')] if protocols != None else []
-        self.regionString = regions
-        self.regions = [region.strip(' ') for region in self.regionString.split(
-            ',')] if regions != None else []
-        self.outputFile = output
-        self.cloudQuery = cloudquery
+            sources = kwargs.get('sources', None)
+            regions = kwargs.get('regions', None)
+            dests = kwargs.get('dests', None)
+            accounts = kwargs.get('accounts', None)
+            ports = kwargs.get('ports', None)
+            protocols = kwargs.get('protocols', None)
+            cloudquery = kwargs.get('cloudquery', None)
+            output = kwargs.get('output', None)
+            self.sourceString = sources
+            if self.sourceString is not None and '@' in self.sourceString:
+                self.sources = []
+                try:
+                    with open(self.sourceString[1:], 'r') as f:
+                        for line in f:
+                            self.sources.append(line.strip())
+                except Exception as e:
+                    raise Exception(
+                        f"Invalid Filename {self.sourceString[1:]}")
+            else:
+                self.sources = [source.strip(' ') for source in self.sourceString.split(
+                    ',')] if sources != None else []
+            self.destString = dests
+            if self.destString is not None and '@' in self.destString:
+                self.dests = []
+                try:
+                    with open(self.destString[1:], 'r') as f:
+                        for line in f:
+                            self.dests.append(line.strip())
+                except Exception as e:
+                    raise Exception(f"Invalid Filename {self.destString[1:]}")
+
+            else:
+                self.dests = [dest.strip(' ') for dest in self.destString.split(
+                    ',')] if dests != None else []
+            self.accountString = accounts
+            self.accounts = [acct.strip(' ') for acct in self.accountString.split(
+                ',')] if accounts != None else []
+            self.portString = ports
+            self.ports = [int(port.strip(' ')) for port in self.portString.split(
+                ',')] if ports != None else []
+            self.protocolString = protocols
+            self.protocols = [protocol.strip(' ') for protocol in self.protocolString.split(
+                ',')] if protocols != None else []
+            self.regionString = regions
+            self.regions = [region.strip(' ') for region in self.regionString.split(
+                ',')] if regions != None else []
+            self.outputFile = output
+            self.cloudQuery = cloudquery
 
     def filterAccounts(self, acct):
         if len(self.accounts) > 0:
@@ -97,7 +110,7 @@ class CLI:
         if len(self.protocols) > 0:
             returnString += " and (" if returnString != "" else "| filter ("
             for protocol in self.protocols:
-                returnString += f"protocol = {protocol if protocol.isnumeric() else protocolToIntTable[protocol]} or "
+                returnString += f"protocol = {protocol} or "
             returnString = returnString.rstrip(' or ')
             returnString += ')'
         return returnString
@@ -211,42 +224,3 @@ class CLI:
                     traceback.print_exc(file=f)
                     f.write(f"Rule that broke: {str(rule)}")
         return innerExpand
-
-    def filterEntrySource(self, entry: LogEntry):
-        if len(self.sources) > 0:
-            return entry.pkt_srcaddr in self.sources
-        return True
-
-    def filterEntryDest(self, entry: LogEntry):
-        if len(self.dests) > 0:
-            return entry.pkt_srcaddr in self.sources
-        return True
-
-    def filterEntryPorts(self, entry: LogEntry):
-        if len(self.ports) > 0:
-            for port in self.ports:
-                if int(port) == (entry.dstport):
-                    return True
-                if int(port) == int(entry.srcport):
-                    return True
-            return False
-        return True
-
-    def filterEntryProtocol(self, entry: LogEntry):
-        if len(self.protocols) > 0:
-            for protocol in self.protocols:
-                if protocol in entry.protocol:
-                    return True
-            return False
-        return True
-
-    def allowEntry(self, entry: LogEntry):
-        if not self.filterEntryPorts(entry):
-            return False
-        if not self.filterEntryProtocol(entry):
-            return False
-        if not self.filterEntrySource(entry):
-            return False
-        if not self.filterEntryDest(entry):
-            return False
-        return True

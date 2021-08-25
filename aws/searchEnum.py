@@ -10,4 +10,4 @@ class SearchFilters(Enum):
     events = "events[*].{timestamp:timestamp, message:message}"
 
 
-# isEgress:IsEgress, protocol:IpProtocol, from:FromPort, to:ToPort, cidrv4:CidrIpv4, cidrv6:CidrIpv6, referencedGroup:ReferencedGroupInfo.GroupId
+# IpPermissions[*].{ips:IpRanges[*].{ip:CidrIp}, ipv6s:Ipv6Ranges[*].{ip:CidrIpv6}, from:FromPort, to:ToPort, protocol:IpProtocol}

@@ -207,15 +207,11 @@ class AWS:
     def diff(self, cli: CLI, msgPmp: queue.Queue):
         sso = SSO()
         threads = []
-        results = []
+        group1_diffs = []
+        group2_diffs = []
+        sg1, sg2 = None, None
         regions = sso.getRegions()
         for region in regions:
-            self.currentRegion = region
-            if not region in self.ruleMap:
-                self.ruleMap[region] = {}
-                self.groupMap[region] = {}
-                self.instanceMap[region] = {}
-
             accounts = sso.getAccounts()['accountList']
             for account in accounts:
                 self.currentAccount = account['accountId']
@@ -224,18 +220,16 @@ class AWS:
                     try:
                         reg = region
                         acct = account['accountId']
-                        creds = sso.getCreds(account=account)
-                        client = boto3.client('ec2', region_name=region, aws_access_key_id=creds.access_key,
+                        creds = sso.getCreds(account=acct)
+                        client = boto3.client('ec2', region_name=reg, aws_access_key_id=creds.access_key,
                                               aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
-                        groups = list(
-                            filter(lambda x: x['id'] == '' or x['id'] == '', grab_sec_groups(client)))
-
-                        if len(groups) > 0:
-                            for group in groups:
-                                results.append(group)
+                        for group in grab_sec_groups(client):
+                            if group['id'] == cli.group1:
+                                sg1 = group
+                            elif group['id'] == cli.group2:
+                                sg2 = group
                     except Exception as e:
                         msgPmp.put(common.event.ErrorEvent(e=e))
-
                 x = Thread(daemon=True, target=thread_func, name="{}-{}".format(
                     region, account['accountId']), args=(region, account))
                 threads.append(x)
@@ -244,9 +238,59 @@ class AWS:
         for process in threads:
             process.join()
 
+        if sg1 == None or sg2 == None:
+            return  # change this to give an error message that one couldnt be found
+            # TODO: change this so that it checks for either so itll let them know which one is wrong
+
+        for inbound_rule in sg1['inbound']:
+            if not contains_rule(rules=sg2['inbound'], rule=inbound_rule):
+                group1_diffs.append(inbound_rule)  # add a difference
+        for outbound_rule in sg1['outbound']:
+            if not contains_rule(rules=sg2['outbound'], rule=outbound_rule):
+                group1_diffs.append(outbound_rule)  # add a difference
+
+        for inbound_rule in sg2['inbound']:
+            if not contains_rule(rules=sg1['inbound'], rule=inbound_rule):
+                group2_diffs.append(inbound_rule)  # add a difference
+
+        for outbound_rule in sg2['outbound']:
+            if not contains_rule(rules=sg1['outbound'], rule=outbound_rule):
+                group2_diffs.append(outbound_rule)  # add a difference
+
 
 @dataclass
 class Diff:
     rule1: dict
     rule2: dict
     diffString: str
+
+
+def contains_rule(rule, rules):
+    for inner_rule in rules:
+        if equals(inner_rule, rule):
+            return True
+    return False
+
+
+def contains_ip(ip, ips):
+    for inner_ip in ips:
+        if inner_ip['ip'] == ip:
+            return True
+    return False
+
+
+def equals(rule1, rule2):
+    if rule1['from'] != rule2['from']:
+        return False
+    if rule1['to'] != rule2['to']:
+        return False
+    if rule1['protocol'] != rule2['protocol']:
+        return False
+    for ip in rule1['ips']:
+        if not contains_ip(rule2['ips'], ip['ip']):
+            return False
+    for ip in rule1['ipv6s']:
+        if not contains_ip(rule2['ips'], ip['ip']):
+            return False
+    return True
+    # IpPermissions[*].{ips:IpRanges[*].{ip:CidrIp}, ipv6s:Ipv6Ranges[*].{ip:CidrIpv6}, from:FromPort, to:ToPort, protocol:IpProtocol}

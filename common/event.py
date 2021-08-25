@@ -2,7 +2,6 @@ from dataclasses import dataclass, field
 from logging import ERROR
 import queue
 import enum
-from aws.records import LogEntry
 
 
 @dataclass
@@ -82,7 +81,7 @@ class LoadResultsEvent(Event):
 
 @dataclass
 class LogEntryReceivedEvent(Event):
-    log: LogEntry
+    log: str
     e_type: str = field(default=Events.LogEntryReceivedEvent.value, init=False)
 
 
