@@ -1,4 +1,4 @@
-from .searchenum import SearchFilters
+from .searchEnum import SearchFilters
 
 
 def grab_instances(client):

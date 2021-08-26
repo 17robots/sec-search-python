@@ -22,6 +22,8 @@ class Events(enum.Enum):
     LogStreamStarted = "LogStreamStarted"
     LogStreamStopped = "LogStreamStopped"
     AddLogStream = "AddLogStream"
+    GroupNotFoundEvent = "GroupNotFoundEvent"
+    LoadDiffsEvent = "LoadDiffsEvent"
 
 # error events
 
@@ -102,6 +104,18 @@ class AddLogStream(Event):
 class LogStreamStopped(Event):
     region: str
     e_type: str = field(default=Events.LogStreamStopped.value, init=False)
+
+# diff events
+@dataclass
+class GroupNotFoundEvent(Event):
+    group: str
+    e_type: str = field(default=Events.GroupNotFoundEvent.value, init=False)
+
+@dataclass
+class LoadDiffsEvent(Event):
+    grp1_diffs: list
+    grp2_diffs: list
+    e_type: str = field(default=Events.LoadDiffsEvent.value, init=False)
 
 # pipeline
 

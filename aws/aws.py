@@ -9,7 +9,7 @@ from threading import Thread, Event
 import threading
 import queue
 import common.event
-from .searchenum import SearchFilters
+from .searchEnum import SearchFilters
 from datetime import datetime, timedelta
 from itertools import chain
 import time
@@ -219,14 +219,16 @@ class AWS:
                 def thread_func(region, account):
                     try:
                         reg = region
-                        acct = account['accountId']
+                        acct = account
                         creds = sso.getCreds(account=acct)
                         client = boto3.client('ec2', region_name=reg, aws_access_key_id=creds.access_key,
                                               aws_secret_access_key=creds.secret_access_key, aws_session_token=creds.session_token)
                         for group in grab_sec_groups(client):
                             if group['id'] == cli.group1:
+                                nonlocal sg1
                                 sg1 = group
                             elif group['id'] == cli.group2:
+                                nonlocal sg2
                                 sg2 = group
                     except Exception as e:
                         msgPmp.put(common.event.ErrorEvent(e=e))
@@ -238,9 +240,12 @@ class AWS:
         for process in threads:
             process.join()
 
-        if sg1 == None or sg2 == None:
-            return  # change this to give an error message that one couldnt be found
-            # TODO: change this so that it checks for either so itll let them know which one is wrong
+        if sg1 == None or sg2:
+            if sg1 == None:
+                msgPmp.put(common.event.GroupNotFoundEvent(group="group1"))
+            if sg2 == None:
+                msgPmp.put(common.event.GroupNotFoundEvent(group="group2"))
+            return
 
         for inbound_rule in sg1['inbound']:
             if not contains_rule(rules=sg2['inbound'], rule=inbound_rule):
@@ -256,6 +261,8 @@ class AWS:
         for outbound_rule in sg2['outbound']:
             if not contains_rule(rules=sg1['outbound'], rule=outbound_rule):
                 self.group2_diffs.append(outbound_rule)  # add a difference
+        
+        msgPmp.put(common.event.LoadDiffsEvent(grp1_diffs=self.group1_diffs, grp2_diffs=self.group2_diffs))
 
 
 @dataclass
