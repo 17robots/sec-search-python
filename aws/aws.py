@@ -207,8 +207,8 @@ class AWS:
     def diff(self, cli: CLI, msgPmp: queue.Queue):
         sso = SSO()
         threads = []
-        group1_diffs = []
-        group2_diffs = []
+        self.group1_diffs = []
+        self.group2_diffs = []
         sg1, sg2 = None, None
         regions = sso.getRegions()
         for region in regions:
@@ -244,18 +244,18 @@ class AWS:
 
         for inbound_rule in sg1['inbound']:
             if not contains_rule(rules=sg2['inbound'], rule=inbound_rule):
-                group1_diffs.append(inbound_rule)  # add a difference
+                self.group1_diffs.append(inbound_rule)  # add a difference
         for outbound_rule in sg1['outbound']:
             if not contains_rule(rules=sg2['outbound'], rule=outbound_rule):
-                group1_diffs.append(outbound_rule)  # add a difference
+                self.group1_diffs.append(outbound_rule)  # add a difference
 
         for inbound_rule in sg2['inbound']:
             if not contains_rule(rules=sg1['inbound'], rule=inbound_rule):
-                group2_diffs.append(inbound_rule)  # add a difference
+                self.group2_diffs.append(inbound_rule)  # add a difference
 
         for outbound_rule in sg2['outbound']:
             if not contains_rule(rules=sg1['outbound'], rule=outbound_rule):
-                group2_diffs.append(outbound_rule)  # add a difference
+                self.group2_diffs.append(outbound_rule)  # add a difference
 
 
 @dataclass
