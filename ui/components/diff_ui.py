@@ -22,12 +22,12 @@ class DiffUI(Component):
         table1 = Table.grid()
         table1.add_column(self.state['grp1'])
         for msg in self.state['grp1Msgs']:
-            table1.add_row(msg)
+            table1.add_row(str(msg))
 
         table2 = Table.grid()
         table2.add_column(self.state['grp2'])
         for msg in self.state['grp2Msgs']:
-            table2.add_row(msg)
+            table2.add_row(str(msg))
         layout['group1'].update(Panel(table1))
         layout['group2'].update(Panel(table2))
         return layout

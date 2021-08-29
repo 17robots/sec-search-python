@@ -240,36 +240,49 @@ class AWS:
         for process in threads:
             process.join()
 
-        if sg1 == None or sg2:
+        if sg1 == None or sg2 == None:
             if sg1 == None:
-                msgPmp.put(common.event.GroupNotFoundEvent(group="group1"))
+                if sg2 == None:
+                    msgPmp.put(common.event.LoadDiffsEvent(grp1_diffs=[
+                               f'Unable to find {cli.group1}'], grp2_diffs=[f'Unable to find {cli.group2}']))
+                else:
+                    msgPmp.put(common.event.LoadDiffsEvent(grp1_diffs=[
+                               f'Unable to find {cli.group1}'], grp2_diffs=[f'Refusing to load {cli.group2} because other group not found']))
+                return
             if sg2 == None:
-                msgPmp.put(common.event.GroupNotFoundEvent(group="group2"))
+                msgPmp.put(common.event.LoadDiffsEvent(grp1_diffs=[f'Refusing to load {cli.group1} because other group not found'], grp2_diffs=[
+                    f'Unable to find {cli.group2}']))
             return
-
+        logger.debug(f"{sg1}\n{sg2}\n")
+        logger.debug("Rule Similarities\n")
+        logger.debug(f"{cli.group1}\n")
         for inbound_rule in sg1['inbound']:
             if not contains_rule(rules=sg2['inbound'], rule=inbound_rule):
                 self.group1_diffs.append(inbound_rule)  # add a difference
+            else:
+                logger.debug(inbound_rule)
+
         for outbound_rule in sg1['outbound']:
             if not contains_rule(rules=sg2['outbound'], rule=outbound_rule):
                 self.group1_diffs.append(outbound_rule)  # add a difference
+            else:
+                logger.debug(outbound_rule)
 
+        logger.debug(f"{cli.group2}\n")
         for inbound_rule in sg2['inbound']:
             if not contains_rule(rules=sg1['inbound'], rule=inbound_rule):
                 self.group2_diffs.append(inbound_rule)  # add a difference
+            else:
+                logger.debug(inbound_rule)
 
         for outbound_rule in sg2['outbound']:
             if not contains_rule(rules=sg1['outbound'], rule=outbound_rule):
                 self.group2_diffs.append(outbound_rule)  # add a difference
-        
-        msgPmp.put(common.event.LoadDiffsEvent(grp1_diffs=self.group1_diffs, grp2_diffs=self.group2_diffs))
+            else:
+                logger.debug(outbound_rule)
 
-
-@dataclass
-class Diff:
-    rule1: dict
-    rule2: dict
-    diffString: str
+        msgPmp.put(common.event.LoadDiffsEvent(
+            grp1_diffs=self.group1_diffs if len(self.group1_diffs) > 0 else [f'All rules present in {cli.group1}'], grp2_diffs=self.group2_diffs if len(self.group2_diffs) > 0 else [f'All rules present in {cli.group2}']))
 
 
 def contains_rule(rule, rules):
@@ -294,10 +307,10 @@ def equals(rule1, rule2):
     if rule1['protocol'] != rule2['protocol']:
         return False
     for ip in rule1['ips']:
-        if not contains_ip(rule2['ips'], ip['ip']):
+        if not contains_ip(ips=rule2['ips'], ip=ip['ip']):
             return False
     for ip in rule1['ipv6s']:
-        if not contains_ip(rule2['ips'], ip['ip']):
+        if not contains_ip(ips=rule2['ipv6s'], ip=ip['ip']):
             return False
     return True
     # IpPermissions[*].{ips:IpRanges[*].{ip:CidrIp}, ipv6s:Ipv6Ranges[*].{ip:CidrIpv6}, from:FromPort, to:ToPort, protocol:IpProtocol}

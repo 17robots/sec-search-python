@@ -27,19 +27,19 @@ def diff(secid1, secid2):
             state['grp1Msgs'] = [f'Unable to find {secid1}']
         if e.group == 'group2':
             state['grp2Msgs'] = [f'Unable to find {secid2}']
-    
+
     def loadDiffs(e: common.event.LoadDiffsEvent):
         state['grp1Msgs'] = e.grp1_diffs
         state['grp2Msgs'] = e.grp2_diffs
-    
-    def handleException(e: common.event.ErrorEvent):
-        state['grp1Msgs'].append(str(e))
-    
 
-    pump.addListener(common.event.Events.GroupNotFoundEvent.value, groupNotFound)
+    def handleException(e: common.event.ErrorEvent):
+        state['grp1Msgs'] = [str(e.e)]
+        state['grp2Msgs'] = []
+
+    pump.addListener(
+        common.event.Events.GroupNotFoundEvent.value, groupNotFound)
     pump.addListener(common.event.Events.LoadDiffsEvent.value, loadDiffs)
     pump.addListener(common.event.Events.ErrorEvent.value, handleException)
-
 
     def diff_thread():
         try:
@@ -52,7 +52,7 @@ def diff(secid1, secid2):
     diff_ui = DiffUI(props=state)
 
     x.start()
-    
+
     with Live(diff_ui(), refresh_per_second=60, screen=True) as live:
         while isRunning:
             live.update(diff_ui.setState(newState=state))
