@@ -252,13 +252,19 @@ class AWS:
             if sg2 == None:
                 msgPmp.put(common.event.LoadDiffsEvent(grp1_diffs=[f'Refusing to load {cli.group1} because other group not found'], grp2_diffs=[
                     f'Unable to find {cli.group2}']))
-
             return
-        logger.debug(f"{sg1}\n{sg2}\n")
-        logger.debug("Rule Similarities\n")
-        logger.debug(f"{cli.group1}\n")
+
+        # output to files
+        with open(f'{cli.group1}-{cli.group2}_{cli.group1}.txt', 'w') as f:
+            f.write('Inbound Rules')
+            f.write(*sg1['inbound'], sep='\n')
+            f.write('Outbound Rules')
+            f.write(*sg1['outbound'], sep='\n')
+        with open(f'{cli.group1}-{cli.group2}_{cli.group2}.txt', 'w') as f:
+            f.write('Inbound Rules')
+            f.write(*sg2['inbound'], sep='\n')
+            f.write('Outbound Rules')
+            f.write(*sg2['outbound'], sep='\n')
 
         msgPmp.put(common.event.LoadDiffsEvent(
             grp1_diffs=sg1['inbound'] + sg1['outbound'], grp2_diffs=sg2['inbound'] + sg2['outbound']))
-
-    # IpPermissions[*].{ips:IpRanges[*].{ip:CidrIp}, ipv6s:Ipv6Ranges[*].{ip:CidrIpv6}, from:FromPort, to:ToPort, protocol:IpProtocol}

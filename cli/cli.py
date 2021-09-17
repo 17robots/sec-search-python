@@ -129,9 +129,9 @@ class CLI:
                         return True
                     if expandedRule.source in source:
                         return True
-                    return False
-                except Exception as e:
+                except:
                     continue
+            return False
         return True
 
     def filterDestinations(self, expandedRule: Rule):
@@ -148,9 +148,9 @@ class CLI:
                         return True
                     if expandedRule.dest in dest:
                         return True
-                    return False
-                except Exception as e:
+                except:
                     continue
+            return False
         return True
 
     def filterPorts(self, rule):
